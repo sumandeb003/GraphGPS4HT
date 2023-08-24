@@ -9,8 +9,9 @@ Goal:
 	d) Phases through which the training goes*****
 	e) Where are the hyperparameters set?***** 
 
-python main.py --cfg configs/GPS/zinc-GPS+RWSE-MYVALUES.yaml  wandb.use False
+`python main.py --cfg configs/GPS/zinc-GPS+RWSE-MYVALUES.yaml  wandb.use False`
 
+-------------------------------
 GrahGPS Workflow:
 -------------------------------
 1. Load cmd line args
