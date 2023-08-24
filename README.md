@@ -53,7 +53,7 @@ dump_cfg(cfg): Combines the configurations specified in the configuration file (
 	c) Start training
 
 
-===============================
+
 configs/GPS/zinc-GPS+RWSE.yaml
 -------------------------------
 out_dir: results
