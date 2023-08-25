@@ -37,7 +37,7 @@ The `set_cfg()` method combines the default values of the parameters of GraphGym
     custom_set_out_dir(cfg, args.cfg_file, cfg.name_tag)
     dump_cfg(cfg)
 ```
-set_cfg(cfg)**: Sets default values of parameters of the experiment. The default values of these and other unspecified parameters in this file are stated in the set_cfg(cfg) method of the file:  https://github.com/snap-stanford/GraphGym/blob/master/graphgym/config.py
+**set_cfg(cfg)**: Sets default values of parameters of the experiment. The default values of these and other unspecified parameters in this file are stated in the set_cfg(cfg) method of the file:  https://github.com/snap-stanford/GraphGym/blob/master/graphgym/config.py
 Note that the parameters in 'configs/GPS/zinc-GPS+RWSE.yaml' custom defined for this project are not present in the set_cfg method of GraphGym. The default values of these custom parameters are stated in the .py files of https://github.com/rampasek/GraphGPS/tree/main/graphgps/config
 
 **load_cfg(cfg, args)**: Loads configurations from the configuration file mentioned in command line and also any configuration specifically mentioned  through command line.
