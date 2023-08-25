@@ -1,7 +1,7 @@
 # GraphGPS4HT
 
-Goal:
-===== 
+## Goals of Project:
+
 1. Train GraphGPS on my HT dataset
 	a) How to add/create a new dataset?
 	b) How to call the new dataset?
@@ -10,6 +10,8 @@ Goal:
 	e) Where are the hyperparameters set?***** 
 
 `python main.py --cfg configs/GPS/zinc-GPS+RWSE-MYVALUES.yaml  wandb.use False`
+
+2. Compare with other GNN-based tools trained on the same dataset and tested on the same dataset.
 
 -------------------------------
 GrahGPS Workflow:
