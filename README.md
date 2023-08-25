@@ -15,8 +15,10 @@ Goal:
 GrahGPS Workflow:
 -------------------------------
 1. Load cmd line args
-```args = parse_args()
-   print (args)```
+```
+args = parse_args()
+print (args)
+```
 args: Namespace(cfg_file='configs/GPS/zinc-GPS+RWSE.yaml', repeat=1, mark_done=False, opts=['wandb.use', 'False'])
 
 Parses the command line for arguments like cfg - configuration file path, repeat - the number of repeated jobs, mark_done - marking yaml as done after a job has finished, opt - configuration options.
