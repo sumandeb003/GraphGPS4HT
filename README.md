@@ -15,8 +15,8 @@ Goal:
 GrahGPS Workflow:
 -------------------------------
 1. Load cmd line args
-args = parse_args()
-print (args)
+```args = parse_args()
+print (args)```
 args: Namespace(cfg_file='configs/GPS/zinc-GPS+RWSE.yaml', repeat=1, mark_done=False, opts=['wandb.use', 'False'])
 
 Parses the command line for arguments like cfg - configuration file path, repeat - the number of repeated jobs, mark_done - marking yaml as done after a job has finished, opt - configuration options.
@@ -26,20 +26,20 @@ The default values of these and other unspecified parameters in this file are st
 Note that some of the parameters in 'configs/GPS/zinc-GPS+RWSE.yaml' are custom defined for this project and not present in the set_cfg method. The default values of these custom parameters are stated in https://github.com/rampasek/GraphGPS/tree/main/graphgps/config
 
 2. Load config file
-
+```
     set_cfg(cfg)
     load_cfg(cfg, args)
     custom_set_out_dir(cfg, args.cfg_file, cfg.name_tag)
     dump_cfg(cfg)
+```
+**set_cfg(cfg)**: Sets default values of parameters of the experiment. The default values of these and other unspecified parameters in this file are stated in the set_cfg(cfg) method of the file:  https://github.com/snap-stanford/GraphGym/blob/master/graphgym/config.py
+Note that the parameters in 'configs/GPS/zinc-GPS+RWSE.yaml' custom defined for this project are not present in the set_cfg method of GraphGym. The default values of these custom parameters are stated in the .py files of https://github.com/rampasek/GraphGPS/tree/main/graphgps/config
 
-set_cfg(cfg): Sets default values of parameters of the experiment. The default values of these and other unspecified parameters in this file are stated in the set_cfg(cfg) method of the file:  https://github.com/snap-stanford/GraphGym/blob/master/graphgym/config.py
-Note that some of the parameters in 'configs/GPS/zinc-GPS+RWSE.yaml' are custom defined for this project and not present in the set_cfg method. The default values of these custom parameters are stated in https://github.com/rampasek/GraphGPS/tree/main/graphgps/config
+**load_cfg(cfg, args)**: Loads configurations from the configuration file mentioned in command line and also any configuration specifically mentioned  through command line.
 
-load_cfg(cfg, args): Loads configurations from the configuration file mentioned in command line and also any configuration specifically mentioned  through command line.
+**custom_set_out_dir(cfg, args.cfg_file, cfg.name_tag)**: result is the custom_out_dir (= 'results/' + 'zinc-GPS+RWSE')
 
-custom_set_out_dir(cfg, args.cfg_file, cfg.name_tag): result is the custom_out_dir (= 'results/' + 'zinc-GPS+RWSE')
-
-dump_cfg(cfg): Combines the configurations specified in the configuration file (e.g. 'configs/GPS/zinc-GPS+RWSE.yaml'; argument in CLI)  and the default values of unspecified configurations from graphgym/config.py to custom_out_dir.
+**dump_cfg(cfg)**: Combines the configurations specified in the configuration file (e.g. 'configs/GPS/zinc-GPS+RWSE.yaml'; argument in CLI)  and the default values of unspecified configurations from graphgym/config.py to custom_out_dir.
 
 3. custom_set_run_dir(cfg, run_id): it sets custom output directory for each experiment run. Inside the custom output directory (here, 'results/zinc-GPS+RWSE'), a separate directory is created during each run. The title of this directory is the run-id.
 4. set_printing: set printing options
