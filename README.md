@@ -28,7 +28,8 @@ The default values of these and other unspecified parameters in this file are st
 Note that some of the parameters in 'configs/GPS/zinc-GPS+RWSE.yaml' are custom defined for this project and not present in the set_cfg method. The default values of these custom parameters are stated in https://github.com/rampasek/GraphGPS/tree/main/graphgps/config
 
 The `set_cfg()` method combines the default values of the parameters of GraphGym and those of the custom parameters of the project. This is done by the following code snippet in `set_cfg()`:
-```    for func in register.config_dict.values():
+```
+for func in register.config_dict.values():
         func(cfg)
 ```
 
