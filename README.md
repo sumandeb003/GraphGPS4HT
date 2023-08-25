@@ -34,6 +34,7 @@ The `set_cfg()` method combines the default values of the parameters of GraphGym
 for func in register.config_dict.values():
         func(cfg)
 ```
+<span style="color:red">**I AM STILL NOT CLEAR ABOUT THE** </span> `**config_dict**` <span style="color:red"> **DICTIONARY IS POPULATED WITH KEYS AND VALUES. WHICH CODE CARRIES IT OUT?** </span>
 
 2. Load config file
 ```
