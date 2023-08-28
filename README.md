@@ -58,7 +58,7 @@ f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2
 
 ⬇️
 
-**Performing training**
+**Perform training**
 
 ⬇️
 
