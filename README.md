@@ -100,35 +100,35 @@ Note:`logging.info(f"some_string {some_variable}")`: Python provides a module ca
 
 Parse arguments of the execution command from CLI 
 
-                        ⬇️
+⬇️
 
 Extract the location of configuration file from the list of arguments 
 
-                        ⬇️
+⬇️
 
 Set default values of parameters of the experiment 
 
-                        ⬇️
+⬇️
 
 Load configurations from the above configuration file  and also any configuration specifically mentioned  through command line 
 
-                        ⬇️
+ ⬇️
 
 Set output directory where the results are stored 
 
-                        ⬇️
+⬇️
 
 Combine the configurations specified in the user-given configuration file and the default values of unspecified configurations from `graphgym/config.py` and from the configuration files in `graphgps/config` into the `config.yaml` file in `custom_out_dir`
 
-                        ⬇️
+⬇️
 
 create run-directory (in `custom_out_dir`) during each run of experiment 
 
-                        ⬇️
+⬇️
 
 create dataset loader, a logger that logs info in `logging.log` inside the run-directory, create model, optimizer and an LR scheduler
 
-                        ⬇️
+⬇️
 
 
 
