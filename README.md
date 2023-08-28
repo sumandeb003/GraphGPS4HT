@@ -8,11 +8,17 @@
 4. **Extend the work to node classification**
 
 ## Progress or Questions Answered So Far
+
 a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR; NEED MORE CLARITY**)
+
 b) Where are the hyperparameters set? (**DONE**)
+
 c) Understand the meaning of the hyperparameters (**NEED TO DICUSS WITH VIJAY ABOUT THE HYPERPARAMETERS THAT I DIDN'T UNDERSTAND**)
+
 d) How a dataset is called? (**NEXT**) 
+
 e) How to add a new dataset TO GraphGPS? How to call the new dataset? (**NEAR FUTURE**)
+
 f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**FUTURE**)
 
 -------------------------------
