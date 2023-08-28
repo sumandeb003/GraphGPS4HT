@@ -130,10 +130,11 @@ Note that the parameters in 'configs/GPS/zinc-GPS+RWSE.yaml' custom defined for 
 
 13. `create_scheduler()`: Creates a config-driven LR scheduler. It is located in `GraphGym/graphgym/optimizer.py`
 
-14. ```	logging.info(model)
-    	logging.info(cfg)
-        cfg.params = params_count(model)
-        logging.info('Num parameters: %s', cfg.params)```
+14. ```
+    logging.info(model)
+    logging.info(cfg)
+    cfg.params = params_count(model)
+    logging.info('Num parameters: %s', cfg.params)```
 
 It logs the model, configurations and the given string+variable (`cfg.params`) into `results/'benchmark-name'/logging.log`. 
 Note:`logging.info(f"some_string {some_variable}")`: Python provides a module called `logging` for logging messages. 
