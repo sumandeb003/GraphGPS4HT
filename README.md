@@ -115,7 +115,7 @@ Aslo, the best epoch so far (at any point of training) and its essential details
 
 
 ## Example Configuration File: configs/GPS/zinc-GPS+RWSE.yaml
-
+```
 out_dir: results
 metric_best: mae 
 metric_agg: argmin 
@@ -173,8 +173,9 @@ gnn:
   agg: mean
   normalize_adj: False
 optim:
+```
 
-### GNN Model: Output of print(f'model:{model}')
+### GNN Model: Output of print(f'model:{model}') 🤔 🤔 NEED TO DISCUSS WITH VIJAY TO UNDERSTAND THE MEANING OF EACH OF THE FOLLOWING DETAILS 🤔 🤔
 ```
 model:GraphGymModule(
   (model): GPSModel(
