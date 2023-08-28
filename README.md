@@ -63,7 +63,7 @@ f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2
 **Display best epoch and the corresponding performances on training, validation and test sets.**
 
 
---------------------------------------
+
 Steps in GrahGPS Workflow (in Detail):
 --------------------------------------
 1. Load cmd line args
