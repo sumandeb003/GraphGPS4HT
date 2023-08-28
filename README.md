@@ -141,7 +141,7 @@ Note:`logging.info(f"some_string {some_variable}")`: Python provides a module ca
 
 
 
-15. Perform training
+15. Perform training: `train_dict[cfg.train.mode](loggers, loaders, model, optimizer,scheduler)`
 
 16. `agg_runs()`: aggregates the training, validation and test results of each epoch and prints the best epoch and the corresponding statistics.
 
