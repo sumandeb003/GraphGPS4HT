@@ -21,9 +21,51 @@ e) How to add a new dataset TO GraphGPS? How to call the new dataset? (**NEXT**)
 
 f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**NEAR FUTURE**)
 
--------------------------------
-Steps in GrahGPS Workflow:
--------------------------------
+
+## Workflow of GraphGPS (in Short):
+
+**Parse arguments of the execution command from CLI** 
+
+⬇️
+
+**Extract the location of configuration file from the list of arguments** 
+
+⬇️
+
+**Set default values of parameters of the experiment** 
+
+⬇️
+
+**Load configurations from the above configuration file  and also any configuration specifically mentioned  through command line** 
+
+ ⬇️
+
+**Set output directory where the results are stored** 
+
+⬇️
+
+**Combine the configurations specified in the user-given configuration file and the default values of unspecified configurations from `graphgym/config.py` and from the configuration files in `graphgps/config` into the `config.yaml` file in `custom_out_dir`**
+
+⬇️
+
+**create run-directory (in `custom_out_dir`) during each run of experiment** 
+
+⬇️
+
+**create dataset loader, a logger that logs info in `logging.log` inside the run-directory, create model, optimizer and an LR scheduler**
+
+⬇️
+
+**Performing training**
+
+⬇️
+
+**Display best epoch and the corresponding performances on training, validation and test sets.**
+
+
+--------------------------------------
+Steps in GrahGPS Workflow (in Detail):
+--------------------------------------
 1. Load cmd line args
 ```
 args = parse_args()
@@ -116,45 +158,6 @@ Aslo, the best epoch so far (at any point of training) and its essential details
 
 
  
-## Workflow of GraphGPS in Short:
-
-**Parse arguments of the execution command from CLI** 
-
-⬇️
-
-**Extract the location of configuration file from the list of arguments** 
-
-⬇️
-
-**Set default values of parameters of the experiment** 
-
-⬇️
-
-**Load configurations from the above configuration file  and also any configuration specifically mentioned  through command line** 
-
- ⬇️
-
-**Set output directory where the results are stored** 
-
-⬇️
-
-**Combine the configurations specified in the user-given configuration file and the default values of unspecified configurations from `graphgym/config.py` and from the configuration files in `graphgps/config` into the `config.yaml` file in `custom_out_dir`**
-
-⬇️
-
-**create run-directory (in `custom_out_dir`) during each run of experiment** 
-
-⬇️
-
-**create dataset loader, a logger that logs info in `logging.log` inside the run-directory, create model, optimizer and an LR scheduler**
-
-⬇️
-
-**Performing training**
-
-⬇️
-
-**Display best epoch and the corresponding performances on training, validation and test sets.**
 
 
 ## Example Configuration File: configs/GPS/zinc-GPS+RWSE.yaml
