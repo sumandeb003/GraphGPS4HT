@@ -2,16 +2,18 @@
 
 ## Goals of Project:
 
-1. Train GraphGPS on my HT dataset
-	a) How to add/create a new dataset?
-	b) How to call the new dataset?
-	c) How a dataset is called?
-	d) Phases through which the training goes*****
-	e) Where are the hyperparameters set?***** 
+1. **Train GraphGPS on my HT dataset**
+2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
+3. **Proliferate the TrustHub dataset using the GAINESIS, S Bhunia's tool and another tool**
+4. **Extend the work to node classification**
 
-`python main.py --cfg configs/GPS/zinc-GPS+RWSE-MYVALUES.yaml  wandb.use False`
-
-2. Compare with other GNN-based tools trained on the same dataset and tested on the same dataset.
+## Progress or Questions Answered So Far
+a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR; NEED MORE CLARITY**)
+b) Where are the hyperparameters set? (**DONE**)
+c) Understand the meaning of the hyperparameters (**NEED TO DICUSS WITH VIJAY ABOUT THE HYPERPARAMETERS THAT I DIDN'T UNDERSTAND**)
+d) How a dataset is called? (**NEXT**) 
+e) How to add a new dataset TO GraphGPS? How to call the new dataset? (**NEAR FUTURE**)
+f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**FUTURE**)
 
 -------------------------------
 GrahGPS Workflow:
