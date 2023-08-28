@@ -2,9 +2,9 @@
 
 ## Goals of Project:
 
-1. **Train GraphGPS on my HT dataset**
+1. **Train GraphGPS on HT dataset**
 2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
-3. **Proliferate the TrustHub dataset using the GAINESIS, S Bhunia's tool and another tool**
+3. **Proliferate the TrustHub dataset using the GAINESIS tool, S. Bhunia's tool and another tool**
 4. **Extend the work to node classification**
 
 ## Progress or Questions Answered So Far
@@ -40,6 +40,7 @@ The default values of these and other unspecified parameters in this file are st
 Note that some of the parameters in `configs/GPS/zinc-GPS+RWSE.yaml` are custom defined for this project and not present in the `set_cfg` method. The default values of these custom parameters are stated in https://github.com/rampasek/GraphGPS/tree/main/graphgps/config
 
 The `set_cfg()` method combines the default values of the parameters of GraphGym and those of the custom parameters of the project. This is done by the following code snippet in `set_cfg()`:
+
 ```
 for func in register.config_dict.values():
         func(cfg)
@@ -95,12 +96,12 @@ Note:`logging.info(f"some_string {some_variable}")`: Python provides a module ca
 
 15. `agg_runs()`: aggregates the results and prints the best epoch and the corresponding statistics.
  
-Workflow:
-----------------
-Parse arguments of the execution command from CLI --> Extract the location of configuration file from the list of arguments --> Set default values of parameters of the experiment --> Load configurations from the above configuration file  and also any configuration specifically mentioned  through command line --> set output directory where the results are stored --> Combine the configurations specified in the above configuration file and the default values of unspecified configurations from graphgym/config.py to custom_out_dir --> 
+## Workflow of GraphGPS in Short:
+
+Parse arguments of the execution command from CLI --> Extract the location of configuration file from the list of arguments --> Set default values of parameters of the experiment --> Load configurations from the above configuration file  and also any configuration specifically mentioned  through command line --> set output directory where the results are stored --> Combine the configurations specified in the above configuration file and the default values of unspecified configurations from `graphgym/config.py` and from the configuration files in `graphgps/config` into the `config.yaml` file in `custom_out_dir` --> create run-directory (in `custom_out_dir`) during each run of experiment --> create dataset loader --> create a logger that logs info in `logging.log` inside the run-directory --> create model, optimizer and an LR scheduler -->
 
 Upon executing the command 'python main.py --cfg configs/GPS/zinc-GPS+RWSE.yaml  wandb.use False',  the details of the training, validation, testing of an epoch , say epoch 1291, are output as:
-
+```
 train: {'epoch': 1291, 'time_epoch': 18.93798, 'eta': 13315.24609, 'eta_hours': 3.69868, 'loss': 0.02500516, 'lr': 0.00029223, 'params': 423717, 'time_iter': 0.0605, 'mae': 0.02501, 'r2': 0.9997, 'spearmanr': 0.99983, 'mse': 0.00122, 'rmse': 0.03492}
 
 val: {'epoch': 1291, 'time_epoch': 0.4733, 'loss': 0.08178774, 'lr': 0, 'params': 423717, 'time_iter': 0.01479, 'mae': 0.08179, 'r2': 0.96319, 'spearmanr': 0.99765, 'mse': 0.145, 'rmse': 0.38079}
@@ -110,12 +111,11 @@ test: {'epoch': 1291, 'time_epoch': 0.46763, 'loss': 0.07286437, 'lr': 0, 'param
 Aslo, the best epoch so far (at any point of training) and its essential details are summarised as follows, for each epoch until the next best epoch is found:
 
 > Epoch 1999: took 20.3s (avg 19.7s) | Best so far: epoch 1291	train_loss: 0.0250 train_mae: 0.0250	val_loss: 0.0818 val_mae: 0.0818	test_loss: 0.0729 test_mae: 0.0729
+```
 
 
+## Example Configuration File: configs/GPS/zinc-GPS+RWSE.yaml
 
-
-configs/GPS/zinc-GPS+RWSE.yaml
--------------------------------
 out_dir: results
 metric_best: mae 
 metric_agg: argmin 
@@ -173,9 +173,9 @@ gnn:
   agg: mean
   normalize_adj: False
 optim:
-===========================================
 
-===============================================
+### GNN Model: Output of print(f'model:{model}')
+```
 model:GraphGymModule(
   (model): GPSModel(
     (encoder): FeatureEncoder(
@@ -421,3 +421,4 @@ model:GraphGymModule(
         (norm1_attn): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
         (dropout_local): Dropout(p=0.1, inp
 
+```
