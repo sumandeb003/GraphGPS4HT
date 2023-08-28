@@ -4,7 +4,7 @@
 
 1. **Train GraphGPS on HT dataset**
 2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
-3. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), (S. Bhunia's tool)[https://arxiv.org/pdf/2204.08580.pdf] and another tool (can't recall the title; need to check my collection of papers)**
+3. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
 4. **Extend the work to node classification**
 
 ## Progress or Questions Answered So Far
