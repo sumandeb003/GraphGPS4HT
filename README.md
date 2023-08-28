@@ -176,7 +176,12 @@ gnn:
 optim:
 ```
 
-### GNN Model: Output of print(f'model:{model}') 🤔 🤔 NEED TO DISCUSS WITH VIJAY TO UNDERSTAND THE MEANING OF EACH OF THE FOLLOWING DETAILS 🤔 🤔
+### GNN Model: 
+
+**Output of print(f'model:{model}')**
+
+**🤔 🤔 NEED TO DISCUSS WITH VIJAY TO UNDERSTAND THE MEANING OF EACH OF THE FOLLOWING DETAILS 🤔 🤔**
+
 ```
 model:GraphGymModule(
   (model): GPSModel(
