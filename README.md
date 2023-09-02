@@ -484,7 +484,7 @@ model:GraphGymModule(
 ### Loading Custom Datasets in PyG
 PyTorch provides two data primitives that allow you to use pre-loaded datasets as well as your own data:
 
-    - `torch.utils.data.Dataset`: stores the samples and their corresponding labels
-    -  `torch.utils.data.DataLoader`: wraps an iterable around the `Dataset` to enable easy access to the samples.
+  - `torch.utils.data.Dataset`: stores the samples and their corresponding labels
+  -  `torch.utils.data.DataLoader`: wraps an iterable around the `Dataset` to enable easy access to the samples.
 
     
