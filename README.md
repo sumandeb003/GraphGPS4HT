@@ -8,17 +8,17 @@
 
 1. **Train GraphGPS on HT dataset**
 
-  a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR ABOUT THE OVERALL WORKFLOW OF GRAPHGPS; I WANT MORE CLARITY**) (**Done by $\color{red}{28.08.2023}$**)
+    a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR ABOUT THE OVERALL WORKFLOW OF GRAPHGPS; I WANT MORE CLARITY**) (**Done by $\color{red}{28.08.2023}$**)
 
-  b) Where are the hyperparameters set?(**Done by $\color{red}{28.08.023}$**)
+    b) Where are the hyperparameters set?(**Done by $\color{red}{28.08.023}$**)
 
-  c) Understand the meaning of the hyperparameters (**NEED TO DICUSS WITH VIJAY ABOUT THE HYPERPARAMETERS THAT I DIDN'T UNDERSTAND**)
+    c) Understand the meaning of the hyperparameters (**NEED TO DICUSS WITH VIJAY ABOUT THE HYPERPARAMETERS THAT I DIDN'T UNDERSTAND**)
 
-  d) How a dataset is called? (**Done by $\color{red}{08.09.2023}$**)
+    d) How a dataset is called? (**Done by $\color{red}{08.09.2023}$**)
 
-  e) How to add a new dataset to GraphGPS? How to call the new dataset? (**NEXT**)
+    e) How to add a new dataset to GraphGPS? How to call the new dataset? (**NEXT**)
 
-  f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**NEAR FUTURE**)
+    f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**NEAR FUTURE**)
 
 2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
 3. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
