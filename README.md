@@ -489,3 +489,4 @@ model:GraphGymModule(
 
 **PyTorch domain libraries provide a number of pre-loaded datasets that subclass `torch.utils.data.Dataset` and implement functions specific to the particular data**. They have the `__getitem__` and `__len__` methods implemented.
 
+All the datasets have almost similar API. They all have two common arguments: `transform` and `target_transform` to transform the input and the target, respectively. **You can also create your own datasets using the provided [base classes](https://pytorch.org/vision/stable/datasets.html#base-classes-datasets).**
