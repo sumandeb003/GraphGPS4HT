@@ -528,5 +528,5 @@ test_data = datasets.FashionMNIST(
 We can index `Datasets` manually like a list:  
 
 ```
-training_data[index] for index in range(len(training_data)
+training_data[index] for index in range(len(training_data))
 ```
