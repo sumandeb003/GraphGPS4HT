@@ -487,5 +487,5 @@ model:GraphGymModule(
   - **`torch.utils.data.Dataset`**: stores the samples and their corresponding labels
   -  **`torch.utils.data.DataLoader`**: wraps an iterable around the `Dataset` to enable easy access to the samples.
 
-**PyTorch domain libraries provide a number of pre-loaded datasets that subclass `torch.utils.data.Dataset` and implement functions specific to the particular data**.
+**PyTorch domain libraries provide a number of pre-loaded datasets that subclass `torch.utils.data.Dataset` and implement functions specific to the particular data**. They have the `__getitem__` and `__len__` methods implemented.
 
