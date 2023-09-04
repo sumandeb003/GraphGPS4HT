@@ -582,3 +582,13 @@ for index in range(len(training_data)):
     img, label = training_data[index] 
 ```
 **As seen, the `Dataset` retrieves our dataset’s features and labels one sample at a time. But, while training a model, we typically want to pass samples in mini-batches, reshuffle the data to form new mini-batches after every epoch (to reduce model overfitting), and use Python’s multiprocessing to speed up data retrieval. `DataLoader` is an iterable that abstracts this complexity for us through a simple API.**
+
+```
+from torch.utils.data import DataLoader
+
+train_dataloader = DataLoader(training_data, batch_size=64, shuffle=True)
+test_dataloader = DataLoader(test_data, batch_size=64, shuffle=True)
+
+```
+Having loaded that dataset into the DataLoader, one can iterate through the dataset as needed. Each iteration below returns a batch of train_features and train_labels (containing batch_size=64 features and labels respectively). Because we specified shuffle=True, after we iterate over all batches the data is shuffled.
+
