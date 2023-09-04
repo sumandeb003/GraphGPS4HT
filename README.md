@@ -531,3 +531,6 @@ We can index `Datasets` manually like a list:
 for index in range(len(training_data)):
     img, label = training_data[index] 
 ```
+## Creating a Custom Dataset for your files
+
+A custom Dataset class must implement three functions: `__init__`, `__len__`, and `__getitem__`. 
