@@ -501,6 +501,7 @@ Here is an example of how to load the Fashion-MNIST dataset from TorchVision. Fa
 3. **`download=True` downloads the data from the internet if it’s not available at root**
 4. **`transform` and `target_transform` specify the feature and label transformations**
 
+
 ```
 import torch
 from torch.utils.data import Dataset
@@ -524,3 +525,5 @@ test_data = datasets.FashionMNIST(
 )
 
 ```
+We can index `Datasets` manually like a list:  `training_data[index]`, ` test_data[index]`
+
