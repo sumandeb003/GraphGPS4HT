@@ -561,8 +561,8 @@ class CustomImageDataset(Dataset):
         return image, label
 ```
 
-**The `__init__` function is run once when instantiating the Dataset object. We initialize the directory containing the images, the annotations file, and both transforms.**
+1. **The `__init__` function is run once when instantiating the Dataset object. We initialize the directory containing the images, the annotations file, and both transforms.**
 
-**The `__len__` function returns the number of samples in our dataset.**
+2 .**The `__len__` function returns the number of samples in our dataset.**
 
-**The `__getitem__` function loads and returns a sample from the dataset at the given index `idx`.** Based on the index, it identifies the image’s location on disk, converts that to a tensor using `read_image`, and retrieves the corresponding label from the csv data in `self.img_labels`, calls the transform functions on them (if applicable), and returns the tensor image and corresponding label in a tuple.
+3. **The `__getitem__` function loads and returns a sample from the dataset at the given index `idx`.** Based on the index, it identifies the image’s location on disk, converts that to a tensor using `read_image`, and retrieves the corresponding label from the csv data in `self.img_labels`, calls the transform functions on them (if applicable), and returns the tensor image and corresponding label in a tuple.
