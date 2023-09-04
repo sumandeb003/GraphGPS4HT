@@ -21,7 +21,7 @@ c) Understand the meaning of the hyperparameters (**NEED TO DICUSS WITH VIJAY AB
 
 d) How a dataset is called? (**$\color{red}{08.09.2023}$**)
 
-e) How to add a new dataset TO GraphGPS? How to call the new dataset? (**NEXT**)
+e) How to add a new dataset to GraphGPS? How to call the new dataset? (**NEXT**)
 
 f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**NEAR FUTURE**)
 
