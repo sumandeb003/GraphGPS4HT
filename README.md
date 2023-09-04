@@ -13,13 +13,13 @@
 
 ## Progress or Questions Answered So Far
 
-a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR ABOUT THE OVERALL WORKFLOW OF GRAPHGPS; I WANT MORE CLARITY**) (**Done on $\color{red}{August 28, 2023}$**)
+a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR ABOUT THE OVERALL WORKFLOW OF GRAPHGPS; I WANT MORE CLARITY**) (**Done on $\color{red}{28.08.2023}$**)
 
-b) Where are the hyperparameters set?(**Done on $\color{red}{August 28, 2023}$**)
+b) Where are the hyperparameters set?(**Done on $\color{red}{28.08.023}$**)
 
 c) Understand the meaning of the hyperparameters (**NEED TO DICUSS WITH VIJAY ABOUT THE HYPERPARAMETERS THAT I DIDN'T UNDERSTAND**)
 
-d) How a dataset is called? (**$\color{red}{September 8, 2023}$**)
+d) How a dataset is called? (**$\color{red}{08.09.2023}$**)
 
 e) How to add a new dataset TO GraphGPS? How to call the new dataset? (**NEXT**)
 
