@@ -7,11 +7,6 @@
 ## Goals of Project:
 
 1. **Train GraphGPS on HT dataset**
-2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
-3. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
-4. **Extend the work to node classification**
-
-## Progress or Questions Answered So Far
 
 a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR ABOUT THE OVERALL WORKFLOW OF GRAPHGPS; I WANT MORE CLARITY**) (**Done by $\color{red}{28.08.2023}$**)
 
@@ -25,6 +20,9 @@ e) How to add a new dataset to GraphGPS? How to call the new dataset? (**NEXT**)
 
 f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**NEAR FUTURE**)
 
+2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
+3. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
+4. **Extend the work to node classification**
 
 ## August 28, 2023
 
