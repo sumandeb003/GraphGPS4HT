@@ -1,3 +1,5 @@
+
+
 # GraphGPS4HT
 
 [GraphGPS](https://proceedings.neurips.cc/paper_files/paper/2022/file/5d4834a159f1547b267a05a4e2b7cf5e-Paper-Conference.pdf) is a tool for Graph ML. 
@@ -11,18 +13,20 @@
 
 ## Progress or Questions Answered So Far
 
-a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR ABOUT THE OVERALL WORKFLOW OF GRAPHGPS; I WANT MORE CLARITY**)
+a) Phases through which the training goes (**GOT A HIGH-LEVEL IDEA FROM IMPLEMENTATION PERSPECTIVE; EXPLAINED BELOW ALL THE INFORMATION I HAVE DISCOVERED SO FAR ABOUT THE OVERALL WORKFLOW OF GRAPHGPS; I WANT MORE CLARITY**) (**Done on $\color{red}{August 28, 2023}$**)
 
-b) Where are the hyperparameters set? (**DONE**)
+b) Where are the hyperparameters set?(**Done on $\color{red}{August 28, 2023}$**)
 
 c) Understand the meaning of the hyperparameters (**NEED TO DICUSS WITH VIJAY ABOUT THE HYPERPARAMETERS THAT I DIDN'T UNDERSTAND**)
 
-d) How a dataset is called? (**DOING NOW**) 
+d) How a dataset is called? (**$\color{red}{September 8, 2023}$**)
 
 e) How to add a new dataset TO GraphGPS? How to call the new dataset? (**NEXT**)
 
 f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**NEAR FUTURE**)
 
+
+## August 28, 2023
 
 ## Workflow of GraphGPS (in Short):
 
