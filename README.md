@@ -490,50 +490,7 @@ PyG is based on PyTorch. **PyTorch provides two data primitives that allow you t
   - **`torch.utils.data.Dataset`**: stores the samples and their corresponding labels. **PyTorch provides a number of pre-loaded datasets that subclass `torch.utils.data.Dataset` and implement functions specific to the particular data**. They have the `__getitem__` and `__len__` methods implemented. 
   -  **`torch.utils.data.DataLoader`**: wraps an iterable around the `Dataset` to enable easy access to the samples. The datasets can all be passed to a `torch.utils.data.DataLoader` which can load multiple samples in parallel using `torch.multiprocessing` workers.
 
-All the datasets have almost similar API. They all have two common arguments: `transform` and `target_transform` to transform the input and the target, respectively. **You can also create your own datasets using the provided [base classes](https://pytorch.org/vision/stable/datasets.html#base-classes-datasets).**
-
-### Example
-
-Here is an example of how to load the Fashion-MNIST dataset from TorchVision. Fashion-MNIST consists of 60,000 training examples and 10,000 test examples. Each example comprises a 28×28 grayscale image and an associated label from one of 10 classes. We load the FashionMNIST Dataset with the following parameters:
-
-1. **`root` is the path where the train/test data is stored**
-2. **`train` specifies training or test dataset**
-3. **`download=True` downloads the data from the internet if it’s not available at root**
-4. **`transform` and `target_transform` specify the feature and label transformations**
-
-
-```
-import torch
-from torch.utils.data import Dataset
-from torchvision import datasets
-from torchvision.transforms import ToTensor
-import matplotlib.pyplot as plt
-
-
-training_data = datasets.FashionMNIST(
-    root="data",
-    train=True,
-    download=True,
-    transform=ToTensor()
-)
-
-test_data = datasets.FashionMNIST(
-    root="data",
-    train=False,
-    download=True,
-    transform=ToTensor()
-)
-
-```
-We can index `Datasets` manually like a list:  
-
-```
-for index in range(len(training_data)):
-    img, label = training_data[index] 
-```
-## Creating a Custom Dataset for your files
-
-A custom Dataset class must implement three functions: `__init__`, `__len__`, and `__getitem__`. 
+A Dataset class has three functions: `__init__`, `__len__`, and `__getitem__`. 
 
 ```
 import os
@@ -582,3 +539,48 @@ def __getitem__(self, idx):
         label = self.target_transform(label)
     return image, label
 ```
+
+
+
+All the datasets have almost similar API. They all have two common arguments: `transform` and `target_transform` to transform the input and the target, respectively. **You can also create your own datasets using the provided [base classes](https://pytorch.org/vision/stable/datasets.html#base-classes-datasets).**
+
+### Example
+
+Here is an example of how to load the Fashion-MNIST dataset from TorchVision. Fashion-MNIST consists of 60,000 training examples and 10,000 test examples. Each example comprises a 28×28 grayscale image and an associated label from one of 10 classes. We load the FashionMNIST Dataset with the following parameters:
+
+1. **`root` is the path where the train/test data is stored**
+2. **`train` specifies training or test dataset**
+3. **`download=True` downloads the data from the internet if it’s not available at root**
+4. **`transform` and `target_transform` specify the feature and label transformations**
+
+
+```
+import torch
+from torch.utils.data import Dataset
+from torchvision import datasets
+from torchvision.transforms import ToTensor
+import matplotlib.pyplot as plt
+
+
+training_data = datasets.FashionMNIST(
+    root="data",
+    train=True,
+    download=True,
+    transform=ToTensor()
+)
+
+test_data = datasets.FashionMNIST(
+    root="data",
+    train=False,
+    download=True,
+    transform=ToTensor()
+)
+
+```
+We can index `Datasets` manually like a list:  
+
+```
+for index in range(len(training_data)):
+    img, label = training_data[index] 
+```
+
