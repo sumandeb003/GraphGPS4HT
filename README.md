@@ -495,6 +495,57 @@ PyG is based on PyTorch. **PyTorch provides two data primitives that allow you t
 
 A Dataset class has three functions: `__init__`, `__len__`, and `__getitem__`. 
 
+1. **The `__init__` function is run once when instantiating the Dataset object. We initialize the directory containing the images, the annotations file, and both transforms.**
+
+2. **The `__len__` function (called as `len(CustomImageDataset)`) returns the number of samples in our dataset.**
+
+3. **The `__getitem__` function provides access to the data samples in the dataset by supporting indexing operation. For example, dataset[i] retrieves the i-th data sample.** Based on the index, it:
+    - identifies the image’s location on disk,
+    - converts that to a tensor using `read_image`,
+    - retrieves the corresponding label from the csv data in `self.img_labels`,
+    - calls the transform functions on them (if applicable), and
+    - returns the tensor image and corresponding label in a tuple.
+
+### An example of custom dataset:
+```
+class SimpleDataset(Dataset):
+    # defining values in the constructor
+    def __init__(self, data_length = 20, transform = None):
+        self.x = 3 * torch.eye(data_length, 2)
+        self.y = torch.eye(data_length, 4)
+        self.transform = transform
+        self.len = data_length
+     
+    # Getting the data samples
+    def __getitem__(self, idx):
+        sample = self.x[idx], self.y[idx]
+        if self.transform:
+            sample = self.transform(sample)     
+        return sample
+    
+    # Getting data size/length
+    def __len__(self):
+        return self.len
+```
+**In the object constructor `__init__`, we have created the values of features and targets, namely x and y, assigning their values to the tensors `self.x` and `self.y`.** Each tensor carries 20 data samples while the attribute data_length stores the number of data samples. 
+
+```
+dataset = SimpleDataset()
+print("length of the SimpleDataset object: ", len(dataset))
+print("accessing value at index 1 of the simple_dataset object: ", dataset[1])
+```
+This prints:
+```
+length of the SimpleDataset object:  20
+accessing value at index 1 of the simple_dataset object:  (tensor([0., 3.]), tensor([0., 1., 0., 0.]))
+```
+**The behavior of the SimpleDataset object is like any Python iterable, such as a list or a tuple.**
+
+All the datasets have almost similar API. They all have two common arguments: `transform` and `target_transform` to transform the input and the target, respectively. **You can also create your own datasets using the provided [base classes](https://pytorch.org/vision/stable/datasets.html#base-classes-datasets).**
+
+### Another Example
+
+
 ```
 import os
 import pandas as pd
@@ -520,32 +571,6 @@ class CustomImageDataset(Dataset):
             label = self.target_transform(label)
         return image, label
 ```
-
-1. **The `__init__` function is run once when instantiating the Dataset object. We initialize the directory containing the images, the annotations file, and both transforms.**
-
-2. **The `__len__` function (called as `len(CustomImageDataset)`) returns the number of samples in our dataset.**
-
-3. **The `__getitem__` function provides access to the data samples in the dataset by supporting indexing operation. For example, dataset[i] retrieves the i-th data sample.** Based on the index, it:
-    - identifies the image’s location on disk,
-    - converts that to a tensor using `read_image`,
-    - retrieves the corresponding label from the csv data in `self.img_labels`,
-    - calls the transform functions on them (if applicable), and
-    - returns the tensor image and corresponding label in a tuple.
-```
-def __getitem__(self, idx):
-    img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, 0])
-    image = read_image(img_path)
-    label = self.img_labels.iloc[idx, 1]
-    if self.transform:
-        image = self.transform(image)
-    if self.target_transform:
-        label = self.target_transform(label)
-    return image, label
-```
-
-All the datasets have almost similar API. They all have two common arguments: `transform` and `target_transform` to transform the input and the target, respectively. **You can also create your own datasets using the provided [base classes](https://pytorch.org/vision/stable/datasets.html#base-classes-datasets).**
-
-### Example
 
 Here is an example of how to load the Fashion-MNIST dataset from TorchVision. Fashion-MNIST consists of 60,000 training examples and 10,000 test examples. Each example comprises a 28×28 grayscale image and an associated label from one of 10 classes. We load the FashionMNIST Dataset with the following parameters:
 
