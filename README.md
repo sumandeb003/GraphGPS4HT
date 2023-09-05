@@ -541,6 +541,20 @@ accessing value at index 1 of the simple_dataset object:  (tensor([0., 3.]), ten
 ```
 **The behavior of the SimpleDataset object is like any Python iterable, such as a list or a tuple.**
 
+```
+
+for i in range(4):
+    x, y = dataset[i]
+    print(x, y)
+```
+This prints:
+
+```
+tensor([3., 0.]) tensor([1., 0., 0., 0.])
+tensor([0., 3.]) tensor([0., 1., 0., 0.])
+tensor([0., 0.]) tensor([0., 0., 1., 0.])
+tensor([0., 0.]) tensor([0., 0., 0., 1.])
+```
 
 ### Another Example of custom dataset:
 
