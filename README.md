@@ -523,7 +523,7 @@ class CustomImageDataset(Dataset):
 
 1. **The `__init__` function is run once when instantiating the Dataset object. We initialize the directory containing the images, the annotations file, and both transforms.**
 
-2. **The `__len__` function returns the number of samples in our dataset.**
+2. **The `__len__` function (called as `len(CustomImageDataset)`) returns the number of samples in our dataset.**
 
 3. **The `__getitem__` function provides access to the data samples in the dataset by supporting indexing operation. For example, dataset[i] can be used to retrieve i-th data sample.** Based on the index, it:
     - identifies the image’s location on disk,
