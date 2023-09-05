@@ -525,7 +525,7 @@ class CustomImageDataset(Dataset):
 
 2. **The `__len__` function (called as `len(CustomImageDataset)`) returns the number of samples in our dataset.**
 
-3. **The `__getitem__` function provides access to the data samples in the dataset by supporting indexing operation. For example, dataset[i] can be used to retrieve i-th data sample.** Based on the index, it:
+3. **The `__getitem__` function provides access to the data samples in the dataset by supporting indexing operation. For example, dataset[i] retrieves the i$^{th}$ data sample.** Based on the index, it:
     - identifies the image’s location on disk,
     - converts that to a tensor using `read_image`,
     - retrieves the corresponding label from the csv data in `self.img_labels`,
