@@ -709,4 +709,4 @@ face_dataset = FaceLandmarksDataset(csv_file='data/faces/face_landmarks.csv',
 for i, sample in enumerate(face_dataset):
 
 ```
-**Remember that the `DataLoader` object is an iterator, not the `Dataset` object. So, you need to enumerate the `Dataset`.**
+**Remember that the `DataLoader` object is an iterator, not the `Dataset` object. So, you need to enumerate the `Dataset` in order to iterate it.**
