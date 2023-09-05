@@ -706,4 +706,6 @@ class FaceLandmarksDataset(Dataset):
 face_dataset = FaceLandmarksDataset(csv_file='data/faces/face_landmarks.csv',
                                     root_dir='data/faces/')
 
+for i, sample in enumerate(face_dataset):
+
 ```
