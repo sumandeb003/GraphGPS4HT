@@ -649,3 +649,54 @@ plt.imshow(img, cmap="gray")
 plt.show()
 print(f"Label: {label}")
 ```
+### Another Example of Custom Dataset
+
+Download the dataset from [here](https://download.pytorch.org/tutorial/faces.zip) so that the images are in a directory named ‘data/faces/’. Dataset comes with a csv file with annotations which looks like this:
+
+```
+image_name,part_0_x,part_0_y,part_1_x,part_1_y,part_2_x, ... ,part_67_x,part_67_y
+0805personali01.jpg,27,83,27,98, ... 84,134
+1084239450_e76e00b7e7.jpg,70,236,71,257, ... ,128,312
+```
+
+```
+class FaceLandmarksDataset(Dataset):
+    """Face Landmarks dataset."""
+
+    def __init__(self, csv_file, root_dir, transform=None):
+        """
+        Arguments:
+            csv_file (string): Path to the csv file with annotations.
+            root_dir (string): Directory with all the images.
+            transform (callable, optional): Optional transform to be applied
+                on a sample.
+        """
+        self.landmarks_frame = pd.read_csv(csv_file)
+        self.root_dir = root_dir
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.landmarks_frame)
+
+    def __getitem__(self, idx):
+        if torch.is_tensor(idx):
+            idx = idx.tolist()
+
+        img_name = os.path.join(self.root_dir,
+                                self.landmarks_frame.iloc[idx, 0])
+        image = io.imread(img_name)
+        landmarks = self.landmarks_frame.iloc[idx, 1:]
+        landmarks = np.array([landmarks], dtype=float).reshape(-1, 2)
+        sample = {'image': image, 'landmarks': landmarks}
+
+        if self.transform:
+            sample = self.transform(sample)
+
+        return sample
+
+# Instantiate an object of this dataset class and iterate through the data samples.
+
+face_dataset = FaceLandmarksDataset(csv_file='data/faces/face_landmarks.csv',
+                                    root_dir='data/faces/')
+
+```
