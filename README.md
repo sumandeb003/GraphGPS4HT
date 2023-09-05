@@ -541,10 +541,8 @@ accessing value at index 1 of the simple_dataset object:  (tensor([0., 3.]), ten
 ```
 **The behavior of the SimpleDataset object is like any Python iterable, such as a list or a tuple.**
 
-All the datasets have almost similar API. They all have two common arguments: `transform` and `target_transform` to transform the input and the target, respectively. **You can also create your own datasets using the provided [base classes](https://pytorch.org/vision/stable/datasets.html#base-classes-datasets).**
 
-### Another Example
-
+### Another Example of custom dataset:
 
 ```
 import os
@@ -571,6 +569,9 @@ class CustomImageDataset(Dataset):
             label = self.target_transform(label)
         return image, label
 ```
+### Calling a dataset
+
+All the datasets have almost similar API. They all have two common arguments: `transform` and `target_transform` to transform the input and the target, respectively. **You can also create your own datasets using the provided [base classes](https://pytorch.org/vision/stable/datasets.html#base-classes-datasets).**
 
 Here is an example of how to load the Fashion-MNIST dataset from TorchVision. Fashion-MNIST consists of 60,000 training examples and 10,000 test examples. Each example comprises a 28×28 grayscale image and an associated label from one of 10 classes. We load the FashionMNIST Dataset with the following parameters:
 
