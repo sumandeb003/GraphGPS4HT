@@ -487,7 +487,7 @@ model:GraphGymModule(
 
 PyG is based on PyTorch. **PyTorch provides two data primitives that allow you to use pre-loaded datasets as well as your own data**:
 
-  - **`torch.utils.data.Dataset`**: stores the samples and their corresponding labels.
+  - **`torch.utils.data.Dataset`**: an abstract class representing a dataset. Its `__init__` constructor stores the data samples and their corresponding labels.  
     - **PyTorch provides a number of pre-loaded datasets that subclass `torch.utils.data.Dataset` and implement functions specific to the particular data**.
     - The `torch.utils.data.Dataset` has the `__getitem__` and `__len__` methods implemented in it.
     - **The behavior of the Dataset object is like any Python iterable, such as a list or a tuple.**
