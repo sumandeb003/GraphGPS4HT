@@ -556,7 +556,7 @@ tensor([0., 0.]) tensor([0., 0., 1., 0.])
 tensor([0., 0.]) tensor([0., 0., 0., 1.])
 ```
 
-### Another Example of custom dataset:
+### Another Example of Custom Dataset Creation:
 
 ```
 import os
