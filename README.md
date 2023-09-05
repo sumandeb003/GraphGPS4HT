@@ -663,7 +663,8 @@ image_name,part_0_x,part_0_y,part_1_x,part_1_y,part_2_x, ... ,part_67_x,part_67_
 class FaceLandmarksDataset(Dataset):
     """Face Landmarks dataset."""
 
-# read the csv in __init__ but leave the reading of images to __getitem__. This is memory efficient because all the images are not stored in the memory at once but read as required.
+# Read the csv in __init__ but leave the reading of images to __getitem__. This is memory efficient because
+# all the images are not stored in the memory at once but read as required.
 
     def __init__(self, csv_file, root_dir, transform=None):
         """
@@ -675,6 +676,7 @@ class FaceLandmarksDataset(Dataset):
         """
         self.landmarks_frame = pd.read_csv(csv_file)
         self.root_dir = root_dir
+
         # Our dataset will take an optional argument transform so that any required processing can be applied on the sample.
         self.transform = transform 
 
