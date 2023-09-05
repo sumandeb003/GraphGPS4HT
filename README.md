@@ -581,7 +581,10 @@ We can index `Datasets` manually like a list:
 for index in range(len(training_data)):
     img, label = training_data[index] 
 ```
-**As seen, the `Dataset` retrieves our dataset’s features and labels one sample at a time. But, while training a model, we typically want to pass samples in mini-batches, reshuffle the data to form new mini-batches after every epoch (to reduce model overfitting), and use Python’s multiprocessing to speed up data retrieval. `DataLoader` is an iterable that abstracts this complexity for us through a simple API.**
+
+Here, the index-based access is provided by the `__getitem__` function.
+
+**As seen, the `Dataset` retrieves our dataset’s features and labels, one sample at a time. But, while training a model, we typically want to pass samples in mini-batches, reshuffle the data to form new mini-batches after every epoch (to reduce model overfitting), and use Python’s multiprocessing to speed up data retrieval. `DataLoader` is an iterable that abstracts this complexity for us through a simple API.**
 
 ```
 from torch.utils.data import DataLoader
