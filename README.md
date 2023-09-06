@@ -491,7 +491,8 @@ PyG is based on PyTorch. **PyTorch provides two data primitives that allow you t
     - **PyTorch provides a number of pre-loaded datasets that subclass `torch.utils.data.Dataset` and implement functions specific to the particular data**.
     - The `torch.utils.data.Dataset` has the `__getitem__` and `__len__` methods implemented in it.
     - **The behavior of the Dataset object is like any Python iterable, such as a list or a tuple.**
-  -  **`torch.utils.data.DataLoader`**: wraps an iterable around the `Dataset` to enable easy access to the samples. The datasets can all be passed to a `torch.utils.data.DataLoader` which can load multiple samples in parallel using `torch.multiprocessing` workers.
+  -  **`torch.utils.data.DataLoader`**: The `Dataset` object can be passed to  `torch.utils.data.DataLoader`. The `Dataloader` then forms **mini-batches**, **loads multiple samples in parallel** using `torch.multiprocessing` workers and **shuffles** the data at the end of each epoch.
+
 
 A Dataset class has three functions: `__init__`, `__len__`, and `__getitem__`. 
 
@@ -627,7 +628,9 @@ for index in range(len(training_data)):
 
 Here, the index-based access to the individual samples in the dataset is provided by the `__getitem__` function.
 
-**As seen, the `Dataset` retrieves our dataset’s features and labels, one sample at a time. But, while training a model, we typically want to pass samples in mini-batches, reshuffle the data to form new mini-batches after every epoch (to reduce model overfitting), and use Python’s multiprocessing to speed up data retrieval. `DataLoader` is an iterable that abstracts this complexity for us through a simple API.**
+**As seen, the `Dataset` retrieves our dataset’s features and labels, one sample at a time. But, while training a model, we typically want to pass samples in mini-batches, reshuffle the data to form new mini-batches after every epoch (to reduce model overfitting), and use Python’s multiprocessing to speed up data retrieval. `DataLoader` is an iterable that abstracts all these complexities for us through a simple API.**
+
+So, function of the D
 
 ```
 from torch.utils.data import DataLoader
