@@ -491,7 +491,10 @@ PyG is based on PyTorch. **PyTorch provides two data primitives that allow you t
     - **PyTorch provides a number of pre-loaded datasets that subclass `torch.utils.data.Dataset` and implement functions specific to the particular data**.
     - The `torch.utils.data.Dataset` has the `__getitem__` and `__len__` methods implemented in it.
     - **The behavior of the Dataset object is like any Python iterable, such as a list or a tuple.**
-  -  **`torch.utils.data.DataLoader`**: The `Dataset` object can be passed to  `torch.utils.data.DataLoader`. The `Dataloader` then forms **mini-batches**, **loads multiple samples in parallel** using `torch.multiprocessing` workers and **shuffles** the data at the end of each epoch.
+  -  **`torch.utils.data.DataLoader`**: The `Dataset` object can be passed to  `torch.utils.data.DataLoader`. The `Dataloader` then:
+    - **forms mini-batches**
+    - **loads multiple samples in parallel** using `torch.multiprocessing` workers, and
+    - **shuffles** the data at the end of each epoch.
 
 
 A Dataset class has three functions: `__init__`, `__len__`, and `__getitem__`. 
