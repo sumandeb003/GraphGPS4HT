@@ -633,8 +633,6 @@ Here, the index-based access to the individual samples in the dataset is provide
 
 **As seen, the `Dataset` retrieves our dataset’s features and labels, one sample at a time. But, while training a model, we typically want to pass samples in mini-batches, reshuffle the data to form new mini-batches after every epoch (to reduce model overfitting), and use Python’s multiprocessing to speed up data retrieval. `DataLoader` is an iterable that abstracts all these complexities for us through a simple API.**
 
-So, function of the D
-
 ```
 from torch.utils.data import DataLoader
 
