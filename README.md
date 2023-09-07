@@ -716,3 +716,10 @@ for i, sample in enumerate(face_dataset):
 
 ```
 **Remember that the `DataLoader` object is an iterator, not the `Dataset` object. So, you need to enumerate the `Dataset` in order to iterate it.**
+
+**Need not write dataloader. Just have to call one.**
+
+```
+dataset_loader = torch.utils.data.DataLoader(Dataset_object, batch_size=4, shuffle=True, num_workers=4)
+
+```
