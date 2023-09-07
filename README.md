@@ -720,6 +720,18 @@ for i, sample in enumerate(face_dataset):
 **No need to write the dataloader. Just have to call one.**
 
 ```
-dataset_loader = torch.utils.data.DataLoader(Dataset_object, batch_size=4, shuffle=True, num_workers=4)
+ DataLoader(dataset,
+            batch_size=1,
+            shuffle=False,
+            sampler=None,
+            batch_sampler=None,
+            num_workers=0,
+            collate_fn=None,
+            pin_memory=False,
+            drop_last=False,
+            timeout=0,
+            worker_init_fn=None, *,
+            prefetch_factor=2,
+            persistent_workers=False)
 
 ```
