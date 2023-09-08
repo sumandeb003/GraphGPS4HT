@@ -30,7 +30,7 @@
 2. **[Exphormer](https://github.com/hamed1375/Exphormer) is an improved version of GraphGPS agnostic of the application.**
 3. **ZINC and other benchmarks used in the GraphGPS tool-flow were proposed in Vijay's benchmarking paper.**
 
-## August 28, 2023
+## Update for Meeting on August 28, 2023
 
 ## Workflow of GraphGPS (in Short):
 
