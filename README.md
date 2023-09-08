@@ -733,3 +733,10 @@ for i, sample in enumerate(face_dataset):
             persistent_workers=False)
 
 ```
+1. The most important argument of `DataLoader` constructor is **`dataset`**, which indicates a `Dataset` object to load data from. PyTorch supports two different types of datasets:
+  - map-style datasets: A map-style dataset implements the `__getitem__` and `__len__` protocols, and represents a map from $\color{red}indices/keys}$ to data samples. For example, such a dataset, when accessed with dataset[idx], could read the idx-th image and its corresponding label from a folder on the disk.
+  - iterable-style datasets: An iterable-style dataset is an instance of a subclass of IterableDataset that implements the `__iter__` protocol, and represents an iterable over data samples. This type of dataset is particularly suitable for cases where random reads are expensive or even improbable, and where the batch size depends on the fetched data. For example, such a dataset, when called `iter(dataset)`, could return a stream of data reading from a database, a remote server, or even logs generated in real time.
+2.  `torch.utils.data.Sampler` classes are used to specify the sequence of $\color{red}indices/keys}$ used in data loading. They represent iterable objects (list, etc.) over the indices to datasets.
+  - A sequential or shuffled sampler will be automatically constructed based on the `shuffle` argument to a `DataLoader`.
+  - Alternatively, users may use the `sampler` argument to specify a custom `Sampler` object that at each time yields the next $\color{red}index/key}$ to fetch.
+  - A custom sampler that yields a list of batch indices at a time can be passed as the `batch_sampler` argument.
