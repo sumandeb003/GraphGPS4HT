@@ -720,7 +720,7 @@ for i, sample in enumerate(face_dataset):
 
 ```
  DataLoader(dataset,                     # a `Dataset` object to load data from
-            batch_size=1,
+            batch_size=1,                # Number of samples per batch
             shuffle=False,               # shuffle the dataset to form new batches at the end of each epoch
             sampler=None,                # specify a custom Sampler object that at each time yields the next index/key to fetch
             batch_sampler=None,
@@ -753,4 +753,4 @@ Example:
         [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 
 ```
-6. 
+6. When the `drop_last` argument is set to `True`, the `Dataloader` drops the last non-full batch of data samples from the epoch.
