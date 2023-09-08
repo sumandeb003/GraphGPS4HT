@@ -766,8 +766,40 @@ Example:
 for indices in batch_sampler:
     yield collate_fn([dataset[i] for i in indices])
 ```
-A custom `collate_fn` can be used to customize collation, e.g., padding sequential data to the maximum length of a batch.
+Examples of collation:
 
+```
+# Example with a batch of `int`s:
+default_collate([0, 1, 2, 3])
+# Example with a batch of `str`s:
+default_collate(['a', 'b', 'c'])
+# Example with `Map` inside the batch:
+default_collate([{'A': 0, 'B': 1}, {'A': 100, 'B': 100}])
+# Example with `NamedTuple` inside the batch:
+Point = namedtuple('Point', ['x', 'y'])
+default_collate([Point(0, 0), Point(1, 1)])
+# Example with `Tuple` inside the batch:
+default_collate([(0, 1), (2, 3)])
+# Example with `List` inside the batch:
+default_collate([[0, 1], [2, 3]])
+```
+
+A custom `collate_fn` can be used to customize collation, e.g., padding sequential data to the maximum length of a batch.
+```
+# Two options to extend `default_collate` to handle specific type
+# Option 1: Write custom collate function and invoke `default_collate`
+def custom_collate(batch):
+    elem = batch[0]
+    if isinstance(elem, CustomType):  # Some custom condition
+        return ...
+    else:  # Fall back to `default_collate`
+        return default_collate(batch)
+# Option 2: In-place modify `default_collate_fn_map`
+def collate_customtype_fn(batch, *, collate_fn_map=None):
+    return ...
+default_collate_fn_map.update(CustoType, collate_customtype_fn)
+default_collate(batch)  # Handle `CustomType` automatically
+```
 8. When both `batch_size` and `batch_sampler` are None (default value for `batch_sampler` is already `None`), automatic batching is disabled.
 9. When automatic batching is disabled, the default `collate_fn` simply converts NumPy arrays into PyTorch Tensors.
 ```
