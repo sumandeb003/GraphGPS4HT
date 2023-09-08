@@ -756,9 +756,17 @@ Example:
 6. When the `drop_last` argument is set to `True`, the `Dataloader` drops the last non-full batch of data samples from the list of batches of indices.
 
 `DataLoader` fetches a minibatch of data and collates them into batched samples, i.e., containing Tensors with one dimension being the batch dimension (usually the first). 
-7. After fetching a list of samples using the list (as shown above) of indices produced by the batch sampler, the function passed as the `collate_fn` argument is used to collate lists of samples into batches. A custom `collate_fn` can be used to customize collation, e.g., padding sequential data to the maximum length of a batch.
+7. After fetching a list of samples using the list (as shown above) of indices produced by the batch sampler, the function passed as the `collate_fn` argument is used to collate lists of samples into batches. For instance, if each data sample consists of a 3-channel image and an integral class label, i.e., each element of the dataset returns a tuple (image, class_index), the default `collate_fn` collates a list of such tuples into a single tuple of a batched image tensor and a batched class label Tensor. It preserves the data structure, e.g., if each sample is a dictionary, it outputs a dictionary with the same set of keys but batched Tensors as values (or lists if the values can not be converted into Tensors). Same for list s, tuple s, namedtuple s, etc.
 ```
 for indices in batch_sampler:
     yield collate_fn([dataset[i] for i in indices])
 ```
-8. When both `batch_size` and `batch_sampler` are None (default value for `batch_sampler` is already `None`), automatic batching is disabled. 
+A custom `collate_fn` can be used to customize collation, e.g., padding sequential data to the maximum length of a batch.
+
+8. When both `batch_size` and `batch_sampler` are None (default value for `batch_sampler` is already `None`), automatic batching is disabled.
+9. When automatic batching is disabled, the default `collate_fn` simply converts NumPy arrays into PyTorch Tensors.
+```
+for index in sampler:
+    yield collate_fn(dataset[index])
+```
+10. Setting the argument `num_workers` as a positive integer will turn on multi-process data loading with the specified number of loader worker processes. For map-style datasets, the main process generates the indices using sampler and sends them to the workers. So any shuffle randomization is done in the main process which guides loading by assigning indices to load. A `DataLoader` uses single-process data loading by default.
