@@ -719,15 +719,15 @@ for i, sample in enumerate(face_dataset):
 **No need to write the dataloader. Just have to call one.**
 
 ```
- DataLoader(dataset,                     # a `Dataset` object to load data from
+ DataLoader(dataset,                     # a Dataset object to load data from
             batch_size=1,                # Number of samples per batch
             shuffle=False,               # shuffle the dataset to form new batches at the end of each epoch
-            sampler=None,                # specify a custom Sampler object that at each time yields the next index/key to fetch
-            batch_sampler=None,
-            num_workers=0,               # number of parallel threads for loading data
-            collate_fn=None,
-            pin_memory=False,
-            drop_last=False,
+            sampler=None,                # specify a custom Sampler object that at each time yields the next index/key to fetch. If specified, shuffle must not be specified.
+            batch_sampler=None,          # like sampler, but returns a batch of indices at a time. Mutually exclusive with batch_size, shuffle, sampler, and drop_last.
+            num_workers=0,               # how many subprocesses to use for data loading. 0 means that the data will be loaded in the main process. (default: 0)
+            collate_fn=None,             # merges a list of samples to form a mini-batch of Tensor(s). Used when using batched loading from a map-style dataset.
+            pin_memory=False,            # If True, the data loader will copy Tensors into device/CUDA pinned memory before returning them. 
+            drop_last=False,             # set to True to drop the last incomplete batch, if the dataset size is not divisible by the batch size.
             timeout=0,
             worker_init_fn=None, *,
             prefetch_factor=2,
@@ -739,7 +739,7 @@ for i, sample in enumerate(face_dataset):
   - iterable-style datasets: An iterable-style dataset is an instance of a subclass of IterableDataset that implements the `__iter__` protocol, and represents an iterable over data samples. This type of dataset is particularly suitable for cases where random reads are expensive or even improbable, and where the batch size depends on the fetched data. For example, such a dataset, when called `iter(dataset)`, could return a stream of data reading from a database, a remote server, or even logs generated in real time.
 2.  If the `shuffle` argument to a `DataLoader` is `True`, a sampler will randomly shuffle the data samples after each epoch. If this argument is set `False`, a sampler will produce the same sequence of indices of data samples after each epoch.
   - `torch.utils.data.Sampler` classes are used to specify the sequence of $\color{red}{indices/keys}$ used in data loading. They are iterable objects (list, etc.) over the indices to datasets.
-3. The `sampler` argument is used to specify a custom `Sampler` object that at each time yields the next $\color{red}{index/key}$ to fetch.
+3. The `sampler` argument is used to specify a custom `Sampler` object that at each time yields the next $\color{red}{index/key}$ to fetch. If specified, `shuffle` must not be specified.
 4. For map-style datasets, the sampler is either provided by user or constructed based on the `shuffle` argument. 
 5. The `batch_sampler` argument takes a custom sampler that yields a list of batch indices at a time. Mutually exclusive with `batch_size`, `shuffle`, `sampler`, and `drop_last`.
 Example:
