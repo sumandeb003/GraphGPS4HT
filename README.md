@@ -16,13 +16,14 @@
 
     d) How a dataset is called? (**Done by $\color{red}{08.09.2023}$**)
 
-    e) How to add a new dataset to GraphGPS? How to call the new dataset? (**NEXT**)
+    e) How to add a new dataset to GraphGPS? How to call the new dataset? (**Done by $\color{red}{08.09.2023}$**)
 
-    f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**NEAR FUTURE**)
+    f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**Work-In-Progress**)
 
 2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
 3. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
 4. **Extend the work to node classification**
+5. **Improve the GraphGPS tool**
 
 ## August 28, 2023
 
@@ -736,10 +737,11 @@ for i, sample in enumerate(face_dataset):
 1. The most important argument of `DataLoader` constructor is **`dataset`**, which indicates a `Dataset` object to load data from. PyTorch supports two different types of datasets:
   - map-style datasets: A map-style dataset implements the `__getitem__` and `__len__` protocols, and represents a map from $\color{red}{indices/keys}$ to data samples. For example, such a dataset, when accessed with dataset[idx], could read the idx-th image and its corresponding label from a folder on the disk.
   - iterable-style datasets: An iterable-style dataset is an instance of a subclass of IterableDataset that implements the `__iter__` protocol, and represents an iterable over data samples. This type of dataset is particularly suitable for cases where random reads are expensive or even improbable, and where the batch size depends on the fetched data. For example, such a dataset, when called `iter(dataset)`, could return a stream of data reading from a database, a remote server, or even logs generated in real time.
-2.  `torch.utils.data.Sampler` classes are used to specify the sequence of $\color{red}{indices/keys}$ used in data loading. They are iterable objects (list, etc.) over the indices to datasets.
-  - If the `shuffle` argument to a `DataLoader` is `True`, a sampler will randomly shuffle the data samples after each epoch. If this argument is set `False`, a sampler will produce the same sequence of indices of data samples after each epoch.
+2.  If the `shuffle` argument to a `DataLoader` is `True`, a sampler will randomly shuffle the data samples after each epoch. If this argument is set `False`, a sampler will produce the same sequence of indices of data samples after each epoch.
+  - `torch.utils.data.Sampler` classes are used to specify the sequence of $\color{red}{indices/keys}$ used in data loading. They are iterable objects (list, etc.) over the indices to datasets.
 3. The `sampler` argument is used to specify a custom `Sampler` object that at each time yields the next $\color{red}{index/key}$ to fetch.
-4. The `batch_sampler` argument takes a custom sampler that yields a list of batch indices at a time. 
+4. For map-style datasets, the sampler is either provided by user or constructed based on the `shuffle` argument. 
+5. The `batch_sampler` argument takes a custom sampler that yields a list of batch indices at a time. 
 Example:
 
 ```
@@ -751,3 +753,4 @@ Example:
         [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 
 ```
+6. 
