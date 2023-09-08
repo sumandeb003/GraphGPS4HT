@@ -819,11 +819,11 @@ print(batch)
 
 No surprise, but let’s formalize what was has been done:
 
-Loader selected 2items from the dataset.
+  - Loader selected 2 items from the dataset.
 
-Those items were converted into a tensor (2 items of size 3).
+  - Those items were converted into a tensor (2 items of size 3).
 
-A new tensor was created (2x3) and returned.
+  - A new tensor was created (2x3) and returned.
 
 Default setup also allows us to use dictionaries. Let’s see an example:
 
