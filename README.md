@@ -739,7 +739,7 @@ for i, sample in enumerate(face_dataset):
 2.  `torch.utils.data.Sampler` classes are used to specify the sequence of $\color{red}{indices/keys}$ used in data loading. They represent iterable objects (list, etc.) over the indices to datasets.
   - A sequential or shuffled sampler will be automatically constructed based on the `shuffle` argument to a `DataLoader`.
   - Alternatively, users may use the `sampler` argument to specify a custom `Sampler` object that at each time yields the next $\color{red}{index/key}$ to fetch.
-3. A custom sampler that yields a list of batch indices at a time can be passed as the `batch_sampler` argument. 
+3. The `batch_sampler` argument takes a custom sampler that yields a list of batch indices at a time. 
 Example:
 
 ```
