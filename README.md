@@ -718,12 +718,12 @@ for i, sample in enumerate(face_dataset):
 **No need to write the dataloader. Just have to call one.**
 
 ```
- DataLoader(dataset,
+ DataLoader(dataset,                     # a `Dataset` object to load data from
             batch_size=1,
-            shuffle=False,
-            sampler=None,
+            shuffle=False,               # shuffle the dataset to form new batches at the end of each epoch
+            sampler=None,                # specify a custom Sampler object that at each time yields the next index/key to fetch
             batch_sampler=None,
-            num_workers=0,
+            num_workers=0,               # number of parallel threads for loading data
             collate_fn=None,
             pin_memory=False,
             drop_last=False,
@@ -739,4 +739,15 @@ for i, sample in enumerate(face_dataset):
 2.  `torch.utils.data.Sampler` classes are used to specify the sequence of $\color{red}{indices/keys}$ used in data loading. They represent iterable objects (list, etc.) over the indices to datasets.
   - A sequential or shuffled sampler will be automatically constructed based on the `shuffle` argument to a `DataLoader`.
   - Alternatively, users may use the `sampler` argument to specify a custom `Sampler` object that at each time yields the next $\color{red}{index/key}$ to fetch.
-  - A custom sampler that yields a list of batch indices at a time can be passed as the `batch_sampler` argument.
+3. A custom sampler that yields a list of batch indices at a time can be passed as the `batch_sampler` argument. 
+Example:
+
+```
+        >>> list(SequentialSampler(range(10)), batch_size=3, drop_last=False)
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        >>> list(BatchSampler(SequentialSampler(range(10)), batch_size=3, drop_last=False))
+        [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]
+        >>> list(BatchSampler(SequentialSampler(range(10)), batch_size=3, drop_last=True))
+        [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+
+```
