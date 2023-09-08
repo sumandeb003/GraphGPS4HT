@@ -753,4 +753,12 @@ Example:
         [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
 
 ```
-6. When the `drop_last` argument is set to `True`, the `Dataloader` drops the last non-full batch of data samples from the epoch.
+6. When the `drop_last` argument is set to `True`, the `Dataloader` drops the last non-full batch of data samples from the list of batches of indices.
+
+`DataLoader` fetches a minibatch of data and collates them into batched samples, i.e., containing Tensors with one dimension being the batch dimension (usually the first). 
+7. After fetching a list of samples using the list (as shown above) of indices produced by the batch sampler, the function passed as the `collate_fn` argument is used to collate lists of samples into batches. A custom `collate_fn` can be used to customize collation, e.g., padding sequential data to the maximum length of a batch.
+```
+for indices in batch_sampler:
+    yield collate_fn([dataset[i] for i in indices])
+```
+8. When both `batch_size` and `batch_sampler` are None (default value for `batch_sampler` is already `None`), automatic batching is disabled. 
