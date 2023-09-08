@@ -850,7 +850,7 @@ pprint(batch)
 #  'y': tensor([0, 0])}
 ```
 
-The loader was smart enough to correctly repack data from a list of dicts. **(THIS IS NOT CLEAR FOR REAL DATASETS.**
+The loader was smart enough to correctly repack data from a list of dicts. **THIS IS NOT CLEAR IN CONTEXT OF REAL DATASETS BECAUSE ALL SAMPLES MAY NOT HAVE THE SAME SET OF KEYS OR INDICES.**
 
 A custom `collate_fn` can be used to customize collation, e.g., padding sequential data to the maximum length of a batch.
 ```
