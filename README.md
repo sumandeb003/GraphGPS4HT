@@ -488,7 +488,7 @@ model:GraphGymModule(
         (dropout_local): Dropout(p=0.1, inp
 
 ```
-## Sep 2, 2023
+## Update for Meeting on Sep 8, 2023
 ### Loading Custom Datasets in PyG
 
 PyG is based on PyTorch. **PyTorch provides two data primitives that allow you to use pre-loaded datasets as well as your own data**:
