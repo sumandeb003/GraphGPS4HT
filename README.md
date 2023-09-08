@@ -25,6 +25,11 @@
 4. **Extend the work to node classification**
 5. **Improve the GraphGPS tool - for HT detection or in general**
 
+**NOTE:** 
+1. **GraphGPS++ is an improved version of GraphGPS mainly for molecular classifications.**
+2. **Exphormer is an improved version of GraphGPS agnostic of the application.**
+3. **ZINC and other benchmarks used in the GraphGPS tool-flow were proposed in Vijay's benchmarking paper.**
+
 ## August 28, 2023
 
 ## Workflow of GraphGPS (in Short):
