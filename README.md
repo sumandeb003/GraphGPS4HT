@@ -790,6 +790,68 @@ Point(x=tensor([0, 1]), y=tensor([0, 1]))
 [tensor([0, 2]), tensor([1, 3])]
 ```
 
+One of the first pieces of information in every deep learning course is that we perform training/inferencing in batches. Most of the time, a batch is just a number of stacked examples. But in some cases, we would like to modify how it is created.
+
+First things first, let’s investigate what happens in the default case. Assume we have the following toy dataset. It contains four examples, three features each.
+```
+import torch
+from torch.utils.data import DataLoader
+import numpy as np
+
+data = np.array([
+    [0.1, 7.4, 0],
+    [-0.2, 5.3, 0],
+    [0.2, 8.2, 1],
+    [0.2, 7.7, 1]])
+print(data)
+```
+
+If we ask a loader for a batch, we will see the following (note that I set shuffle=False to eliminate randomness):
+
+```
+loader = DataLoader(data, batch_size=2, shuffle=False)
+batch = next(iter(loader))
+print(batch)
+
+# tensor([[ 0.1000,  7.4000,  0.0000],
+#         [-0.2000,  5.3000,  0.0000]], dtype=torch.float64)
+```
+
+No surprise, but let’s formalize what was has been done:
+
+Loader selected 2items from the dataset.
+
+Those items were converted into a tensor (2 items of size 3).
+
+A new tensor was created (2x3) and returned.
+
+Default setup also allows us to use dictionaries. Let’s see an example:
+
+```
+from pprint import pprint
+# now dataset is a list of dicts
+dict_data = [
+    {'x1': 0.1, 'x2': 7.4, 'y': 0},
+    {'x1': -0.2, 'x2': 5.3, 'y': 0},
+    {'x1': 0.2, 'x2': 8.2, 'y': 1},
+    {'x1': 0.2, 'x2': 7.7, 'y': 10},
+]
+pprint(dict_data)
+# [{'x1': 0.1, 'x2': 7.4, 'y': 0},
+# {'x1': -0.2, 'x2': 5.3, 'y': 0},
+# {'x1': 0.2, 'x2': 8.2, 'y': 1},
+# {'x1': 0.2, 'x2': 7.7, 'y': 10}]
+
+loader = DataLoader(dict_data, batch_size=2, shuffle=False)
+batch = next(iter(loader))
+pprint(batch)
+# {'x1': tensor([ 0.1000, -0.2000], dtype=torch.float64),
+#  'x2': tensor([7.4000, 5.3000], dtype=torch.float64),
+#  'y': tensor([0, 0])}
+```
+
+The loader was smart enough to correctly repack data from a list of dicts. 
+
 A custom `collate_fn` can be used to customize collation, e.g., padding sequential data to the maximum length of a batch.
 ```
 >>> # Two options to extend `default_collate` to handle specific type
