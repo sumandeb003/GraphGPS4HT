@@ -20,10 +20,12 @@
 
     f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**Work-In-Progress**)
 
-2. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
-3. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
-4. **Extend the work to node classification**
-5. **Improve the GraphGPS tool - for HT detection or in general**
+    g) Train GraphGPS using the TrustHub graphs. Tune hyperparameters.
+
+3. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
+4. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
+5. **Extend the work to node classification**
+6. **Improve the GraphGPS tool - for HT detection or in general**
 
 **NOTE:** 
 1. **[GPS++](https://arxiv.org/pdf/2212.02229.pdf) is an improved version of GraphGPS mainly for molecular classifications.**
