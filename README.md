@@ -20,7 +20,7 @@
 
     f) Convert the TrustHub benchmarks using the ckt-to-graph conversion code of HW2VEC (**Work-In-Progress**)
 
-    g) Train GraphGPS using the TrustHub graphs. Tune hyperparameters.
+    g) Train GraphGPS using the TrustHub graphs. Tune hyperparameters. (**Near Future**)
 
 3. **Compare with other GNN-based tools (trained on the same dataset and tested on the same dataset).**
 4. **Proliferate the TrustHub dataset using the [GAINESIS tool](https://www.mdpi.com/2079-9292/11/2/245), [S. Bhunia's tool](https://arxiv.org/pdf/2204.08580.pdf) and another tool (can't recall the title; need to check my collection of papers)**
