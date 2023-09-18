@@ -870,6 +870,7 @@ A custom `collate_fn` can be used to customize collation, e.g., padding sequenti
 >>> default_collate_fn_map.update(CustoType, collate_customtype_fn)
 >>> default_collate(batch)  # Handle `CustomType` automatically
 ```
+
 8. When both `batch_size` and `batch_sampler` are None (default value for `batch_sampler` is already `None`), automatic batching is disabled.
 9. When automatic batching is disabled, the default `collate_fn` simply converts NumPy arrays into PyTorch Tensors.
 ```
@@ -878,3 +879,15 @@ for index in sampler:
 ```
 10. Setting the argument `num_workers` as a positive integer will turn on multi-process data loading with the specified number of loader worker processes. For map-style datasets, the main process generates the indices using sampler and sends them to the workers. So any shuffle randomization is done in the main process which guides loading by assigning indices to load. A `DataLoader` uses single-process data loading by default.
 11. Host to GPU copies are much faster when they originate from pinned (page-locked) memory. For data loading, passing `pin_memory=True` to a DataLoader will automatically put the fetched data Tensors in pinned memory, and thus enables faster data transfer to CUDA-enabled GPUs.
+
+## Update for Meeting on Sep 18, 2023
+### Conversion of HW circuits to Graphs using HW2VEC tool
+**HW2GRAPH.preprocess()** - flatten all .v files to one .v file, remove comments, remove underscores, rename as `topModule.v`
+
+⬇️
+
+**HW2GRAPH.process()**  - generate AST/CFG/DFG (NetworkX object) of the `topModule.v`
+
+⬇️
+
+**DataProcessor.process()** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
