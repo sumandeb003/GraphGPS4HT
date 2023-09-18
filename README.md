@@ -882,12 +882,14 @@ for index in sampler:
 
 ## Update for Meeting on Sep 18, 2023
 ### Conversion of HW circuits to Graphs using HW2VEC tool
-**`hw2vec/hw2graph.py`: `HW2GRAPH.preprocess(path/to/HW/Circuit)`** - flatten all .v files of the HW circuit to one .v file, remove comments, remove underscores, rename as `topModule.v`
+This conversion is done by the following methods of `hw2vec/hw2graph.py` in the following order:
+
+**`HW2GRAPH.preprocess(path/to/HW/Circuit)`** - flatten all .v files of the HW circuit to one .v file, remove comments, remove underscores, rename as `topModule.v`
 
 ⬇️
 
-**`hw2vec/hw2graph.py`: `HW2GRAPH.process(path/to/topModule.v)`**  - generate AST/CFG/DFG (NetworkX object) of the `topModule.v`
+**`HW2GRAPH.process(path/to/topModule.v)`**  - generate AST/CFG/DFG (NetworkX object) of the `topModule.v`
 
 ⬇️
 
-**`hw2vec/hw2graph.py`: `DataProcessor.process(NetworkX-Object)`** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
+**`DataProcessor.process(NetworkX-Object)`** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
