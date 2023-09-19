@@ -36,8 +36,8 @@
 </details>
 
 
-
-## Update for Meeting on August 28, 2023
+<details>
+  <summary> ## Update for Meeting on August 28, 2023 </summary>
 
 ## Workflow of GraphGPS (in Short):
 
@@ -495,7 +495,11 @@ model:GraphGymModule(
         (dropout_local): Dropout(p=0.1, inp
 
 ```
-## Update for Meeting on Sep 8, 2023
+</details>
+
+<details>
+  <summary> ## Update for Meeting on Sep 8, 2023 </summary>
+
 ### Loading Custom Datasets in PyG
 
 PyG is based on PyTorch. **PyTorch provides two data primitives that allow you to use pre-loaded datasets as well as your own data**:
@@ -673,7 +677,7 @@ Download the dataset from [here](https://download.pytorch.org/tutorial/faces.zip
 ```
 image_name,part_0_x,part_0_y,part_1_x,part_1_y,part_2_x, ... ,part_67_x,part_67_y
 0805personali01.jpg,27,83,27,98, ... 84,134
-1084239450_e76e00b7e7.jpg,70,236,71,257, ... ,128,312
+1084239450_e76e</details>00b7e7.jpg,70,236,71,257, ... ,128,312
 ```
 
 ```
@@ -885,7 +889,13 @@ for index in sampler:
 10. Setting the argument `num_workers` as a positive integer will turn on multi-process data loading with the specified number of loader worker processes. For map-style datasets, the main process generates the indices using sampler and sends them to the workers. So any shuffle randomization is done in the main process which guides loading by assigning indices to load. A `DataLoader` uses single-process data loading by default.
 11. Host to GPU copies are much faster when they originate from pinned (page-locked) memory. For data loading, passing `pin_memory=True` to a DataLoader will automatically put the fetched data Tensors in pinned memory, and thus enables faster data transfer to CUDA-enabled GPUs.
 
-## Update for Meeting on Sep 18, 2023
+</details>
+
+
+<summary>## Update for Meeting on Sep 18, 2023 </summary>
+<details>
+
+
 ### Conversion of HW circuits to Graphs using HW2VEC tool
 This conversion is done by the following methods of `hw2vec/hw2graph.py` in the following order:
 
@@ -898,3 +908,5 @@ This conversion is done by the following methods of `hw2vec/hw2graph.py` in the 
 ⬇️
 
 **`DataProcessor.process(NetworkX-Object)`** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
+
+</details>
