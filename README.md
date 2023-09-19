@@ -10,8 +10,11 @@
 3. **ZINC and other benchmarks used in the GraphGPS tool-flow were proposed in Vijay's benchmarking paper.**
 
 <details>
+  
   <summary> 
-    ## Goals of Project: 
+    
+    ## Goals of Project:
+    
   </summary>
 
 1. **Train GraphGPS on HT dataset**
