@@ -40,7 +40,9 @@
 # Weekly Research Updates
 
 <details>
-  <summary> **Update for Meeting on August 28, 2023** </summary>
+  <summary> 
+    **Update for Meeting on August 28, 2023** 
+  </summary>
 
 ## Workflow of GraphGPS (in Short):
 
