@@ -42,7 +42,9 @@
 
 <details>
   <summary> 
+    
   ### Update as of August 28, 2023
+  
   </summary>
 
 ## Workflow of GraphGPS (in Short):
@@ -903,7 +905,9 @@ for index in sampler:
 
 <details>
 <summary> 
+  
 ### Update as of Sep 18, 2023 
+
 </summary>
 
 ### Conversion of HW circuits to Graphs using HW2VEC tool
