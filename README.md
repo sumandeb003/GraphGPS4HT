@@ -4,7 +4,13 @@
 
 [GraphGPS](https://proceedings.neurips.cc/paper_files/paper/2022/file/5d4834a159f1547b267a05a4e2b7cf5e-Paper-Conference.pdf) is a tool for Graph ML. 
 
-## Goals of Project:
+**NOTE:** 
+1. **[GPS++](https://arxiv.org/pdf/2212.02229.pdf) is an improved version of GraphGPS mainly for molecular classifications.**
+2. **[Exphormer](https://github.com/hamed1375/Exphormer) is an improved version of GraphGPS agnostic of the application.**
+3. **ZINC and other benchmarks used in the GraphGPS tool-flow were proposed in Vijay's benchmarking paper.**
+
+<details>
+  <summary>## Goals of Project:</summary>
 
 1. **Train GraphGPS on HT dataset**
 
@@ -27,10 +33,9 @@
 5. **Extend the work to node classification**
 6. **Improve the GraphGPS tool - for HT detection or in general**
 
-**NOTE:** 
-1. **[GPS++](https://arxiv.org/pdf/2212.02229.pdf) is an improved version of GraphGPS mainly for molecular classifications.**
-2. **[Exphormer](https://github.com/hamed1375/Exphormer) is an improved version of GraphGPS agnostic of the application.**
-3. **ZINC and other benchmarks used in the GraphGPS tool-flow were proposed in Vijay's benchmarking paper.**
+</details>
+
+
 
 ## Update for Meeting on August 28, 2023
 
