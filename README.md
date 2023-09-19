@@ -891,10 +891,8 @@ for index in sampler:
 
 </details>
 
-
-<summary>## Update for Meeting on Sep 18, 2023 </summary>
 <details>
-
+<summary> ## Update for Meeting on Sep 18, 2023 </summary>
 
 ### Conversion of HW circuits to Graphs using HW2VEC tool
 This conversion is done by the following methods of `hw2vec/hw2graph.py` in the following order:
