@@ -41,7 +41,7 @@
 
 <details>
   <summary> 
-    **Update for Meeting on August 28, 2023** 
+    Update as of August 28, 2023
   </summary>
 
 ## Workflow of GraphGPS (in Short):
@@ -503,7 +503,7 @@ model:GraphGymModule(
 </details>
 
 <details>
-  <summary> ## Update for Meeting on Sep 8, 2023 </summary>
+  <summary> Update as of Sep 8, 2023 </summary>
 
 ### Loading Custom Datasets in PyG
 
@@ -897,7 +897,7 @@ for index in sampler:
 </details>
 
 <details>
-<summary> ## Update for Meeting on Sep 18, 2023 </summary>
+<summary> Update as of Sep 18, 2023 </summary>
 
 ### Conversion of HW circuits to Graphs using HW2VEC tool
 This conversion is done by the following methods of `hw2vec/hw2graph.py` in the following order:
