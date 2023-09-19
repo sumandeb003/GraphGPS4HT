@@ -47,7 +47,12 @@
   
   </summary>
 
+<details>
+  <summary> 
+    
 ## Workflow of GraphGPS (in Short):
+
+ </summary>
 
 **Parse arguments of the execution command from CLI** 
 
@@ -87,10 +92,16 @@
 
 **Display best epoch and the corresponding performances on training, validation and test sets.**
 
+</details>
 
+<details>
+  
+<summary>
+  
+## Steps in GrahGPS Workflow (in Detail):
 
-Steps in GrahGPS Workflow (in Detail):
---------------------------------------
+</summary>
+
 1. Load cmd line args
 ```
 args = parse_args()
@@ -503,6 +514,7 @@ model:GraphGymModule(
         (dropout_local): Dropout(p=0.1, inp
 
 ```
+</details>
 </details>
 
 <details>
