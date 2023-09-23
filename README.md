@@ -929,7 +929,7 @@ This conversion is done by the following methods of `hw2vec/hw2graph.py` in the 
 
 ⬇️
 
-**`HW2GRAPH.process(path/to/topModule.v)`**  - generate AST/CFG/DFG (NetworkX object) of the `topModule.v`
+**`HW2GRAPH.process(path/to/topModule.v)`**  - generate AST/CFG/DFG (NetworkX object) of the `topModule.v` using Pyverilog functions.
 
 ⬇️
 
