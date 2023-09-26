@@ -918,9 +918,17 @@ for index in sampler:
 <details>
 <summary> 
   
-### Update as of Sep 18, 2023 
+### Update as of Sep 26 and Sep 18, 2023 
 
 </summary>
+
+**The goal is to use the circuit-to-graph conversion segment of HW2VEC tool to create a graph dataset for training GraphGPS.** So, I had multiple curiosities regarding the process of conversion of HW circuits to corresponding graphs by the HW2VEC tool. Like: 
+
+1. Does HW2VEC convert the circuits to graph correctly?
+2. What is the process of circuit-to-graph conversion in HW2VEC?
+3. How does HW2VEC generate the features of the nodes of the graph?
+4. Are these features a good representation of the circuits?
+5. How do the DFG (Data Flow Graph) and the AST (Abstract Syntax Tree) of a circuit differ from each other?
 
 ### Conversion of HW circuits to Graphs using HW2VEC tool
 This conversion is done by the following methods of `hw2vec/hw2graph.py` in the following order:
@@ -937,13 +945,3 @@ This conversion is done by the following methods of `hw2vec/hw2graph.py` in the 
 
 </details>
 
-<details>
-<summary> 
-  
-### Update as of Sep 26, 2023 
-
-</summary>
-
-
-
-</details>
