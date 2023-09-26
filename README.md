@@ -1007,7 +1007,7 @@ data.edge_index - tensor([[0, 1, 1, 4], [1, 2, 3, 5]])
 1. **What does the normalization in Step 3 do?**
     - `Ans:` `DataProcessor.normalize()` determines the type of each node in the graph. The class `DataProcessor` maintains a list of all possible types of DFG nodes and a list of all possible types of AST nodes as follows:
 ```python
-        self.global_type2idx_AST_list = ['names','always','none','senslist','sens','identifier','nonblockingsubstitution',
+self.global_type2idx_AST_list = ['names','always','none','senslist','sens','identifier','nonblockingsubstitution',
                                          'lvalue','rvalue','intconst','pointer','ifstatement','pure numeric','assign','cond','unot','plus','land','reg','partselect','eq','lessthan','greaterthan','decl','wire',
                                          'width','output','input','moduledef','portarg','instancelist','source','description',
                                          'port','portlist','ulnot','instance','or','and','lor','block','xor','ioport',
@@ -1027,7 +1027,10 @@ self.global_type2idx_DFG_list = ['concat','input','unand','unor','uxor','signal'
 2. **What do the values in `data.x` and `data.edge_index` mean? How are they generated? How do they make sense?**
    - `Ans:` **Answered Above**
      
-3. **How are the directions of edges of a DFG stored?**
+3. **Where are the node-feature vectors? If any, how are they computed?** 
+   - `Ans:` **Answered Above**
+
+4. **How are the directions of edges of a DFG stored?**
     - `Ans:` Let us consider the following adjacency matrix A = \[\[0,1,1,2,2,6\],\[1,2,3,4,5,7\]\]. The convention is that the edges are from the nodes \[0,1,1,2,2,6\] to the corresponding nodes in \[1,2,3,4,5,7\]. A\[i,j\] is an element of the adjacency matrix and represents an edge from the i-th element of the first array in A to the j-th element of the second array in A.
 
 </details>
