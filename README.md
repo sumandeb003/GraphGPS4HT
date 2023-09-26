@@ -1033,6 +1033,33 @@ self.global_type2idx_DFG_list = ['concat','input','unand','unor','uxor','signal'
 4. **How are the directions of edges of a DFG stored?**
     - `Ans:` Let us consider the following adjacency matrix A = \[\[0,1,1,2,2,6\],\[1,2,3,4,5,7\]\]. The convention is that the edges are from the nodes \[0,1,1,2,2,6\] to the corresponding nodes in \[1,2,3,4,5,7\]. A\[i,j\] is an element of the adjacency matrix and represents an edge from the i-th element of the first array in A to the j-th element of the second array in A.
 
+**SOME OBSERVATIONS:**
+1. NORMALIZATION DOESN'T CHANGE THE `in_degree()` and the `out_degree()`
+2. NO DIFFERENCE IN THE `in_degree()` and the `out_degree()` for AST & DFG OF THE SAME CIRCUIT
+3. Pyverilog produces a graph in which the direction of the edges are reversed. The directions are from 'destination' to 'source' rather than vice versa. The directions remain reversed for combinational as well as sequential designs.
+4. For the following **combinational circuit**, Pyverilog produces graph with nodes \['top.out_graphrename_0', 'And_graphrename_1', 'top_a', 'top_b'\] and edges \[('top.out_graphrename_0', 'And_graphrename_1'), ('And_graphrename_1', 'top_a'), ('And_graphrename_1', 'top_b')\]
+
+```verilog
+module lol (input a, input b, output out);  
+    //always @ (a or b) begin  
+    assign out = a & b;
+  //end  
+endmodule  
+```
+The corresponding graph plot is: <img src="comb_out.png">
+
+
+If we render the same logic to be a **sequential circuit** - described as follows, Pyverilog produces a graph with nodes \['top._rn0_out_graphrename_0', 'And_graphrename_1', 'top_a', 'top_b', 'top.out_graphrename_2', 'top__rn0_out'\] and edges \[('top._rn0_out_graphrename_0', 'And_graphrename_1'), ('And_graphrename_1', 'top_a'), ('And_graphrename_1', 'top_b'), ('top.out_graphrename_2', 'top__rn0_out')\]
+
+```verilog
+module lol (input a, input b, output reg out)  
+    always @ (a or b) begin  
+    out = a & b;
+  end  
+endmodule  
+```
+The corrresponding graph plot is: <img src="always_out1.png"> <img src="always_out2.png">
+
 </details>
 
 
