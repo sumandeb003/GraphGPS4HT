@@ -1024,6 +1024,8 @@ self.global_type2idx_DFG_list = ['concat','input','unand','unor','uxor','signal'
 ```
 **The position of a type of node in the above (relevant) list is the value of the (node) feature assigned to a node** - this is the main function of the `DataProcessor.normalize()` function. This node feature is stored in `data.x` as shown above.
 
+**I initially thought that `from_networkx()` computes the node features.**
+
 2. **What do the values in `data.x` and `data.edge_index` mean? How are they generated? How do they make sense?**
    - `Ans:` **Answered Above**
      
@@ -1059,6 +1061,22 @@ module lol (input a, input b, output reg out)
 endmodule  
 ```
 The corrresponding graph plot is: <img src="always_out1.png"> <img src="always_out2.png">
+
+5. Setting the `graph_type` in the command line didn't work. Had to edit this argument the `use_case_1.py` file to enforce it.
+6. An AST contains significantly more number of nodes than the DFG of the same circuit. While the DFG of the following circuit has 6 nodes, the AST has 57 nodes. **WHY?????????**
+```verilog
+module lol (  input a,  
+                  input b,  
+                  //input c,  
+                  output out);  
+  
+    always @ (a or b) begin  
+    out= a & b;
+    //assign out = a & b;
+  end  
+endmodule
+```
+7. **CAN BETTER NODE-FEATURES BE CONSIDERED?? IF YES, WHAT ARE THEY?? (READ THE 2 PAPERS THAT PROPOSE MORE NUMBER OF NODE FEATURES - IMPORTANT: BETTER FEATURES WILL, MOST LIKELY, IMPROVE THE ACCURACY)**
 
 </details>
 
