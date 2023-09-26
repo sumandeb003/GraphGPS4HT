@@ -946,7 +946,6 @@ The following methods in `hw2vec/hw2graph.py` and their order constitute the ckt
 
 **`DataProcessor.process(NetworkX-Object)`** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
 
-</details>
 
 I converted the following simple circuit to graph using HW2VEC:
 
@@ -962,3 +961,7 @@ module lol (  input a,
   end  
 endmodule
 ```
+
+</details>
+
+
