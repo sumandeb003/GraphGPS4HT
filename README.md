@@ -936,3 +936,14 @@ This conversion is done by the following methods of `hw2vec/hw2graph.py` in the 
 **`DataProcessor.process(NetworkX-Object)`** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
 
 </details>
+
+<details>
+<summary> 
+  
+### Update as of Sep 26, 2023 
+
+</summary>
+
+
+
+</details>
