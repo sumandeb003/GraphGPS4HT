@@ -1062,7 +1062,7 @@ endmodule
 ```
 The corrresponding graph plot is: <img src="always_out1.png"> <img src="always_out2.png">
 
-5. Setting the `graph_type` in the command line didn't work. Had to edit this argument the `use_case_1.py` file to enforce it.
+5. Setting the `graph_type` in the command line didn't work. Had to edit this argument in the `use_case_1.py` file to enforce it.
 6. An AST contains significantly more number of nodes than the DFG of the same circuit. While the DFG of the following circuit has 6 nodes, the AST has 57 nodes. **WHY?????????**
 ```verilog
 module lol (  input a,  
