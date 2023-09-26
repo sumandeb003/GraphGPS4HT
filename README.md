@@ -948,4 +948,17 @@ The following methods in `hw2vec/hw2graph.py` and their order constitute the ckt
 
 </details>
 
+I converted the following simple circuit to graph using HW2VEC:
 
+```verilog
+module lol (  input a,  
+                  input b,  
+                  //input c,  
+                  output out);  
+  
+    always @ (a or b) begin  
+    out= a & b;
+    //assign out = a & b;
+  end  
+endmodule
+```
