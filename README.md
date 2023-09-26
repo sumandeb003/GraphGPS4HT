@@ -929,7 +929,9 @@ for index in sampler:
 3. How does HW2VEC generate the features of the nodes of the graph? Are these features a good representation of the circuits?
 4. How do the DFG (Data Flow Graph) and the AST (Abstract Syntax Tree) of a circuit differ from each other?
 
-I spent the past few days digging into the HW2VEC tool. I had to read the source code, put a lot of print statements in the code to get clarity, and also modify or write some code to cater the tool to my needs. I got some insights into the tool's graph generation process.
+I spent the past few days digging into the HW2VEC tool. I had to read the source code, put a lot of print statements in the code to get clarity, and also modify or write some code to cater the tool to my needs. **All the details of this exercise can be found [here](https://github.com/sumandeb003/MyGNNpractices/blob/d494c3611c943dd6d9a029047e9efa35a52d38e1/My%20Experiments%20with%20HW2VEC.ipynb).**
+
+For the sake of brevity, I jot down the following key insights that I got about the tool's graph generation process. 
 
 ### Conversion of HW circuits to Graphs using HW2VEC tool
 The following methods in `hw2vec/hw2graph.py` and their order constitute the ckt-to-graph conversion pipeline:
@@ -946,4 +948,4 @@ The following methods in `hw2vec/hw2graph.py` and their order constitute the ckt
 
 </details>
 
-**All the details of this exercise can be found [here](https://github.com/sumandeb003/MyGNNpractices/blob/d494c3611c943dd6d9a029047e9efa35a52d38e1/My%20Experiments%20with%20HW2VEC.ipynb).**
+
