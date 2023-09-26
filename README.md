@@ -991,6 +991,18 @@ Adjacency:
  {'top._rn0_out_graphrename_0': {'And_graphrename_1': {}}, 'And_graphrename_1': {'top_a': {}, 'top_b': {}}, 'top_a': {}, 'top_b': {}, 'top.out_graphrename_2': {'top__rn0_out': {}}, 'top__rn0_out': {}}
 ```
 
+The output of **Step 3** is the following normalized graph:
+
+```python
+data.label - ['_rn0_out', 'and', 'a', 'b', 'out', 'out']
+
+number of nodes - 6
+
+data.x - tensor([16, 11,  1,  1, 16,  1])
+
+data.edge_index - tensor([[0, 1, 1, 4], [1, 2, 3, 5]])
+```
+
 </details>
 
 
