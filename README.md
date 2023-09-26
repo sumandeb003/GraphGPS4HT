@@ -931,10 +931,8 @@ for index in sampler:
 
 I spent the past few days digging into the HW2VEC tool. I had to read the source code, put a lot of print statements in the code to get clarity, and also modify or write some code to cater the tool to my needs. I got some insights into the tool's graph generation process.
 
-
-
 ### Conversion of HW circuits to Graphs using HW2VEC tool
-This conversion is done by the following methods of `hw2vec/hw2graph.py` in the following order:
+The following methods in `hw2vec/hw2graph.py` and their order constitute the ckt-to-graph conversion pipeline:
 
 **`HW2GRAPH.preprocess(path/to/HW/Circuit)`** - flatten all .v files of the HW circuit to one .v file, remove comments, remove underscores, rename as `topModule.v`
 
@@ -948,3 +946,4 @@ This conversion is done by the following methods of `hw2vec/hw2graph.py` in the 
 
 </details>
 
+**All the details of this exercise can be found [here](https://github.com/sumandeb003/MyGNNpractices/blob/d494c3611c943dd6d9a029047e9efa35a52d38e1/My%20Experiments%20with%20HW2VEC.ipynb).**
