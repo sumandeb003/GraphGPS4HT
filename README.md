@@ -936,18 +936,18 @@ For the sake of brevity, I jot down the following key insights that I got about 
 ### Conversion of HW circuits to Graphs using HW2VEC tool
 The following methods in `hw2vec/hw2graph.py` and their order constitute the ckt-to-graph conversion pipeline:
 
-**`HW2GRAPH.preprocess(path/to/HW/Circuit)`** - flatten all .v files of the HW circuit to one .v file, remove comments, remove underscores, rename as `topModule.v`
+**STEP 1: `HW2GRAPH.preprocess(path/to/HW/Circuit)`** - flatten all .v files of the HW circuit to one .v file, remove comments, remove underscores, rename as `topModule.v`
 
 ⬇️
 
-**`HW2GRAPH.process(path/to/topModule.v)`**  - generate AST/CFG/DFG (NetworkX object) of the `topModule.v` using Pyverilog functions.
+**STEP 2: `HW2GRAPH.process(path/to/topModule.v)`**  - generate AST/CFG/DFG (NetworkX object) of the `topModule.v` using Pyverilog functions.
 
 ⬇️
 
-**`DataProcessor.process(NetworkX-Object)`** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
+**STEP 3: `DataProcessor.process(NetworkX-Object)`** - normalize the graph and create node-feature vectors `X` and adjacency matrix `A`
 
 
-I converted the following simple circuit to graph using HW2VEC:
+In **Step 1**, I gave the following simple circuit (for conversion to **DFG**) as input to HW2VEC:
 
 ```verilog
 module lol (  input a,  
@@ -960,6 +960,35 @@ module lol (  input a,
     //assign out = a & b;
   end  
 endmodule
+```
+
+The output of Step 1 is the following file:
+
+```verilog
+module top (  input a,  
+                  input b,  
+                  
+                  output out);  
+  
+    always @ (a or b) begin  
+    out= a & b;
+    
+  end  
+endmodule
+```
+**YOU CAN SEE THE COMMENTS IN THE INPUT ARE NOT PRESENT IN THE OUTPUT FILE.**
+
+The output of **Step 2** is the following DFG:
+
+```python
+Nodes: 
+ ['top._rn0_out_graphrename_0', 'And_graphrename_1', 'top_a', 'top_b', 'top.out_graphrename_2', 'top__rn0_out']
+
+Edges: 
+ [('top._rn0_out_graphrename_0', 'And_graphrename_1'), ('And_graphrename_1', 'top_a'), ('And_graphrename_1', 'top_b'), ('top.out_graphrename_2', 'top__rn0_out')]
+
+Adjacency: 
+ {'top._rn0_out_graphrename_0': {'And_graphrename_1': {}}, 'And_graphrename_1': {'top_a': {}, 'top_b': {}}, 'top_a': {}, 'top_b': {}, 'top.out_graphrename_2': {'top__rn0_out': {}}, 'top__rn0_out': {}}
 ```
 
 </details>
