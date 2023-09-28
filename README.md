@@ -1094,6 +1094,6 @@ endmodule
 
 ## Workflow of Pyverilog
 
-**Verilog HDL code (RTL)** <span style="color:red"> ------Parser-----> </span> **AST (Abstract Syntax Tree)** <span style="color:red"> ------Dataflow Analyser-----> </span> **DFG** <span style="color:red"> ------Controlflow Analyser-----> </span> **CFG**
+**Verilog HDL code (RTL)** <span style="color:red">------Parser-----></span> **AST (Abstract Syntax Tree)** <span style="color:red"> ------Dataflow Analyser-----> </span> **DFG** <span style="color:red"> ------Controlflow Analyser-----> </span> **CFG**
 
 </details>
