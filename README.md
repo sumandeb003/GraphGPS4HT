@@ -1085,4 +1085,15 @@ endmodule
 
 </details>
 
+<details>
+<summary> 
+  
+### Update as of Oct 2, 2023 
 
+</summary>
+
+## Workflow of Pyverilog
+
+**Verilog HDL code (RTL)** <span style="color:red"> ------Parser-----> </span> **AST (Abstract Syntax Tree)** <span style="color:red"> ------Dataflow Analyser-----> </span> **DFG** <span style="color:red"> ------Controlflow Analyser-----> </span> **CFG**
+
+</details>
