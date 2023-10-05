@@ -1101,7 +1101,7 @@ My understanding of GNN after investigating into the code of HW2VEC tool:
 
 Assume you have a small graph with 3 nodes and 2 edges. Here's a visual representation:
 
-Copy code
+
 **Node 1** 
    |
 **Node 2** — **Node 3**
@@ -1125,6 +1125,7 @@ This edge_index means there's an edge from Node 1 to Node 2 and another edge fro
 Now, let's walk through the processing loop for a single hypothetical layer:
 
 **Graph Convolution:**
+
 Let's assume the graph convolution operation of the layer simply averages the features of the neighboring nodes. (Note: Real GNN layers would have more complex operations involving weights, biases, etc.)
 
 Node 1 has only Node 2 as its neighbor.
@@ -1140,11 +1141,13 @@ x = \[
 \]
 
 **ReLU Activation:**
+
 After applying the ReLU activation, any negative value in x becomes 0.
 
 The updated x remains the same in this example since there are no negative values.
 
 **Dropout:**
+
 Let's assume self.config.dropout = 0.5, meaning there's a 50% chance each feature is set to 0.
 
 After applying dropout (randomly), x might look like:
