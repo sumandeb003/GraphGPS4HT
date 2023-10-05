@@ -1099,7 +1099,7 @@ endmodule
 
 **Verilog HDL code (RTL)** <span style="color:red">------Parser-----></span> **AST (Abstract Syntax Tree)** <span style="color:red"> ------Dataflow Analyser-----> </span> **DFG** <span style="color:red"> ------Controlflow Analyser-----> </span> **CFG**
 
-## Understanding of GNN training  by HW2VEC:
+## Understanding GNN training in HW2VEC:
 
 I investigated the code of HW2VEC tool to understand its GNN training. The purpose was to get answer to my following curiosities:
 
