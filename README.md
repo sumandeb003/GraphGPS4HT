@@ -1106,22 +1106,27 @@ Assume you have a small graph with 3 nodes and 2 edges. Here's a visual represen
 Let's set the initial node features in x and the edges in edge_index:
 
 **Node features** (3 nodes x 2 features per node)
-x = \[
-    \[0.5, -0.5\],  # Features for Node 1
+
+```python
+x = [
+    [0.5, -0.5],  # Features for Node 1
     
-    \[0.3,  0.3\],  # Features for Node 2
+    [0.3,  0.3],  # Features for Node 2
     
-    \[-0.2, 0.7\]   # Features for Node 3
-\]
+    [-0.2, 0.7]   # Features for Node 3
+]
+```
 
 **edge_index:** a 2xN matrix, where N is the number of edges.
 The first row represents the source nodes, and the second row represents the target nodes.
 
-edge_index = \[
-    \[0, 1\],  # Source nodes
+```python
+edge_index = [
+    [0, 1],  # Source nodes
     
-    \[1, 2\]   # Target nodes
-\]
+    [1, 2]   # Target nodes
+]
+```
 
 This `edge_index` means there's an edge from Node 1 to Node 2 and another edge from Node 2 to Node 3.
 
@@ -1139,14 +1144,15 @@ Node 3 has only Node 2 as its neighbor.
 
 The updated `x` after this operation might look like:
 
-
-x = \[
-    \[0.3,  0.3\],   # Average of Node 1 and its neighbor Node 2
+```python
+x = [
+    [0.3,  0.3],   # Average of Node 1 and its neighbor Node 2
     
-    \[0.2,  0.166\], # Average of Node 2, Node 1, and Node 3
+    [0.2,  0.166], # Average of Node 2, Node 1, and Node 3
     
-    \[0.3,  0.3\]    # Average of Node 3 and its neighbor Node 2
-\]
+    [0.3,  0.3]    # Average of Node 3 and its neighbor Node 2
+]
+```
 
 **ReLU Activation:**
 
@@ -1160,14 +1166,16 @@ Let's assume self.config.dropout = 0.5, meaning there's a 50% chance each featur
 
 After applying dropout (randomly), x might look like:
 
+```python
+x = [    
+    [0.3,  0],  
+    
+    [0,  0.166],
+    
+    [0.3,  0]
+]
+```
 
-x = \[
-    \[0.3,  0\],  
-    
-    \[0,  0.166\],
-    
-    \[0.3,  0\]
-\]
 (Note: The exact values that get zeroed out will vary due to the randomness of dropout.)
 
 Now, if there were more layers in self.layers, this updated x would be used as input for the next layer and processed similarly.
