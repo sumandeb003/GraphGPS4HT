@@ -1128,7 +1128,7 @@ x = [
 ]
 ```
 
-**Note:** If the node features (or edge features) are categorical or discrete, the features need to be one-hot encoded. The primary goal of one-hot encoding in this context is to convert discrete, categorical features into a format that can be more easily utilized by machine learning models, especially neural networks. Over time, with graph neural network training, these (initial) one-hot vectors can evolve into dense embeddings that capture the network's topology and node relationships.
+**Note:** If the node features (or edge features) are categorical or discrete, the features need to be one-hot encoded. The primary goal of one-hot encoding in this context is to convert discrete, categorical features into a format that can be more easily utilized by machine learning models, especially neural networks. Over time, with graph neural network training, these (initial) one-hot vectors can evolve into dense embeddings that capture the network's topology and node relationships. For large-scale graphs, directly using one-hot vectors might not be memory efficient. 
 
 **`edge_index`:** a 2xN matrix, where N is the number of edges.
 The first row represents the source nodes, and the second row represents the target nodes.
