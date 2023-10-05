@@ -1103,7 +1103,8 @@ I investigated the code of HW2VEC tool to understand its GNN training:
 Assume you have a small graph with 3 nodes and 2 edges. Here's a visual representation:
 
 **Node 1** — **Node 2** — **Node 3**
-Let's set the initial node features in x and the edges in edge_index:
+
+Let's set the initial node features in `x` and the edges in `edge_index`:
 
 **Node features** (3 nodes x 2 features per node)
 
@@ -1117,7 +1118,7 @@ x = [
 ]
 ```
 
-**edge_index:** a 2xN matrix, where N is the number of edges.
+**`edge_index`:** a 2xN matrix, where N is the number of edges.
 The first row represents the source nodes, and the second row represents the target nodes.
 
 ```python
