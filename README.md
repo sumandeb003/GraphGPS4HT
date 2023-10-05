@@ -1118,6 +1118,8 @@ x = [
 ]
 ```
 
+**Note:** If the node features (or edge features) are categorical or discrete, the features need to be one-hot encoded. The primary goal of one-hot encoding in this context is to convert discrete, categorical features into a format that can be more easily utilized by machine learning models, especially neural networks.
+
 **`edge_index`:** a 2xN matrix, where N is the number of edges.
 The first row represents the source nodes, and the second row represents the target nodes.
 
@@ -1133,7 +1135,7 @@ This `edge_index` means there's an edge from Node 1 to Node 2 and another edge f
 
 Now, let's walk through the processing loop for a single hypothetical layer:
 
-**Graph Convolution:**
+**Step 1 - Graph Convolution:** Message passing, aggregating and updating.
 
 Let's assume the graph convolution operation of the layer simply averages the features of the neighboring nodes. (Note: Real GNN layers would have more complex operations involving weights, biases, etc.)
 
@@ -1147,21 +1149,31 @@ The updated `x` after this operation might look like:
 
 ```python
 x = [
-    [0.3,  0.3],   # Average of Node 1 and its neighbor Node 2
+    [0.4,  -0.1],   # Average of Node 1 and its neighbor Node 2
     
-    [0.2,  0.166], # Average of Node 2, Node 1, and Node 3
+    [0.3,  0.2], # Average of Node 2, Node 1, and Node 3
     
-    [0.3,  0.3]    # Average of Node 3 and its neighbor Node 2
+    [0.05,  0.5]    # Average of Node 3 and its neighbor Node 2
 ]
 ```
 
-**ReLU Activation:**
+**Step 2 - ReLU Activation:**
 
 After applying the ReLU activation, any negative value in x becomes 0.
 
-The updated x remains the same in this example since there are no negative values.
+The updated `x` after this operation might look like:
 
-**Dropout:**
+```python
+x = [
+    [0.4,  0.0],   # Average of Node 1 and its neighbor Node 2
+    
+    [0.3,  0.2], # Average of Node 2, Node 1, and Node 3
+    
+    [0.05,  0.5]    # Average of Node 3 and its neighbor Node 2
+]
+```
+
+**Step 3 - Dropout:**
 
 Let's assume self.config.dropout = 0.5, meaning there's a 50% chance each feature is set to 0.
 
@@ -1169,11 +1181,11 @@ After applying dropout (randomly), x might look like:
 
 ```python
 x = [    
-    [0.3,  0],  
+    [0.4,  0],  
     
-    [0,  0.166],
+    [0,  0.2],
     
-    [0.3,  0]
+    [0.05,  0]
 ]
 ```
 
@@ -1183,15 +1195,17 @@ Now, if there were more layers in self.layers, this updated x would be used as i
 
 This example simplifies many details for the sake of illustration, but it captures the essence of the loop's operations. In real-world GNNs, the convolution operation would be more complex, involving learnable parameters, different aggregation mechanisms, etc.
 
-**Readout:**
+**Step 4 - Readout:** Only in graph-level classification.
 
 To perform the readout operation, we'll pool the node features to obtain a single graph-level feature representation. Given our last `x`:
 
 ```python
-x = [
-    [0.3,  0],  
-    [0,  0.166],
-    [0.3,  0]
+x = [    
+    [0.4,  0],  
+    
+    [0,  0.2],
+    
+    [0.05,  0]
 ]
 ```
 
@@ -1202,7 +1216,7 @@ Let's perform each type of readout operation:
 Result:
 
 ```python
-[0.3, 0.166]
+[0.4, 0.2]
 ```
 
 *Mean Pooling*: Compute the mean of each feature across all nodes.
@@ -1210,8 +1224,8 @@ Result:
 Result:
 
 ```python
-[(0.3 + 0 + 0.3) / 3, (0 + 0.166 + 0) / 3]
-= [0.2, 0.055]
+[(0.4 + 0 + 0.05) / 3, (0 + 0.2 + 0) / 3]
+= [0.15, 0.066]
 ```
 
 *Add Pooling*: Sum up the features of all nodes.
@@ -1219,17 +1233,19 @@ Result:
 Result:
 
 ```python
-[0.3 + 0 + 0.3, 0 + 0.166 + 0]
-= [0.6, 0.166]
+[0.4 + 0 + 0.05, 0 + 0.2 + 0]
+= [0.45, 0.2]
 ```
 
 Each of these results is a single vector, representing the entire graph. Depending on the task at hand, one type of pooling might work better than the others. The choice often depends on experimentation and the nature of the data and problem.
 
 In real-world applications, this graph-level representation can be used as input to other layers or for tasks such as graph classification, where each entire graph is associated with a single label.
 
-training:
+**Step 5 - Input the graph-level feature-vector to MLP for training or testing**
 
-convert node-level feature to one-hot vectors --> pass the one-hot coded feature vectors through the GNN (updates the node features 'x' by passing messages (node features) from the neighbours according to the edges defined by 'edge_index' and then aggregating them and then updating the local node feature) --> do readout (=max of a feature value across all nodes/add or take mean of all the feature values of all the nodes) to obtain a graph-level feature vector --> input the graph-level feature-vector to MLP --> forward pass through MLP --> output from MLP --> loss calculation 
+**Step 6 - Output from MLP**
+
+**Step 7 - Loss Calculation**
 
 
 </details>
