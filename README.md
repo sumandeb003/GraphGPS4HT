@@ -1183,4 +1183,53 @@ Now, if there were more layers in self.layers, this updated x would be used as i
 
 This example simplifies many details for the sake of illustration, but it captures the essence of the loop's operations. In real-world GNNs, the convolution operation would be more complex, involving learnable parameters, different aggregation mechanisms, etc.
 
+**Readout:**
+
+To perform the readout operation, we'll pool the node features to obtain a single graph-level feature representation. Given our last `x`:
+
+```python
+x = [
+    [0.3,  0],  
+    [0,  0.166],
+    [0.3,  0]
+]
+```
+
+Let's perform each type of readout operation:
+
+*Max Pooling*: Take the maximum value of each feature across all nodes.
+
+Result:
+
+```python
+[0.3, 0.166]
+```
+
+*Mean Pooling*: Compute the mean of each feature across all nodes.
+
+Result:
+
+```python
+[(0.3 + 0 + 0.3) / 3, (0 + 0.166 + 0) / 3]
+= [0.2, 0.055]
+```
+
+*Add Pooling*: Sum up the features of all nodes.
+
+Result:
+
+```python
+[0.3 + 0 + 0.3, 0 + 0.166 + 0]
+= [0.6, 0.166]
+```
+
+Each of these results is a single vector, representing the entire graph. Depending on the task at hand, one type of pooling might work better than the others. The choice often depends on experimentation and the nature of the data and problem.
+
+In real-world applications, this graph-level representation can be used as input to other layers or for tasks such as graph classification, where each entire graph is associated with a single label.
+
+training:
+
+convert node-level feature to one-hot vectors --> pass the one-hot coded feature vectors through the GNN (updates the node features 'x' by passing messages (node features) from the neighbours according to the edges defined by 'edge_index' and then aggregating them and then updating the local node feature) --> do readout (=max of a feature value across all nodes/add or take mean of all the feature values of all the nodes) to obtain a graph-level feature vector --> input the graph-level feature-vector to MLP --> forward pass through MLP --> output from MLP --> loss calculation 
+
+
 </details>
