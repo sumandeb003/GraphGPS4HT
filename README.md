@@ -1,4 +1,4 @@
-[](WIP.jpeg)
+<img title="This Week's Update" alt="Alt text" src="WIP.jpeg">
 
 
 # GraphGPS4HT
