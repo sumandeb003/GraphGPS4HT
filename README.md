@@ -1195,7 +1195,7 @@ Now, if there were more layers in self.layers, this updated x would be used as i
 
 This example simplifies many details for the sake of illustration, but it captures the essence of the loop's operations. In real-world GNNs, the convolution operation would be more complex, involving learnable parameters, different aggregation mechanisms, etc.
 
-**Step 4 - Readout:** Only in graph-level classification.
+**Step 4 - Readout:** Done only for graph-level classification.
 
 To perform the readout operation, we'll pool the node features to obtain a single graph-level feature representation. Given our last `x`:
 
