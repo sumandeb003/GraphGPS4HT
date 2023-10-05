@@ -1096,4 +1096,69 @@ endmodule
 
 **Verilog HDL code (RTL)** <span style="color:red">------Parser-----></span> **AST (Abstract Syntax Tree)** <span style="color:red"> ------Dataflow Analyser-----> </span> **DFG** <span style="color:red"> ------Controlflow Analyser-----> </span> **CFG**
 
+
+My understanding of GNN after investigating into the code of HW2VEC tool:
+
+Assume you have a small graph with 3 nodes and 2 edges. Here's a visual representation:
+
+Copy code
+**Node 1** 
+   |
+**Node 2** — **Node 3**
+Let's set the initial node features in x and the edges in edge_index:
+
+Node features (3 nodes x 2 features per node)
+x = \[
+    \[0.5, -0.5\],  # Features for Node 1
+    \[0.3,  0.3\],  # Features for Node 2
+    \[-0.2, 0.7\]   # Features for Node 3
+\]
+
+edge_index: a 2xN matrix, where N is the number of edges.
+The first row represents the source nodes, and the second row represents the target nodes.
+edge_index = \[
+    \[0, 1\],  # Source nodes
+    \[1, 2\]   # Target nodes
+\]
+This edge_index means there's an edge from Node 1 to Node 2 and another edge from Node 2 to Node 3.
+
+Now, let's walk through the processing loop for a single hypothetical layer:
+
+**Graph Convolution:**
+Let's assume the graph convolution operation of the layer simply averages the features of the neighboring nodes. (Note: Real GNN layers would have more complex operations involving weights, biases, etc.)
+
+Node 1 has only Node 2 as its neighbor.
+Node 2 has Node 1 and Node 3 as its neighbors.
+Node 3 has only Node 2 as its neighbor.
+The updated x after this operation might look like:
+
+
+x = \[
+    \[0.3,  0.3\],   # Average of Node 1 and its neighbor Node 2
+    \[0.2,  0.166\], # Average of Node 2, Node 1, and Node 3
+    \[0.3,  0.3\]    # Average of Node 3 and its neighbor Node 2
+\]
+
+**ReLU Activation:**
+After applying the ReLU activation, any negative value in x becomes 0.
+
+The updated x remains the same in this example since there are no negative values.
+
+**Dropout:**
+Let's assume self.config.dropout = 0.5, meaning there's a 50% chance each feature is set to 0.
+
+After applying dropout (randomly), x might look like:
+
+
+x = \[
+    \[0.3,  0\],  
+    \[0,  0.166\],
+    \[0.3,  0\]
+\]
+(Note: The exact values that get zeroed out will vary due to the randomness of dropout.)
+
+Now, if there were more layers in self.layers, this updated x would be used as input for the next layer and processed similarly.
+
+This example simplifies many details for the sake of illustration, but it captures the essence of the loop's operations. In real-world GNNs, the convolution operation would be more complex, involving learnable parameters, different aggregation mechanisms, etc.
+
 </details>
