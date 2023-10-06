@@ -1103,11 +1103,11 @@ endmodule
 
 I investigated the code of HW2VEC tool to understand its GNN training. The purpose was to get answer to my following curiosities:
 
-1. Do I need to one-hot encode the node features before feeding the graphs to GraphGPS?
+1. **Do I need to one-hot encode the node features before feeding the graphs to GraphGPS?**
 
-2. Since our HT detection would be a graph-level classification task, does my dataset need to have the graph-level feature vector for each graph?
+2. **Since our HT detection would be a graph-level classification task, does my dataset need to have the graph-level feature vector for each graph?**
 
-3. Do the graphs in my dataset need to have graph-level labels prior to feeding them to GraphGPS?
+3. **Do the graphs in my dataset need to have graph-level labels prior to feeding them to GraphGPS?**
 
 
 Assume you have a small graph with 3 nodes and 2 edges. Here's a visual representation:
