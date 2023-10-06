@@ -1099,6 +1099,10 @@ endmodule
 
 **Verilog HDL code (RTL)** <span style="color:red">------Parser-----></span> **AST (Abstract Syntax Tree)** <span style="color:red"> ------Dataflow Analyser-----> </span> **DFG** <span style="color:red"> ------Controlflow Analyser-----> </span> **CFG**
 
+**The tool GAINESIS takes in GLNs and inserts HTs in them. The benchmarks in TrustHub are RTLs. RTLs have to be converted to GLNs using Vivado or some other compiler tool and then fed to GAINESIS.**
+
+**At the end, we want graphs from these RTLs or GLNs. Pyverilog can produce graphs from RTLs only. So, GAINESIS won't be useful here. We will need some tool that can convert GLNs to graphs.**
+
 ## Understanding GNN training in HW2VEC:
 
 I investigated the code of HW2VEC tool to understand its GNN training. The purpose was to get answer to my following curiosities:
