@@ -5,6 +5,7 @@
 3. Not all the samples in TrustHub could be converted to graphs using the Pyverilog-based circuit-to-graph conversion mechanism of the [HW2VEC](https://github.com/AICPS/hw2vec) tool. This is because:
 
 i. Some are VHDL RTLs and some are layouts. Hence, incompatible with Pyverilog.
+
 ii. Some are gate-level netlists that have been synthesized for FPGA. So, the netlist contains gates that can't be recognised by Pyverilog.
 
 
