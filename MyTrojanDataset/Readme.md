@@ -8,7 +8,7 @@ i. Some are VHDL RTLs and some are layouts. Hence, incompatible with Pyverilog.
 ii. Some are gate-level netlists that have been synthesized for FPGA. So, the netlist contains gates that can't be recognised by Pyverilog.
 
 
-4. The Trojan-free circuits are:
+4. The Trojan-free circuits in my dataset are:
 
 `adder4bit_1`  
 `c432-NC2360`  
@@ -144,9 +144,11 @@ ii. Some are gate-level netlists that have been synthesized for FPGA. So, the ne
 
 
 
-5. The Trojan-ed circuits are:
+5. The Trojan-ed circuits in my dataset are:
 
 `AES-T100`   `AES-T1300`  `AES-T1700`  `AES-T2000`  `AES-T2500`  `AES-T300`  `AES-T700`      `PIC16F84-T100`  `RS232-T100`   `RS232-T2300`  `RS232-T500`  `RS232-T900`     `vectoradd_TP3`
 `AES-T1000`  `AES-T1400`  `AES-T1800`  `AES-T2100`  `AES-T2600`  `AES-T400`  `AES-T800`      `PIC16F84-T200`  `RS232-T200`   `RS232-T2400`  `RS232-T600`  `RS232-T901`     `wb_conmax-T100`
 `AES-T1100`  `AES-T1500`  `AES-T1900`  `AES-T2300`  `AES-T2700`  `AES-T500`  `AES-T900`      `PIC16F84-T300`  `RS232-T2100`  `RS232-T300`   `RS232-T700`  `vectoradd_TP1`
 `AES-T1200`  `AES-T1600`  `AES-T200`   `AES-T2400`  `AES-T2800`  `AES-T600`  `blocking-TP1`  `PIC16F84-T400`  `RS232-T2200`  `RS232-T400`   `RS232-T800`  `vectoradd_TP2`
+
+6. I am currently debugging few more RTLs to include them in my dataset.
