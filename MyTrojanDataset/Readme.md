@@ -119,17 +119,17 @@ The Trojan-free circuits are:
 `xtea`
 `c432-CY290`   
 `c499-NR1550` 
-`c880-NR3080 ` 
+`c880-NR3080` 
 `encoder8to3_4`
-`c432-CY530   `
-`c499-NR1870  `
-`c880-NR4360  `
+`c432-CY530`
+`c499-NR1870`
+`c880-NR4360`
 `encoder8to3_5`
-`c432-NC1400  `
-`c499-NR2510  `
-`c880-NS2120  `
+`c432-NC1400`
+`c499-NR2510`
+`c880-NS2120`
 `encoder8to3_6`
-`c432-NC1720  `
-`c499-NS1550 `
-`c880-NS2440  `
+`c432-NC1720`
+`c499-NS1550`
+`c880-NS2440`
 `function`
