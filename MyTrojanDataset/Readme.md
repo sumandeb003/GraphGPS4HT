@@ -4,7 +4,7 @@ This dataset has 49 Trojan-ed samples sourced from [TrustHub](https://trust-hub.
 
 Not all the samples in TrustHub could be converted to graphs using the Pyverilog-based circuit-to-graph conversion mechanism of the [HW2VEC](https://github.com/AICPS/hw2vec) tool. This is because:
 
-1. Some are written in VHDL RTLs and some are layouts. Hence, incompatible with Pyverilog.
+1. Some are VHDL RTLs and some are layouts. Hence, incompatible with Pyverilog.
 2. Some are gate-level netlists that have been synthesized for FPGA. So, the netlist contains gates that can't be recognised by Pyverilog.
 
 
