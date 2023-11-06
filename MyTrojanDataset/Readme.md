@@ -1,6 +1,6 @@
-1. This dataset has 131 Trojan-free circuits sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan)  and [Pyverilog](https://github.com/PyHDI/Pyverilog). 
+1. This dataset has 131 Trojan-free circuits (in `TjFree.zip`) sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan)  and [Pyverilog](https://github.com/PyHDI/Pyverilog). 
 
-2. This dataset has 50 Trojan-ed samples sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan) and [MyTrojans](https://github.com/sumandeb003/Ariane_Trojans_for_Pyverilog).
+2. This dataset has 50 Trojan-ed samples (in `TjIn.zip`) sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan) and [MyTrojans](https://github.com/sumandeb003/Ariane_Trojans_for_Pyverilog).
 
 3. Not all the samples in TrustHub could be converted to graphs using the Pyverilog-based circuit-to-graph conversion mechanism of the [HW2VEC](https://github.com/AICPS/hw2vec) tool. This is because:
 
