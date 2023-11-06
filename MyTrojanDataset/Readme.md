@@ -1,14 +1,14 @@
-This dataset has 131 Trojan-free circuits sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan)  and [Pyverilog](https://github.com/PyHDI/Pyverilog). 
+1. This dataset has 131 Trojan-free circuits sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan)  and [Pyverilog](https://github.com/PyHDI/Pyverilog). 
 
-This dataset has 49 Trojan-ed samples sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan) and [MyTrojans](https://github.com/sumandeb003/Ariane_Trojans_for_Pyverilog).
+2. This dataset has 50 Trojan-ed samples sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan) and [MyTrojans](https://github.com/sumandeb003/Ariane_Trojans_for_Pyverilog).
 
-Not all the samples in TrustHub could be converted to graphs using the Pyverilog-based circuit-to-graph conversion mechanism of the [HW2VEC](https://github.com/AICPS/hw2vec) tool. This is because:
+3. Not all the samples in TrustHub could be converted to graphs using the Pyverilog-based circuit-to-graph conversion mechanism of the [HW2VEC](https://github.com/AICPS/hw2vec) tool. This is because:
 
-1. Some are VHDL RTLs and some are layouts. Hence, incompatible with Pyverilog.
-2. Some are gate-level netlists that have been synthesized for FPGA. So, the netlist contains gates that can't be recognised by Pyverilog.
+i. Some are VHDL RTLs and some are layouts. Hence, incompatible with Pyverilog.
+ii. Some are gate-level netlists that have been synthesized for FPGA. So, the netlist contains gates that can't be recognised by Pyverilog.
 
 
-The Trojan-free circuits are:
+4. The Trojan-free circuits are:
 
 `adder4bit_1`  
 `c432-NC2360`  
@@ -141,3 +141,12 @@ The Trojan-free circuits are:
 `c499-NS1550`
 `c880-NS2440`
 `function`
+
+
+
+5. The Trojan-ed circuits are:
+
+`AES-T100   AES-T1300  AES-T1700  AES-T2000  AES-T2500  AES-T300  AES-T700      PIC16F84-T100  RS232-T100   RS232-T2300  RS232-T500  RS232-T900     vectoradd_TP3
+AES-T1000  AES-T1400  AES-T1800  AES-T2100  AES-T2600  AES-T400  AES-T800      PIC16F84-T200  RS232-T200   RS232-T2400  RS232-T600  RS232-T901     wb_conmax-T100
+AES-T1100  AES-T1500  AES-T1900  AES-T2300  AES-T2700  AES-T500  AES-T900      PIC16F84-T300  RS232-T2100  RS232-T300   RS232-T700  vectoradd_TP1
+AES-T1200  AES-T1600  AES-T200   AES-T2400  AES-T2800  AES-T600  blocking-TP1  PIC16F84-T400  RS232-T2200  RS232-T400   RS232-T800  vectoradd_TP2`
