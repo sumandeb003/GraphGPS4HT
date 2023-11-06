@@ -1,4 +1,7 @@
-There are 131 Trojan-free and 49 Trojan-ed samples here.
+There are 131 Trojan-free circuits sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan)  and [Pyverilog](https://github.com/PyHDI/Pyverilog). 
+
+There are 49 Trojan-ed samples sourced from [TrustHub](https://trust-hub.org/#/benchmarks/chip-level-trojan) and [MyTrojans](https://github.com/sumandeb003/Ariane_Trojans_for_Pyverilog).
+
 
 The Trojan-free circuits are:
 
