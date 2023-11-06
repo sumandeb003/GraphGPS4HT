@@ -104,18 +104,18 @@ The Trojan-free circuits are:
 `syncRAM`
 `c432-CS640`   
 `c499-NC1550`  
-`c880-NC4360 ` 
+`c880-NC4360` 
 `encoder8to3_1`  
 `vectoradd`
 `c432-CY1020`  
-`c499-NC1870 ` 
-`c880-NR2120  `
-`encoder8to3_2 ` 
+`c499-NC1870` 
+`c880-NR2120`
+`encoder8to3_2` 
 `vga`
 `c432-CY2000`  
-`c499-NC2510 ` 
-`c880-NR2440  `
-`encoder8to3_3 `  
+`c499-NC2510` 
+`c880-NR2440`
+`encoder8to3_3`  
 `xtea`
 `c432-CY290`   
 `c499-NR1550` 
