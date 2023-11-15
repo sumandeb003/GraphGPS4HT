@@ -1284,9 +1284,10 @@ In real-world applications, this graph-level representation can be used as input
 
 1. I spent most of my time on gathering trojan samples for the training and testing of GraphGPS.
 2. Many of the circuits in TrustHub couldn't be converted to graphs because of any of the following reasons:
-     i. They are in **VHDL**
-     ii. They are **layouts**
-     iii. They are gate-level netlists (Verilog) having gates that can't be recognized by the Verilog-to-graph conversion tool.
+    - They are in **VHDL**
+    - They are **layouts**
+    - They are gate-level netlists (Verilog) having gates that can't be recognized by the Verilog-to-graph conversion tool.
+ 
 4. For Verilgo netlists with unrecognizable gates
 
 
