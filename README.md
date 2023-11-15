@@ -1274,3 +1274,14 @@ In real-world applications, this graph-level representation can be used as input
 
 
 </details>
+
+<details>
+<summary> 
+  
+### Update as of Nov 15, 2023 
+
+</summary>
+
+**The process for converting circuits to graphs is clear to me now. I am currently converting the HT benchmarks in TrustHub to graphs. I will share the repository of graph benchmarks with trojans as soon as I finish converting all the circuits.**
+
+## Workflow of Pyverilog
