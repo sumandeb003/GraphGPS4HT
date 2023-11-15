@@ -1282,12 +1282,14 @@ In real-world applications, this graph-level representation can be used as input
 
 </summary>
 
-1. I spent most of my time on gathering trojan samples for the training and testing of GraphGPS.
+1. I spent most of my time on gathering trojan samples and fixing them so that the can be converted to graphs for the training and the testing of GraphGPS.
 2. Many of the circuits in TrustHub couldn't be converted to graphs because of any of the following reasons:
     - They are in **VHDL**
     - They are **layouts**
     - They are gate-level netlists (Verilog) having gates that can't be recognized by the Verilog-to-graph conversion tool.
+    - They are unflattened Verilog designs with a `define.v` file and they use it's definitions in the constituent files
+    - They have miscellaneous issues related to Verilog syntax. 
  
-4. For Verilgo netlists with unrecognizable gates
+4. So far, I have gathered 132 Trojan-free samples and 51 Trojan-inserted samples.
 
 
