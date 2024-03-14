@@ -1341,7 +1341,7 @@ In real-world applications, this graph-level representation can be used as input
 
   **Step 5a: `model.to(cfg.device)`** moves the model to the specified computing device (e.g., CPU or GPU).
   
-  **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** Create an instance of `GraphTrainer`, passing the configuration and class weights (obtained from `data_proc.get_class_weights`) as arguments.
+  **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** Create an instance of `GraphTrainer`, passing the configuration and class weights (obtained from `data_proc.get_class_weights`) as arguments. The method `get_class_weights` calculates the class weights using the `compute_class_weight` function from `sklearn.utils.class_weight`. This function is designed to mitigate the imbalance in the dataset by assigning higher weights to underrepresented classes. The 'balanced' mode automatically assigns weights inversely proportional to class frequencies in the input data. Classes with lower frequencies get higher weights, and vice versa. The `np.unique(training_labels)` call is used to identify all unique classes in the dataset, and `training_labels` is passed again as the list of labels corresponding to each training instance. 
   
   **Step 5c: `trainer.build(model)`** builds the training setup by initializing the optimizer with the model's parameters. 
   
@@ -1356,6 +1356,38 @@ In real-world applications, this graph-level representation can be used as input
   **Step 6c: `trainer.visualize_embeddings(vis_loader, "./")`** visualizes the embeddings of the graphs using the specified data loader and saves the visualizations to the current directory.
 
 This flow describes the overall process of configuring a graph neural network model, preparing the data, training the model, and then evaluating and visualizing the results as outlined in main.py.
+
+2. Consider a scenario where you're working with a graph dataset for molecule classification. The task is to predict whether a molecule is biologically active (class 1) or not (class 0). Let's say the dataset contains:
+
+900 molecules that are not biologically active (class 0)
+100 molecules that are biologically active (class 1)
+
+Without class weights, the model might learn to overwhelmingly predict the majority class (class 0) because doing so would still achieve a high accuracy (90% if it always predicts class 0). However, such a model is not very useful for identifying the much rarer, but potentially more interesting, biologically active molecules.
+
+By applying class weights, you can make the loss for the minority class (class 1) more significant. For instance, if class 0 has a weight of 1, class 1 might be given a weight of 9 (reflecting the inverse ratio of their occurrences). This adjustment tells the model that mistakes made on the minority class are much more costly than those made on the majority class, encouraging the model to improve its predictions for class 1, despite its rarity.
+
+3. In a Graph Neural Network (GNN), different types of layers play specific roles in processing graph-structured data. Let's go through each of the mentioned layers — `GRAPH_CONV`, `GRAPH_POOL`, `GRAPH_READOUT`, and the output layer (a linear transformation)—and explain their functions using example graphs.
+
+**`GRAPH_CONV` (Graph Convolution Layer)**
+    - **Function:** Graph convolution layers are the core of GNNs, designed to update the features of each node by aggregating information from its neighbors. This process effectively captures the local graph topology around each node.
+    - **Example:** Consider a simple graph with three nodes, where each node represents a person and their features might include their interests or attributes. A GRAPH_CONV layer would update the features of each person by aggregating information from their friends (neighbors in the graph), enabling the model to learn complex relationships and patterns within the social network.
+
+GRAPH_POOL (Graph Pooling Layer)
+Function: Graph pooling layers reduce the size of the graph by aggregating nodes together. This can be done in various ways, such as by merging nodes based on their features (TopKPooling) or based on learned cluster assignments (SAGPooling). Pooling layers help in capturing hierarchical structures in the graph and reduce computational complexity for downstream tasks.
+
+Example: In the context of a molecule graph, where nodes represent atoms and edges represent bonds, a GRAPH_POOL layer might merge nodes to form higher-level representations of functional groups or substructures. This enables the GNN to focus on important parts of the molecule for predicting properties like solubility or reactivity.
+
+GRAPH_READOUT (Readout Layer)
+Function: The readout layer aggregates node features across the entire graph to form a single graph-level representation. This is crucial for tasks that require a holistic understanding of the entire graph, such as classifying the graph into categories. Common aggregation functions include summing (global_add_pool), averaging (global_mean_pool), or taking the maximum (global_max_pool) of node features.
+
+Example: For a graph representing a document where nodes are words and edges indicate co-occurrence within sentences, a GRAPH_READOUT layer could aggregate word features to form a document-level representation. This representation could then be used to classify the document by topic or sentiment.
+
+Output Layer (Linear Transformation)
+Function: The output layer in a GNN, typically a linear layer (fully connected layer), is used to map the graph-level representation (or node-level, depending on the task) to the target output space, such as classes for classification tasks or continuous values for regression tasks. This layer is where the final decision or prediction is made based on the learned representations.
+
+Example: Returning to the molecule graph example, the output layer would take the graph-level representation generated by the preceding layers and output a prediction for a molecular property, such as whether the molecule is likely to be a drug candidate.
+
+In summary, the GRAPH_CONV layers capture local structural information, GRAPH_POOL layers reduce graph size while preserving essential information, GRAPH_READOUT layers aggregate information across the whole graph, and the output layer makes final predictions based on the processed graph data. Together, these components enable GNNs to learn from and make predictions on graph-structured data, which is prevalent in domains like social networks, chemistry, and biology.
 
 </details>
 
