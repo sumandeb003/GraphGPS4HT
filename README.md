@@ -1307,7 +1307,7 @@ In real-world applications, this graph-level representation can be used as input
 
 **Step 1: Import necessary modules and functions**
 
-  **    Step 1a: `import os, sys`** Import os and sys modules, which are standard Python modules used for interacting with the operating system and Python runtime environment, respectively..
+  **Step 1a: `import os, sys`** Import os and sys modules, which are standard Python modules used for interacting with the operating system and Python runtime environment, respectively..
 
   **Step 1b: `sys.path.append(os.path.dirname(sys.path[0]))`** modifies the Python path, so Python will look for modules in the directory one level up from the script's directory. This is typically done to allow importing modules from a parent directory.
 
@@ -1341,11 +1341,11 @@ In real-world applications, this graph-level representation can be used as input
 
   **Step 5a: `model.to(cfg.device)`** moves the model to the specified computing device (e.g., CPU or GPU).
   
-  **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** instantiates a GraphTrainer object with the configuration and class weights obtained from the training graphs.
+  **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** Create an instance of `GraphTrainer`, passing the configuration and class weights (obtained from `data_proc.get_class_weights`) as arguments.
   
-  **Step 5c: `trainer.build(model)`** builds the training setup by associating the model with the trainer and initializing the optimizer.
+  **Step 5c: `trainer.build(model)`** builds the training setup by initializing the optimizer with the model's parameters. 
   
-  **Step 5d: `trainer.train(train_loader, valid_loader)`** starts the training process using the training and validation data loaders.
+  **Step 5d: `trainer.train(train_loader, valid_loader)`** starts training the model using the training and validation DataLoaders.
 
 **Step 6: Evaluate the model and visualize embeddings**
 
