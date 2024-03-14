@@ -1372,19 +1372,19 @@ By applying class weights, you can make the loss for the minority class (class 1
 
 - **Function:** Graph convolution layers are the core of GNNs, designed to update the features of each node by aggregating information from its neighbors. This process effectively captures the local graph topology around each node.
     
-- **Example:** Consider a simple graph with three nodes, where each node represents a person and their features might include their interests or attributes. A GRAPH_CONV layer would update the features of each person by aggregating information from their friends (neighbors in the graph), enabling the model to learn complex relationships and patterns within the social network.
+- **Example:** Consider a simple graph with three nodes, where each node represents a person and their features might include their interests or attributes. A `GRAPH_CONV` layer would update the features of each person by aggregating information from their friends (neighbors in the graph), enabling the model to learn complex relationships and patterns within the social network.
 
 **`GRAPH_POOL` (Graph Pooling Layer)**
 
  - **Function:** Graph pooling layers reduce the size of the graph by aggregating nodes together. This can be done in various ways, such as by merging nodes based on their features (TopKPooling) or based on learned cluster assignments (SAGPooling). Pooling layers help in capturing hierarchical structures in the graph and reduce computational complexity for downstream tasks.
 
- - `**Example:** In the context of a molecule graph, where nodes represent atoms and edges represent bonds, a GRAPH_POOL layer might merge nodes to form higher-level representations of functional groups or substructures. This enables the GNN to focus on important parts of the molecule for predicting properties like solubility or reactivity.
+ - `**Example:** In the context of a molecule graph, where nodes represent atoms and edges represent bonds, a `GRAPH_POOL` layer might merge nodes to form higher-level representations of functional groups or substructures. This enables the GNN to focus on important parts of the molecule for predicting properties like solubility or reactivity.
 
 **`GRAPH_READOUT` (Readout Layer)**
 
- - **Function:** The readout layer aggregates node features across the entire graph to form a single graph-level representation. This is crucial for tasks that require a holistic understanding of the entire graph, such as classifying the graph into categories. Common aggregation functions include summing (global_add_pool), averaging (global_mean_pool), or taking the maximum (global_max_pool) of node features.
+ - **Function:** The readout layer aggregates node features across the entire graph to form a single graph-level representation. This is crucial for tasks that require a holistic understanding of the entire graph, such as classifying the graph into categories. Common aggregation functions include summing (`global_add_pool`), averaging (`global_mean_pool`), or taking the maximum (`global_max_pool`) of node features.
 
- - **Example:** For a graph representing a document where nodes are words and edges indicate co-occurrence within sentences, a GRAPH_READOUT layer could aggregate word features to form a document-level representation. This representation could then be used to classify the document by topic or sentiment.
+ - **Example:** For a graph representing a document where nodes are words and edges indicate co-occurrence within sentences, a `GRAPH_READOUT` layer could aggregate word features to form a document-level representation. This representation could then be used to classify the document by topic or sentiment.
 
 **Output Layer (Linear Transformation)**
 
