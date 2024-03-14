@@ -1325,13 +1325,17 @@ In real-world applications, this graph-level representation can be used as input
   
   **Step 3c: `training_loader = DataLoader(training_graphs, shuffle=True, batch_size=cfg.batch_size)`** creates a data loader for the training graphs with shuffling enabled and batch size specified in the configuration.
   
-  **Step 3d:** `valid_loader = DataLoader(test_graphs, shuffle=True, batch_size=1)` creates a data loader for the test graphs with shuffling enabled and a batch size of 1, which is commonly used for evaluation purposes.
+  **Step 3d: `valid_loader = DataLoader(test_graphs, shuffle=True, batch_size=1)`** creates a data loader for the test graphs with shuffling enabled and a batch size of 1, which is commonly used for evaluation purposes.
 
 **Step 4: Configure and initialize the model**
 
-  **Step 4a: `model = GRAPH2VEC(cfg)`** instantiates a GRAPH2VEC model with the configuration settings.
-  
-  **Step 4b:** Checks if a pre-trained model path is specified in the configuration. If so, it loads the model configuration and weights; otherwise, it sets up the model architecture by creating convolutional, pooling, readout, and output layers with specified parameters and adds them to the model.
+  **Step 4a: `model = GRAPH2VEC(cfg)`** Instantiate the `GRAPH2VEC` model with the configuration settings.
+
+  **Step 4b:** Check if a pre-trained model path is provided in the configuration. If it is, load the model configuration and weights from the specified path.
+
+  **Step 4c:** If no pre-trained model is specified, configure the model's layers manually. This includes setting up graph convolution layers (`GRAPH_CONV`), a pooling layer (`GRAPH_POOL`), a readout layer (`GRAPH_READOUT`), and an output layer (a linear transformation).
+
+  **Step 4d:** Ensure the model is compatible with the configured device (e.g., CPU or GPU).
 
 **Step 5: Train the model**
 
