@@ -1298,7 +1298,8 @@ In real-world applications, this graph-level representation can be used as input
 
 <details>
 <summary>
-### Update as of March 14, 2024 
+
+  ### Update as of March 14, 2024 
 
 </summary>
 1.
