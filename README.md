@@ -1296,6 +1296,7 @@ In real-world applications, this graph-level representation can be used as input
 
 </details>
 
+<details>
 <summary>
 ### Update as of March 14, 2024 
 
