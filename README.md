@@ -1304,9 +1304,10 @@ In real-world applications, this graph-level representation can be used as input
   </summary>
 
 1. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
+
 **Step 1:** Import necessary modules and functions
 
-    **Step 1a:** import os, sys imports the os and sys modules to interact with the operating system and use functionalities related to Python runtime environment.
+  **Step 1a:** import os, sys imports the os and sys modules to interact with the operating system and use functionalities related to Python runtime environment.
 
   **Step 1b:** sys.path.append(os.path.dirname(sys.path[0])) modifies the Python path, so Python will look for modules in the directory one level up from the script's directory. This is typically done to allow importing modules from a parent directory.
 
