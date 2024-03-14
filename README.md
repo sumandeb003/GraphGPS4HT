@@ -1357,10 +1357,7 @@ In real-world applications, this graph-level representation can be used as input
 
 This flow describes the overall process of configuring a graph neural network model, preparing the data, training the model, and then evaluating and visualizing the results as outlined in main.py.
 
-2. [**Class Weights:**](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) Consider a scenario where you're working with a graph dataset for molecule classification. The task is to predict whether a molecule is biologically active (class 1) or not (class 0). Let's say the dataset contains:
-
-900 molecules that are not biologically active (class 0)
-100 molecules that are biologically active (class 1)
+2. [**Class Weights:**](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) Consider a scenario where you're working with a graph dataset for molecule classification. The task is to predict whether a molecule is biologically active (class 1) or not (class 0). Let's say the dataset contains 900 molecules that are not biologically active (class 0) and 100 molecules that are biologically active (class 1).
 
 Without class weights, the model might learn to overwhelmingly predict the majority class (class 0) because doing so would still achieve a high accuracy (90% if it always predicts class 0). However, such a model is not very useful for identifying the much rarer, but potentially more interesting, biologically active molecules.
 
