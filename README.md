@@ -1382,9 +1382,9 @@ By applying class weights, you can make the loss for the minority class (class 1
 
 **`GRAPH_READOUT` (Readout Layer)**
 
-**Function:** The readout layer aggregates node features across the entire graph to form a single graph-level representation. This is crucial for tasks that require a holistic understanding of the entire graph, such as classifying the graph into categories. Common aggregation functions include summing (global_add_pool), averaging (global_mean_pool), or taking the maximum (global_max_pool) of node features.
+  - **Function:** The readout layer aggregates node features across the entire graph to form a single graph-level representation. This is crucial for tasks that require a holistic understanding of the entire graph, such as classifying the graph into categories. Common aggregation functions include summing (global_add_pool), averaging (global_mean_pool), or taking the maximum (global_max_pool) of node features.
 
-**Example:** For a graph representing a document where nodes are words and edges indicate co-occurrence within sentences, a GRAPH_READOUT layer could aggregate word features to form a document-level representation. This representation could then be used to classify the document by topic or sentiment.
+   - **Example:** For a graph representing a document where nodes are words and edges indicate co-occurrence within sentences, a GRAPH_READOUT layer could aggregate word features to form a document-level representation. This representation could then be used to classify the document by topic or sentiment.
 
 **Output Layer (Linear Transformation)**
 
