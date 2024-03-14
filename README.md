@@ -1378,7 +1378,7 @@ By applying class weights, you can make the loss for the minority class (class 1
 
  - **Function:** Graph pooling layers reduce the size of the graph by aggregating nodes together. This can be done in various ways, such as by merging nodes based on their features (TopKPooling) or based on learned cluster assignments (SAGPooling). Pooling layers help in capturing hierarchical structures in the graph and reduce computational complexity for downstream tasks.
 
- - `**Example:** In the context of a molecule graph, where nodes represent atoms and edges represent bonds, a `GRAPH_POOL` layer might merge nodes to form higher-level representations of functional groups or substructures. This enables the GNN to focus on important parts of the molecule for predicting properties like solubility or reactivity.
+ - **Example:** In the context of a molecule graph, where nodes represent atoms and edges represent bonds, a `GRAPH_POOL` layer might merge nodes to form higher-level representations of functional groups or substructures. This enables the GNN to focus on important parts of the molecule for predicting properties like solubility or reactivity.
 
 **`GRAPH_READOUT` (Readout Layer)**
 
