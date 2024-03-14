@@ -1307,49 +1307,49 @@ In real-world applications, this graph-level representation can be used as input
 
 **Step 1: Import necessary modules and functions**
 
-  **Step 1a:** `import os, sys` imports the os and sys modules to interact with the operating system and use functionalities related to Python runtime environment.
+  **Step 1a: `import os, sys`** Import os and sys modules, which are standard Python modules used for interacting with the operating system and Python runtime environment, respectively..
 
-  **Step 1b:** `sys.path.append(os.path.dirname(sys.path[0]))` modifies the Python path, so Python will look for modules in the directory one level up from the script's directory. This is typically done to allow importing modules from a parent directory.
+  **Step 1b: `sys.path.append(os.path.dirname(sys.path[0]))`** modifies the Python path, so Python will look for modules in the directory one level up from the script's directory. This is typically done to allow importing modules from a parent directory.
 
 **Step 2: Import custom modules after adjusting the path**
 
-  **Step 2a:** `from hw2vec.config import Config` imports the Config class from a module config located within a package named hw2vec. This class is likely used to configure the experiment's settings.
+  **Step 2a: `from hw2vec.config import Config`** imports the Config class from a module config located within a package named hw2vec. This class is likely used to configure the experiment's settings.
   
-  **Step 2b:** `import models` imports the models defined in models.py, making the classes GRAPH2VEC, GRAPH_CONV, GRAPH_POOL, and GRAPH_READOUT available in main.py.
+  **Step 2b: `import models`** imports the models defined in models.py, making the classes GRAPH2VEC, GRAPH_CONV, GRAPH_POOL, and GRAPH_READOUT available in main.py.
 
 **Step 3: Initialize configuration and prepare data**
 
-  **Step 3a:** `cfg = Config(sys.argv[1:])` initializes a configuration object cfg by passing command-line arguments (excluding the script name). This object holds configuration settings like data paths, model parameters, etc.
+  **Step 3a: `cfg = Config(sys.argv[1:])`** initializes a configuration object cfg by passing command-line arguments (excluding the script name). This object holds configuration settings like data paths, model parameters, etc.
+
+  **Step 3b: `training_graphs, test_graphs = data_proc.split_dataset(ratio=cfg.ratio, seed=cfg.seed, dataset=all_graphs)`** calls a function split_dataset from an assumed data_proc module to split all_graphs into training and test sets based on a specified ratio and seed from the configuration.
   
-  **Step 3b:** `training_graphs, test_graphs = data_proc.split_dataset(ratio=cfg.ratio, seed=cfg.seed, dataset=all_graphs)` calls a function split_dataset from an assumed data_proc module to split all_graphs into training and test sets based on a specified ratio and seed from the configuration.
-  
-  **Step 3c:** `training_loader = DataLoader(training_graphs, shuffle=True, batch_size=cfg.batch_size)` creates a data loader for the training graphs with shuffling enabled and batch size specified in the configuration.
+  **Step 3c: `training_loader = DataLoader(training_graphs, shuffle=True, batch_size=cfg.batch_size)`** creates a data loader for the training graphs with shuffling enabled and batch size specified in the configuration.
   
   **Step 3d:** `valid_loader = DataLoader(test_graphs, shuffle=True, batch_size=1)` creates a data loader for the test graphs with shuffling enabled and a batch size of 1, which is commonly used for evaluation purposes.
 
 **Step 4: Configure and initialize the model**
 
-  **Step 4a:** `model = GRAPH2VEC(cfg)` instantiates a GRAPH2VEC model with the configuration settings.
+  **Step 4a: `model = GRAPH2VEC(cfg)`** instantiates a GRAPH2VEC model with the configuration settings.
   
   **Step 4b:** Checks if a pre-trained model path is specified in the configuration. If so, it loads the model configuration and weights; otherwise, it sets up the model architecture by creating convolutional, pooling, readout, and output layers with specified parameters and adds them to the model.
 
 **Step 5: Train the model**
 
-  **Step 5a:** `model.to(cfg.device)` moves the model to the specified computing device (e.g., CPU or GPU).
+  **Step 5a: `model.to(cfg.device)`** moves the model to the specified computing device (e.g., CPU or GPU).
   
-  **Step 5b:** `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))` instantiates a GraphTrainer object with the configuration and class weights obtained from the training graphs.
+  **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** instantiates a GraphTrainer object with the configuration and class weights obtained from the training graphs.
   
-  **Step 5c:** `trainer.build(model)` builds the training setup by associating the model with the trainer and initializing the optimizer.
+  **Step 5c: `trainer.build(model)`** builds the training setup by associating the model with the trainer and initializing the optimizer.
   
-  **Step 5d:** `trainer.train(train_loader, valid_loader)` starts the training process using the training and validation data loaders.
+  **Step 5d: `trainer.train(train_loader, valid_loader)`** starts the training process using the training and validation data loaders.
 
 **Step 6: Evaluate the model and visualize embeddings**
 
-  **Step 6a:** `trainer.evaluate(cfg.epochs, train_loader, valid_loader)` evaluates the trained model using the training and validation data loaders after training is complete.
+  **Step 6a: `trainer.evaluate(cfg.epochs, train_loader, valid_loader)`** evaluates the trained model using the training and validation data loaders after training is complete.
   
-  **Step 6b:** `vis_loader = DataLoader(all_graphs, shuffle=False, batch_size=1)` creates a data loader for all graphs without shuffling, typically used for visualization purposes.
+  **Step 6b: `vis_loader = DataLoader(all_graphs, shuffle=False, batch_size=1)`** creates a data loader for all graphs without shuffling, typically used for visualization purposes.
   
-  **Step 6c:** `trainer.visualize_embeddings(vis_loader, "./")` visualizes the embeddings of the graphs using the specified data loader and saves the visualizations to the current directory.
+  **Step 6c: `trainer.visualize_embeddings(vis_loader, "./")`** visualizes the embeddings of the graphs using the specified data loader and saves the visualizations to the current directory.
 
 This flow describes the overall process of configuring a graph neural network model, preparing the data, training the model, and then evaluating and visualizing the results as outlined in main.py.
 
