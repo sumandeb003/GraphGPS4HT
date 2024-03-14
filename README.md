@@ -1307,7 +1307,7 @@ In real-world applications, this graph-level representation can be used as input
 
 **Step 1: Import necessary modules and functions**
 
-  **Step 1a: `import os, sys`** Import os and sys modules, which are standard Python modules used for interacting with the operating system and Python runtime environment, respectively..
+  **    Step 1a: `import os, sys`** Import os and sys modules, which are standard Python modules used for interacting with the operating system and Python runtime environment, respectively..
 
   **Step 1b: `sys.path.append(os.path.dirname(sys.path[0]))`** modifies the Python path, so Python will look for modules in the directory one level up from the script's directory. This is typically done to allow importing modules from a parent directory.
 
