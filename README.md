@@ -1293,5 +1293,10 @@ In real-world applications, this graph-level representation can be used as input
 4. So far, I have gathered 132 Trojan-free samples and 51 Trojan-inserted samples.
 5. The `TRIT` set of benchmarks has around 1000 Trojan-inserted samples, but they have some gates (from LEDA 250nm cell library) that I am not sure about. They are 1-input gates and must be either buffers or inverters. I have mailed the author of the benchmark but haven't heard from him. If we identify these gates and include them in our repository, then the size of our training and testing benchmark will be decent.
 6. I had daily discussions with Gokul regarding the comparator and the BNN papers.
+<summary>
+  
+### Update as of March 14, 2024 
 
+</summary>
 
+<summary>
