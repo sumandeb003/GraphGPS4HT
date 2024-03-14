@@ -1297,11 +1297,11 @@ In real-world applications, this graph-level representation can be used as input
 </details>
 
 <details>
-<summary>
-
-### Update as of March 14, 2024 
-
-</summary>
+  <summary> 
+    
+  ### Update as of March 14, 2024 
+  
+  </summary>
 
 1. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
 
