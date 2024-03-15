@@ -1329,9 +1329,9 @@ In real-world applications, this graph-level representation can be used as input
 
 **Step 4: Configure and initialize the model**
 
- - **Step 4a: `model = GRAPH2VEC(cfg)`** Instantiate the `GRAPH2VEC` model with the configuration settings.
+ - **Step 4a: `model = GRAPH2VEC(cfg)`** Instantiate the `GRAPH2VEC` model with the configuration settings. This model is a template for creating graph neural networks and will be configured based on the specified parameters.
 
- - **Step 4b:** Check if a pre-trained model path is provided in the configuration. If it is, load the model configuration and weights from the specified path.
+ - **Step 4b:** Check if a pre-trained model path is provided in the configuration. If a pre-trained model path (`cfg.model_path`) is specified, load the model configuration and weights using `model.load_model`. This method reads the model's configurations from a *.cfg* file and the model's weights from a *.pth* file, setting up the layers accordingly.
 
  - **Step 4c:** If no pre-trained model is specified, configure the model's layers manually. This includes setting up graph convolution layers (`GRAPH_CONV`), a pooling layer (`GRAPH_POOL`), a readout layer (`GRAPH_READOUT`), and an output layer (a linear transformation).
 
