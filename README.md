@@ -1338,6 +1338,10 @@ In real-world applications, this graph-level representation can be used as input
      `num_layer`: 2 and `hidden`: 200, two GCN convolutional layers are created, each with 200 hidden units. The first layer takes the 
       number of node labels (`data_proc.num_node_labels`) as its input size, and the second layer takes the `hidden` size as both its 
       input and output sizes.
+   - Defining up the graph pooling layer (`GRAPH_POOL`) with the type specified in `pooling_type`: topk, and input channels equal to `hidden`: 200. The `poolratio`: 0.8 parameter is used to specify the pooling ratio.
+   - Defining the readout layer (`GRAPH_READOUT`) using the `readout_type`: max parameter. This layer aggregates node features into a graph-level representation.
+   - Defining the output layer as a linear transformation (`nn.Linear`), transforming the pooled graph representation into the embedding space of dimension `embed_dim`: 2.
+   - Registering all the defined layers with the GRAPH2VEC model using its `set_graph_conv`, `set_graph_pool`, `set_graph_readout`, and `set_output_layer` methods.
    - setting up graph convolution layers (`GRAPH_CONV`), a pooling layer (`GRAPH_POOL`), a readout layer (`GRAPH_READOUT`), and an output layer (a linear transformation).
 
  - **Step 4d:** Ensure the model is compatible with the configured device (e.g., CPU or GPU).
