@@ -1333,7 +1333,12 @@ In real-world applications, this graph-level representation can be used as input
 
  - **Step 4b:** Check if a pre-trained model path is provided in the configuration. If a pre-trained model path (`cfg.model_path`) is specified, load the model configuration and weights using `model.load_model`. This method reads the model's configurations from a *.cfg* file and the model's weights from a *.pth* file, setting up the layers accordingly.
 
- - **Step 4c:** If no pre-trained model is specified, configure the model's layers manually. This includes setting up graph convolution layers (`GRAPH_CONV`), a pooling layer (`GRAPH_POOL`), a readout layer (`GRAPH_READOUT`), and an output layer (a linear transformation).
+ - **Step 4c:** If no pre-trained model is specified, configure the model's layers manually. This includes:
+   - Defining graph convolutional layers (`GRAPH_CONV`) according to the `num_layer` and `hidden` configuration parameters. Given
+     `num_layer`: 2 and `hidden`: 200, two GCN convolutional layers are created, each with 200 hidden units. The first layer takes the 
+      number of node labels (`data_proc.num_node_labels`) as its input size, and the second layer takes the `hidden` size as both its 
+      input and output sizes.
+   - setting up graph convolution layers (`GRAPH_CONV`), a pooling layer (`GRAPH_POOL`), a readout layer (`GRAPH_READOUT`), and an output layer (a linear transformation).
 
  - **Step 4d:** Ensure the model is compatible with the configured device (e.g., CPU or GPU).
 
