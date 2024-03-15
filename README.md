@@ -50,12 +50,12 @@
   
   </summary>
 
-<details>
-  <summary> 
+  <details>
+    <summary> 
     
-## Workflow of GraphGPS (in Short):
+  ## Workflow of GraphGPS (in Short):
 
- </summary>
+     </summary>
 
 **Parse arguments of the execution command from CLI** 
 
@@ -95,7 +95,7 @@
 
 **Display best epoch and the corresponding performances on training, validation and test sets.**
 
-</details>
+  </details>
 
 <details>
   
