@@ -919,11 +919,12 @@ for index in sampler:
 </details>
 
 <details>
-<summary> 
-  
-### Update as of Sep 26 and Sep 18, 2023 
 
-</summary>
+  <summary> 
+  
+  ### Update as of Sep 26 and Sep 18, 2023 
+
+  </summary>
 
 **The goal is to use the circuit-to-graph conversion segment of HW2VEC tool to create a graph dataset for training GraphGPS.** So, I had multiple curiosities regarding the process of conversion of HW circuits to corresponding graphs by the HW2VEC tool. Like: 
 
