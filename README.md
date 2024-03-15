@@ -1327,7 +1327,7 @@ In real-world applications, this graph-level representation can be used as input
   
  - **Step 3d: `valid_loader = DataLoader(test_graphs, shuffle=True, batch_size=1)`** creates a data loader for the test graphs with shuffling enabled and a batch size of 1, which is commonly used for evaluation purposes.
 
-**Step 4: Configure and initialize the model**
+**Step 4: Configure and initialize the GNN model**
 
  - **Step 4a: `model = GRAPH2VEC(cfg)`** Instantiate the `GRAPH2VEC` model with the configuration settings. This model is a template for creating graph neural networks and will be configured based on the specified parameters.
 
@@ -1345,16 +1345,16 @@ In real-world applications, this graph-level representation can be used as input
 
  - **Step 4d:** Ensure the model is compatible with the configured device (e.g., CPU or GPU).
 
-**Step 5: Train the model**
+**Step 5: Train the GNN model**
 
  - **Step 5a: `model.to(cfg.device)`** moves the model to the specified computing device (e.g., CPU or GPU).
   
  - **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** Create an instance of `GraphTrainer`, which is a subclass of `BaseTrainer` specialized for graph classification tasks, passing the configuration and class weights (obtained from `data_proc.get_class_weights`) as arguments. This trainer uses configurations like `learning_rate`: 0.001 and `seed`: 0 for setting up the training environment.
    - The method `get_class_weights` calculates the class weights using the `compute_class_weight` function from `sklearn.utils.class_weight`. This function is designed to mitigate the imbalance in the dataset by assigning higher weights to underrepresented classes. The 'balanced' mode automatically assigns weights inversely proportional to class frequencies in the input data. Classes with lower frequencies get higher weights, and vice versa. The `np.unique(training_labels)` call is used to identify all unique classes in the dataset, and `training_labels` is passed again as the list of labels corresponding to each training instance. 
   
- - **Step 5c: `trainer.build(model)`** calls the training setup `trainer.build`S with the model to initialize the optimizer (Adam in this case) with a learning rate of 0.001 and a weight decay of 5e-4. This step prepares the model for training.
+ - **Step 5c: `trainer.build(model)`** calls the training setup `trainer.build` with the model to initialize the optimizer (Adam in this case) with a learning rate of 0.001 and a weight decay of 5e-4. This step prepares the model for training.
   
- - **Step 5d: `trainer.train(train_loader, valid_loader)`** starts training the model using the training and validation DataLoaders.
+ - **Step 5d: `trainer.train(train_loader, valid_loader)`** starts training the model using the `train` method of `GraphTrainer`.
 
 **Step 6: Evaluate the model and visualize embeddings**
 
