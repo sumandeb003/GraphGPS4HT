@@ -1324,7 +1324,7 @@ In real-world applications, this graph-level representation can be used as input
 
  - **Step 3b: `training_graphs, test_graphs = data_proc.split_dataset(ratio=cfg.ratio, seed=cfg.seed, dataset=all_graphs)`** calls a function `split_dataset` from the `data_proc` module to split `all_graphs` into training and test sets based on a specified ratio and seed from the configuration.
   
- - **Step 3c: `training_loader = DataLoader(training_graphs, shuffle=True, batch_size=cfg.batch_size)`** creates a data loader for the training graphs with shuffling enabled and batch size specified in the configuration.
+ - **Step 3c: `training_loader = DataLoader(training_graphs, shuffle=True, batch_size=cfg.batch_size)`** creates a data loader for the training graphs with shuffling enabled and batch size specified in the configuration. `DataLoader` will create batches of these graphs which can be processed by the model. This batching is essential for efficient computation and is a standard practice in training neural network models.
   
  - **Step 3d: `valid_loader = DataLoader(test_graphs, shuffle=True, batch_size=1)`** creates a data loader for the test graphs with shuffling enabled and a batch size of 1, which is commonly used for evaluation purposes.
 
@@ -1339,7 +1339,7 @@ In real-world applications, this graph-level representation can be used as input
      `num_layer: 2` and `hidden: 200`, two GCN convolutional layers are created, each with 200 hidden units. The first layer takes the 
       number of node labels (`data_proc.num_node_labels`) as its input size, and the second layer takes the `hidden` size as both its 
       input and output sizes.
-   - Defining up the graph pooling layer (`GRAPH_POOL`) with the type specified in `pooling_type: topk`, and input channels equal to `hidden: 200`. The `poolratio: 0.8` parameter is used to specify the pooling ratio.
+   - Defining up the graph pooling layer (`GRAPH_POOL`) with the type specified in `pooling_type: topk`, and input channels equal to `hidden: 200`. The `poolratio: 0.8` parameter is used to specify the proportion of nodes to be kept during the pooling process. For example, a poolratio of 0.8 means that in each pooling step, 80% of the nodes are retained. 
    - Defining the readout layer (`GRAPH_READOUT`) using the `readout_type: max` parameter. This layer aggregates node features into a graph-level representation.
    - Defining the output layer as a linear transformation (`nn.Linear`), transforming the pooled graph representation into the embedding space of dimension `embed_dim: 2`.
    - Registering all the defined layers with the GRAPH2VEC model using its `set_graph_conv`, `set_graph_pool`, `set_graph_readout`, and `set_output_layer` methods.
