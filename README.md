@@ -1307,21 +1307,21 @@ In real-world applications, this graph-level representation can be used as input
 
 **Step 1: Import necessary modules and functions**
 
- - **Step 1a: `import os, sys`** Import os and sys modules, which are standard Python modules used for interacting with the operating system and Python runtime environment, respectively..
+ - **Step 1a: `import os, sys`** Import `os` and `sys` modules, which are standard Python modules used for interacting with the operating system and Python runtime environment, respectively..
 
  - **Step 1b: `sys.path.append(os.path.dirname(sys.path[0]))`** modifies the Python path, so Python will look for modules in the directory one level up from the script's directory. This is typically done to allow importing modules from a parent directory.
 
 **Step 2: Import custom modules after adjusting the path**
 
- - **Step 2a: `from hw2vec.config import Config`** imports the Config class from a module config located within a package named hw2vec. This class is likely used to configure the experiment's settings.
+ - **Step 2a: `from hw2vec.config import Config`** imports the `Config` class from a module config located within a package named `hw2vec`. This class is likely used to configure the experiment's settings.
   
- - **Step 2b: `import models`** imports the models defined in models.py, making the classes GRAPH2VEC, GRAPH_CONV, GRAPH_POOL, and GRAPH_READOUT available in main.py.
+ - **Step 2b: `import models`** imports the models defined in `models.py`, making the classes `GRAPH2VEC`, `GRAPH_CONV`, `GRAPH_POOL`, and `GRAPH_READOUT` available in `main.py`.
 
 **Step 3: Initialize configuration and prepare data**
 
  - **Step 3a: `cfg = Config(sys.argv[1:])`** initializes a configuration object cfg by passing command-line arguments (excluding the script name). This object holds configuration settings like data paths, model parameters, etc.
 
- - **Step 3b: `training_graphs, test_graphs = data_proc.split_dataset(ratio=cfg.ratio, seed=cfg.seed, dataset=all_graphs)`** calls a function split_dataset from an assumed data_proc module to split all_graphs into training and test sets based on a specified ratio and seed from the configuration.
+ - **Step 3b: `training_graphs, test_graphs = data_proc.split_dataset(ratio=cfg.ratio, seed=cfg.seed, dataset=all_graphs)`** calls a function `split_dataset` from the `data_proc` module to split `all_graphs` into training and test sets based on a specified ratio and seed from the configuration.
   
  - **Step 3c: `training_loader = DataLoader(training_graphs, shuffle=True, batch_size=cfg.batch_size)`** creates a data loader for the training graphs with shuffling enabled and batch size specified in the configuration.
   
@@ -1335,12 +1335,12 @@ In real-world applications, this graph-level representation can be used as input
 
  - **Step 4c:** If no pre-trained model is specified, configure the model's layers manually. This includes:
    - Defining graph convolutional layers (`GRAPH_CONV`) according to the `num_layer` and `hidden` configuration parameters. Given
-     `num_layer`: 2 and `hidden`: 200, two GCN convolutional layers are created, each with 200 hidden units. The first layer takes the 
+     `num_layer: 2` and `hidden: 200`, two GCN convolutional layers are created, each with 200 hidden units. The first layer takes the 
       number of node labels (`data_proc.num_node_labels`) as its input size, and the second layer takes the `hidden` size as both its 
       input and output sizes.
-   - Defining up the graph pooling layer (`GRAPH_POOL`) with the type specified in `pooling_type`: topk, and input channels equal to `hidden`: 200. The `poolratio`: 0.8 parameter is used to specify the pooling ratio.
-   - Defining the readout layer (`GRAPH_READOUT`) using the `readout_type`: max parameter. This layer aggregates node features into a graph-level representation.
-   - Defining the output layer as a linear transformation (`nn.Linear`), transforming the pooled graph representation into the embedding space of dimension `embed_dim`: 2.
+   - Defining up the graph pooling layer (`GRAPH_POOL`) with the type specified in `pooling_type: topk`, and input channels equal to `hidden: 200`. The `poolratio: 0.8` parameter is used to specify the pooling ratio.
+   - Defining the readout layer (`GRAPH_READOUT`) using the `readout_type: max` parameter. This layer aggregates node features into a graph-level representation.
+   - Defining the output layer as a linear transformation (`nn.Linear`), transforming the pooled graph representation into the embedding space of dimension `embed_dim: 2`.
    - Registering all the defined layers with the GRAPH2VEC model using its `set_graph_conv`, `set_graph_pool`, `set_graph_readout`, and `set_output_layer` methods.
 
  - **Step 4d:** Ensure the model is compatible with the configured device (e.g., CPU or GPU).
@@ -1349,12 +1349,16 @@ In real-world applications, this graph-level representation can be used as input
 
  - **Step 5a: `model.to(cfg.device)`** moves the model to the specified computing device (e.g., CPU or GPU).
   
- - **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** Create an instance of `GraphTrainer`, which is a subclass of `BaseTrainer` specialized for graph classification tasks, passing the configuration and class weights (obtained from `data_proc.get_class_weights`) as arguments. This trainer uses configurations like `learning_rate`: 0.001 and `seed`: 0 for setting up the training environment.
+ - **Step 5b: `trainer = GraphTrainer(cfg, class_weights=data_proc.get_class_weights(training_graphs))`** Create an instance of `GraphTrainer`, which is a subclass of `BaseTrainer` specialized for graph classification tasks, passing the configuration and class weights (obtained from `data_proc.get_class_weights`) as arguments. This trainer uses configurations like `learning_rate: 0.001` and `seed: 0` for setting up the training environment.
    - The method `get_class_weights` calculates the class weights using the `compute_class_weight` function from `sklearn.utils.class_weight`. This function is designed to mitigate the imbalance in the dataset by assigning higher weights to underrepresented classes. The 'balanced' mode automatically assigns weights inversely proportional to class frequencies in the input data. Classes with lower frequencies get higher weights, and vice versa. The `np.unique(training_labels)` call is used to identify all unique classes in the dataset, and `training_labels` is passed again as the list of labels corresponding to each training instance. 
   
  - **Step 5c: `trainer.build(model)`** calls the training setup `trainer.build` with the model to initialize the optimizer (Adam in this case) with a learning rate of 0.001 and a weight decay of 5e-4. This step prepares the model for training.
   
- - **Step 5d: `trainer.train(train_loader, valid_loader)`** starts training the model using the `train` method of `GraphTrainer`.
+ - **Step 5d: `trainer.train(train_loader, valid_loader)`** starts training the model using the `train` method of `GraphTrainer`. This involves:
+   - Iterating over `epochs: 200`, where in each epoch, the model is trained on the batches from train_loader.
+   - Applying dropout with a rate of `dropout: 0.5` during training.
+   - Every `test_step: 10` epochs, the model is evaluated on the `valid_loader` to monitor its performance during training.
+   - The `train_epoch_tj` method in GraphTrainer is used for a single epoch's training, which involves computing the loss using `nn.CrossEntropyLoss` (considering class weights if provided), and performing backpropagation.
 
 **Step 6: Evaluate the model and visualize embeddings**
 
