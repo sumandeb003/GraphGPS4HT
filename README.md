@@ -1384,6 +1384,7 @@ This flow describes the overall process of configuring a graph neural network mo
 **`GRAPH_POOL` (Graph Pooling Layer)**
 
  - **Function:** Graph pooling layers reduce the size of the graph by aggregating nodes together. This can be done in various ways, such as by merging nodes based on their features (TopKPooling) or based on learned cluster assignments (SAGPooling). Pooling layers help in capturing hierarchical structures in the graph and reduce computational complexity for downstream tasks.
+ - `poolratio` determines the proportion of nodes to keep during the pooling process. For example, a `poolratio` of 0.8 means that in each pooling step, 80% of the nodes are retained. This parameter balances between information retention and computational efficiency
 
  - **Example:** In the context of a molecule graph, where nodes represent atoms and edges represent bonds, a `GRAPH_POOL` layer might merge nodes to form higher-level representations of functional groups or substructures. This enables the GNN to focus on important parts of the molecule for predicting properties like solubility or reactivity.
 
