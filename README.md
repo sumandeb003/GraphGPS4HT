@@ -1374,9 +1374,9 @@ This flow describes the overall process of configuring a graph neural network mo
 2. [**Class Weights:**](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) Consider a scenario where you're working with a graph dataset for molecule classification. The task is to predict whether a molecule is biologically active (class 1) or not (class 0). Let's say the dataset contains 900 molecules that are not biologically active (class 0) and 100 molecules that are biologically active (class 1). Without class weights, the model might learn to overwhelmingly predict the majority class (class 0) because doing so would still achieve a high accuracy (90% if it always predicts class 0). However, such a model is not very useful for identifying the much rarer, but potentially more interesting, biologically active molecules. By applying class weights, you can make the loss for the minority class (class 1) more significant. For instance, if class 0 has a weight of 1, class 1 might be given a weight of 9 (reflecting the inverse ratio of their occurrences). This adjustment tells the model that mistakes made on the minority class are much more costly than those made on the majority class, encouraging the model to improve its predictions for class 1, despite its rarity.
  - [`sklearn.utils.class_weight.compute_class_weight(class_weight, *, classes, y)` ](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) computes weights for each class in a dataset to address the issue of class imbalance.
   - **Parameters**
-   - `class_weight`: This can be a dictionary specifying the weight for each class, the string `balanced` to automatically compute weights inversely proportional to class frequencies, or `None` for uniform class weights.
-   - `classes`: An array of the unique classes occurring in the data.
-   - `y`: The array of original class labels for each sample in the dataset.
+    - `class_weight`: This can be a dictionary specifying the weight for each class, the string `balanced` to automatically compute weights inversely proportional to class frequencies, or `None` for uniform class weights.
+    - `classes`: An array of the unique classes occurring in the data.
+    - `y`: The array of original class labels for each sample in the dataset.
 
  - **Returns**
   - `class_weight_vect`: An array where `class_weight_vect[i]` represents the weight for the i-th class.
