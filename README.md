@@ -1384,10 +1384,10 @@ This flow describes the overall process of configuring a graph neural network mo
  - Example Case
 Let's consider a simple example with a binary class dataset where `y` = [1, 1, 1, 1, 0, 0]. The class distribution is unbalanced with four instances of class 1 and two instances of class 0.
     - Using `balanced`:
-     - The classes in `y` are 0 and 1, so `n_classes` = 2.
-     - The total number of samples `n_samples` = 6.
-     - The occurrences of each class are: 2 times class 0 and 4 times class 1.
-     - The weights would be computed as 6 / (2 * [2, 4]) = [1.5, 0.75]. So, class 0 (the minority class) gets a higher weight of 1.5, and class 1 (the majority class) gets a lower weight of 0.75.
+      - The classes in `y` are 0 and 1, so `n_classes` = 2.
+      - The total number of samples `n_samples` = 6.
+      - The occurrences of each class are: 2 times class 0 and 4 times class 1.
+      - The weights would be computed as 6 / (2 * [2, 4]) = [1.5, 0.75]. So, class 0 (the minority class) gets a higher weight of 1.5, and class 1 (the majority class) gets a lower weight of 0.75.
     - Using a User-defined Dictionary:
       - If class_weight is provided as {0: 0.5, 1: 2}, then class 0 is assigned a weight of 0.5 and class 1 a weight of 2. This manual assignment overrides the balanced computation.
 
