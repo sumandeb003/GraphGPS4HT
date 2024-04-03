@@ -1371,15 +1371,13 @@ In real-world applications, this graph-level representation can be used as input
 
 This flow describes the overall process of configuring a graph neural network model, preparing the data, training the model, and then evaluating and visualizing the results as outlined in main.py.
 
-2. `graphgym/loader.py` loads and preprocesses graph datasets.
-
-  - `create_dataset()`
-    - Calls `load_dataset()`
-Inside load_dataset(), depending on the dataset format, it may call:
-load_pyg(name, dataset_dir) for PyG format datasets.
-load_nx(name, dataset_dir) for NetworkX format datasets.
-Custom loader functions registered in register.loader_dict.
-Calls filter_graphs()
+2. `graphgym/loader.py` loads and preprocesses graph datasets using the following methods:
+  - `create_dataset()`: creates the graph dataset for training, validation, and testing.
+    - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
+      - `load_pyg(name, dataset_dir)` for PyG format datasets.
+      - `load_nx(name, dataset_dir)` for NetworkX format datasets.
+      - **Custom loader functions registered in `register.loader_dict`.**
+    - Calls `filter_graphs()`
 Applies transformations and splits:
 transform_before_split(dataset)
 Splits the dataset (using DeepSNAP functionalities).
