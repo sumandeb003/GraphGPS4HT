@@ -1371,7 +1371,26 @@ In real-world applications, this graph-level representation can be used as input
 
 This flow describes the overall process of configuring a graph neural network model, preparing the data, training the model, and then evaluating and visualizing the results as outlined in main.py.
 
-2. In a Graph Neural Network (GNN), different types of layers play specific roles in processing graph-structured data. Let's go through each of the mentioned layers — `GRAPH_CONV`, `GRAPH_POOL`, `GRAPH_READOUT`, and the output layer (a linear transformation)—and explain their functions using example graphs.
+2. `graphgym/loader.py` loads and preprocesses graph datasets.
+
+  - `create_dataset()`
+    - Calls `load_dataset()`
+Inside load_dataset(), depending on the dataset format, it may call:
+load_pyg(name, dataset_dir) for PyG format datasets.
+load_nx(name, dataset_dir) for NetworkX format datasets.
+Custom loader functions registered in register.loader_dict.
+Calls filter_graphs()
+Applies transformations and splits:
+transform_before_split(dataset)
+Splits the dataset (using DeepSNAP functionalities).
+transform_after_split(datasets)
+Calls set_dataset_info(datasets)
+create_loader(datasets)
+
+This function is called after create_dataset() and uses its output.
+It creates DataLoader instances for each dataset split (training, validation, test) using DataLoader from PyTorch and Batch.collate() from DeepSNAP.
+
+3. In a Graph Neural Network (GNN), different types of layers play specific roles in processing graph-structured data. Let's go through each of the mentioned layers — `GRAPH_CONV`, `GRAPH_POOL`, `GRAPH_READOUT`, and the output layer (a linear transformation)—and explain their functions using example graphs.
 
 **`GRAPH_CONV` (Graph Convolution Layer)**
 
