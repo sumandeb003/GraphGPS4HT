@@ -1381,7 +1381,7 @@ This flow describes the overall process of configuring a graph neural network mo
     - Calls `transform_before_split(dataset)`: Applies transformations to the dataset (A DeepSNAP dataset object) before train/val/test split
     - Calls `transform_after_split(datasets)`: Applies transformations after the dataset has been split. `datasets` is a list of DeepSNAP dataset objects
     - Calls `set_dataset_info(datasets)`: Configures global parameters like input dimension (`dim_in`), output dimension (`dim_out`), and the number of dataset splits
-  - `create_loader(datasets)`: This function is called after `create_dataset()` and uses its output. It creates `DataLoader` instances for each dataset split (training, validation, test) using `DataLoader` from PyTorch and `Batch.collate()` from DeepSNAP.
+  - `create_loader(datasets)`: This function is called after `create_dataset()` and uses its output `datasets` (List of datasets for training, validation, and testing). It creates `DataLoader` instances for each dataset split (training, validation, test) using `DataLoader` from PyTorch and `Batch.collate()` from DeepSNAP.
 
 3. In a Graph Neural Network (GNN), different types of layers play specific roles in processing graph-structured data. Let's go through each of the mentioned layers — `GRAPH_CONV`, `GRAPH_POOL`, `GRAPH_READOUT`, and the output layer (a linear transformation)—and explain their functions using example graphs.
 
