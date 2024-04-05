@@ -1306,7 +1306,8 @@ In real-world applications, this graph-level representation can be used as input
 
 1. Implementing Graphs using the NetworkX library
 
-```import networkx as nx
+```
+import networkx as nx
 import matplotlib.pyplot as plt
 
 # Create an empty graph
@@ -1343,7 +1344,48 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 
 plt.show()
 ```
-2. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
+2. Implementing Graphs using PyTorch Geometric
+```
+import torch
+from torch_geometric.data import Data
+
+# Node features: Let's assign a 2-dimensional feature vector to each node
+node_features = torch.tensor([
+    [1.0, 2.0],  # Node 0
+    [2.0, 3.0],  # Node 1
+    [3.0, 4.0],  # Node 2
+    [4.0, 5.0]   # Node 3
+], dtype=torch.float)
+
+# Edge index: Source nodes to Target nodes
+edge_index = torch.tensor([
+    [0, 1, 2, 3],  # Source nodes
+    [1, 2, 3, 0]   # Target nodes
+], dtype=torch.long)
+
+# Edge attributes: Let's assign a single attribute (e.g., weight) to each edge
+edge_attributes = torch.tensor([
+    [0.5],  # Edge 0 -> 1
+    [1.5],  # Edge 1 -> 2
+    [2.5],  # Edge 2 -> 3
+    [3.5]   # Edge 3 -> 0
+], dtype=torch.float)
+
+# Create the PyG data object
+data = Data(x=node_features, edge_index=edge_index, edge_attr=edge_attributes)
+
+print(data)
+
+# Iterating over edges
+for source, target in data.edge_index.t().tolist():
+    print(f"Edge from node {source} to node {target}"
+
+# Accessing and printing edge attributes alongside the edges
+for i, (source, target) in enumerate(data.edge_index.t().tolist()):
+    print(f"Edge from node {source} to node {target} with attribute {data.edge_attr[i].item()}")
+
+```
+3. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
 
 **Step 1: Import necessary modules and functions**
 
