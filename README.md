@@ -1304,7 +1304,7 @@ In real-world applications, this graph-level representation can be used as input
   
   </summary>
 
-1. Implementing Graphs using the NetworkX library
+1. **Implementing Graphs using the NetworkX library**
 
 ```
 import networkx as nx
@@ -1344,7 +1344,7 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 
 plt.show()
 ```
-2. Implementing Graphs using PyTorch Geometric
+2. **Implementing Graphs using PyTorch Geometric**
 ```
 import torch
 from torch_geometric.data import Data
@@ -1385,7 +1385,36 @@ for i, (source, target) in enumerate(data.edge_index.t().tolist()):
     print(f"Edge from node {source} to node {target} with attribute {data.edge_attr[i].item()}")
 
 ```
-3. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
+3. **Directed Graphs Using PyTorch Geometric**
+```
+# Example of a directed graph with edges: 0->1, 0->2, 1->2
+import torch
+from torch_geometric.data import Data
+
+edge_index = torch.tensor([[0, 0, 1],
+                           [1, 2, 2]], dtype=torch.long)
+
+data_directed = Data(edge_index=edge_index)
+```
+4. **Undirected Graphs Using PyTorch Geometric**
+```
+# Example of an undirected graph with edges: 0-1, 0-2, 1-2
+edge_index = torch.tensor([[0, 1, 0, 2, 1, 2],
+                           [1, 0, 2, 0, 2, 1]], dtype=torch.long)
+
+data_undirected = Data(edge_index=edge_index)
+```
+5. **Directed to Undirected Graphs Using PyTorch Geometric**
+```
+from torch_geometric.utils import to_undirected
+
+# Assuming edge_index_directed is the edge_index tensor of a directed graph
+edge_index_undirected = to_undirected(edge_index_directed)
+
+data_undirected = Data(edge_index=edge_index_undirected)
+
+```
+6. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
 
 **Step 1: Import necessary modules and functions**
 
