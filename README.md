@@ -1304,7 +1304,46 @@ In real-world applications, this graph-level representation can be used as input
   
   </summary>
 
-1. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
+1. Implementing Graphs using the NetworkX library
+
+```import networkx as nx
+import matplotlib.pyplot as plt
+
+# Create an empty graph
+G = nx.Graph()
+
+# Add nodes with attributes
+G.add_node(0, features=[1.0, 2.0])
+G.add_node(1, features=[2.0, 3.0])
+G.add_node(2, features=[3.0, 4.0])
+G.add_node(3, features=[4.0, 5.0])
+
+# Add edges with attributes (e.g., weight)
+G.add_edge(0, 1, weight=0.5)
+G.add_edge(1, 2, weight=1.5)
+G.add_edge(2, 3, weight=2.5)
+G.add_edge(3, 0, weight=3.5)
+
+# Accessing node attributes
+print("Node Attributes:")
+for node in G.nodes(data=True):
+    print(node)
+
+# Accessing edge attributes
+print("\nEdge Attributes:")
+for edge in G.edges(data=True):
+    print(edge)
+
+# Visualizing the graph
+pos = nx.spring_layout(G)  # positions for all nodes
+nx.draw(G, pos, with_labels=True)
+
+edge_labels = nx.get_edge_attributes(G, 'weight')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+
+plt.show()
+```
+2. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
 
 **Step 1: Import necessary modules and functions**
 
