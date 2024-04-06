@@ -1481,7 +1481,24 @@ data_undirected = Data(edge_index=edge_index_undirected)
 
 This flow describes the overall process of configuring a graph neural network model, preparing the data, training the model, and then evaluating and visualizing the results as outlined in main.py.
 
-2. `graphgym/loader.py` loads and preprocesses graph datasets using the following methods:
+2. configurations.yaml:
+===============
+---
+ - `learning_rate`: 0.001 # The initial learning rate for the model.
+ - `seed`: 0 # Random seed.
+ - `epochs`: 200 # Number of epochs to train.
+ - `hidden`: 200 # Number of hidden units.
+ - `dropout`: 0.5 # Dropout rate (1 - keep probability).
+ - `batch_size`: 4 # Number of graphs in a batch.
+ - `num_layer`: 2 # Number of layers in the neural network.
+ - `test_step`: 10 # The interval between mini evaluation along the training process.
+ - `readout_type`: "max" # Readout type.
+ - `pooling_type`: "topk" # Graph pooling type.
+ - `poolratio`: 0.8 # Ratio for graph pooling.
+ - `ratio`: 0.8 # Dataset splitting ratio.
+ - `embed_dim`: 2 # The dimension of graph embeddings.
+
+3. `graphgym/loader.py` loads and preprocesses graph datasets using the following methods:
   - `create_dataset()`: creates the graph dataset for training, validation, and testing.
     - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
       - `load_pyg(name, dataset_dir)` for PyG format datasets.
