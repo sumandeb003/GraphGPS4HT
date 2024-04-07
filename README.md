@@ -1561,3 +1561,8 @@ Let's consider a simple example with a binary class dataset where `y` = [1, 1, 1
 
 </details>
 
+## To Dos:
+
+1. **Include class weights to account for imbalance between the number of trojan-ed samples and the number of trojan-free samples.**
+2. **Convert the graphs into undirected ones. Check the difference in performance between using directed and undirected graph learning.**
+3. **Converting the Verilog circuits into graphs has a caveat that it identifies the inputs as nodes.**
