@@ -1822,29 +1822,29 @@ train: {'epoch': 9, 'eta': 0.0, 'loss': 1.7909, 'lr': 0.0002, 'params': 121, 'ti
 
 1. **Encoder Stage**
 
-`FeatureEncoder`: This initial stage likely transforms raw input features into a format suitable for processing by subsequent GNN layers. The specifics of the transformation are not detailed, but it typically normalizes or embeds input features.
+    - `FeatureEncoder`: This initial stage likely transforms raw input features into a format suitable for processing by subsequent GNN layers. The specifics of the transformation are not detailed, but it typically normalizes or embeds input features.
 
 2. **Pre-message Passing Stage (pre_mp)**
 
-`GeneralMultiLayer`: This stage consists of layers applied before the core message-passing operations. It's designed to preprocess node features.
+    - `GeneralMultiLayer`: This stage consists of layers applied before the core message-passing operations. It's designed to preprocess node features.
 
-`Linear Layer`: A linear transformation applied to the input features. Here, it transforms features from `in_features=34` to `out_features=2`, effectively reducing the dimensionality or projecting the features into a new space.
+    - `Linear Layer`: A linear transformation applied to the input features. Here, it transforms features from `in_features=34` to `out_features=2`, effectively reducing the dimensionality or projecting the features into a new space.
 
-`BatchNorm1d`, `Dropout`, `PReLU`: These layers perform batch normalization, dropout (with p=0.1 for regularization), and Parametric ReLU activation, respectively, on the output of the linear layer.
+    - `BatchNorm1d`, `Dropout`, `PReLU`: These layers perform batch normalization, dropout (with p=0.1 for regularization), and Parametric ReLU activation, respectively, on the output of the linear layer.
 
 3. **Message Passing Stage (mp)**
 
-`GNNStackStage`: This is the core of the GNN, where message passing occurs through multiple GNN layers.
+    - `GNNStackStage`: This is the core of the GNN, where message passing occurs through multiple GNN layers.
 
-SAGEConv Layers: Each `GeneralLayer` in this stage uses a `SAGEConv` layer for convolution operations, specifically `GraphSAGE` convolution, which aggregates neighbor features with a mean aggregation function (aggr=mean). The model includes 3 such layers (layer0, layer1, layer2), each taking 2-dimensional input and outputting 2-dimensional features. This implies that the feature size does not change through these layers.
+    - SAGEConv Layers: Each `GeneralLayer` in this stage uses a `SAGEConv` layer for convolution operations, specifically `GraphSAGE` convolution, which aggregates neighbor features with a mean aggregation function (aggr=mean). The model includes 3 such layers (layer0, layer1, layer2), each taking 2-dimensional input and outputting 2-dimensional features. This implies that the feature size does not change through these layers.
 
-Sequential Layers Post SAGEConv: After each `SAGEConv`, the features undergo batch normalization, dropout, and PReLU activation, similar to the pre_mp stage.
+    - Sequential Layers Post SAGEConv: After each `SAGEConv`, the features undergo batch normalization, dropout, and PReLU activation, similar to the pre_mp stage.
 
 4. **Post-message Passing Stage (post_mp)**
 
-`GNNNodeHead` with MLP: This final stage processes the node features after message passing.
+    - `GNNNodeHead` with MLP: This final stage processes the node features after message passing.
 
-MLP (Multi-Layer Perceptron): An MLP with a single linear layer that transforms the features from `in_features=2` to `out_features=4`. This could be for mapping the features to the space of possible labels or another representation.
+    - MLP (Multi-Layer Perceptron): An MLP with a single linear layer that transforms the features from `in_features=2` to `out_features=4`. This could be for mapping the features to the space of possible labels or another representation.
 
 
 </details>
