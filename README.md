@@ -1304,7 +1304,7 @@ In real-world applications, this graph-level representation can be used as input
   
   </summary>
 
-1. **Implementing Graphs using the NetworkX library**
+## Implementing Graphs using the NetworkX library
 
 ```
 import networkx as nx
@@ -1344,7 +1344,8 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 
 plt.show()
 ```
-2. **Implementing Graphs using PyTorch Geometric**
+## Implementing Graphs using PyTorch Geometric
+
 ```
 import torch
 from torch_geometric.data import Data
@@ -1385,7 +1386,7 @@ for i, (source, target) in enumerate(data.edge_index.t().tolist()):
     print(f"Edge from node {source} to node {target} with attribute {data.edge_attr[i].item()}")
 
 ```
-3. **Directed Graphs Using PyTorch Geometric**
+### Directed Graphs Using PyTorch Geometric
 ```
 # Example of a directed graph with edges: 0->1, 0->2, 1->2
 import torch
@@ -1396,7 +1397,8 @@ edge_index = torch.tensor([[0, 0, 1],
 
 data_directed = Data(edge_index=edge_index)
 ```
-4. **Undirected Graphs Using PyTorch Geometric**
+### Undirected Graphs Using PyTorch Geometric
+
 ```
 # Example of an undirected graph with edges: 0-1, 0-2, 1-2
 edge_index = torch.tensor([[0, 1, 0, 2, 1, 2],
@@ -1404,7 +1406,8 @@ edge_index = torch.tensor([[0, 1, 0, 2, 1, 2],
 
 data_undirected = Data(edge_index=edge_index)
 ```
-5. **Directed to Undirected Graphs Using PyTorch Geometric**
+### Directed to Undirected Graphs Using PyTorch Geometric
+
 ```
 from torch_geometric.utils import to_undirected
 
@@ -1414,7 +1417,7 @@ edge_index_undirected = to_undirected(edge_index_directed)
 data_undirected = Data(edge_index=edge_index_undirected)
 
 ```
-6. [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
+## [hw2vec/examples/use_case_2.py](https://github.com/AICPS/hw2vec/blob/545dd5947124ca2d99680508f8e7d55d60fb20d2/examples/use_case_2.py)
 
 **Step 1: Import necessary modules and functions**
 
@@ -1481,7 +1484,7 @@ data_undirected = Data(edge_index=edge_index_undirected)
 
 This flow describes the overall process of configuring a graph neural network model, preparing the data, training the model, and then evaluating and visualizing the results as outlined in main.py.
 
-2. `configurations.yaml` used by `hw2vec/examples/use_case_2.py`:
+### `configurations.yaml` used by `hw2vec/examples/use_case_2.py`:
    - `learning_rate`: 0.001 # The initial learning rate for the model.
    - `seed`: 0 # Random seed.
    - `epochs`: 200 # Number of epochs to train.
@@ -1496,20 +1499,7 @@ This flow describes the overall process of configuring a graph neural network mo
    - `ratio`: 0.8 # Dataset splitting ratio.
    - `embed_dim`: 2 # The dimension of graph embeddings.
 
-3. `graphgym/loader.py` loads and preprocesses graph datasets using the following methods:
-  - `create_dataset()`: creates the graph dataset for training, validation, and testing.
-    - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
-      - `load_pyg(name, dataset_dir)` for PyG format datasets.
-      - `load_nx(name, dataset_dir)` for NetworkX format datasets.
-      - **Custom loader functions registered in `register.loader_dict`.**
-    - Calls `filter_graphs()`: Sets a minimum number of nodes (0 for 'graph' tasks and 5 for others) to filter out smaller graphs
-    - Calls `transform_before_split(dataset)`: Applies transformations to the dataset (A DeepSNAP dataset object) before train/val/test split
-    - Calls `transform_after_split(datasets)`: Applies transformations after the dataset has been split. `datasets` is a list of DeepSNAP dataset objects
-    - Calls `set_dataset_info(datasets)`: Configures global parameters like input dimension (`dim_in`), output dimension (`dim_out`), and the number of dataset splits
-  - `create_loader(datasets)`: This function is called after `create_dataset()` and uses its output `datasets` (List of datasets for training, validation, and testing). It creates `DataLoader` instances for each dataset split (training, validation, test) using `DataLoader` from PyTorch and `Batch.collate()` from DeepSNAP.
-
-3.  **`graphgym/loader_pyg.py` should be used instead of `graphgym/loader.py` for adding new or custom datasets as it employs a more modular approach for dataset loading, utilizing a registration system that allows for the easy addition of new datasets.**
-4. In a Graph Neural Network (GNN), different types of layers play specific roles in processing graph-structured data. Let's go through each of the mentioned layers — `GRAPH_CONV`, `GRAPH_POOL`, `GRAPH_READOUT`, and the output layer (a linear transformation)—and explain their functions using example graphs.
+In a Graph Neural Network (GNN), different types of layers play specific roles in processing graph-structured data. Let's go through each of the mentioned layers — `GRAPH_CONV`, `GRAPH_POOL`, `GRAPH_READOUT`, and the output layer (a linear transformation)—and explain their functions using example graphs.
 
 **`GRAPH_CONV` (Graph Convolution Layer)**
 
@@ -1538,7 +1528,25 @@ This flow describes the overall process of configuring a graph neural network mo
 
 In summary, the `GRAPH_CONV` layers capture local structural information, `GRAPH_POOL` layers reduce graph size while preserving essential information, `GRAPH_READOUT` layers aggregate information across the whole graph, and the output layer makes final predictions based on the processed graph data. Together, these components enable GNNs to learn from and make predictions on graph-structured data, which is prevalent in domains like social networks, chemistry, and biology.
 
-3.  [**Class Weights:**](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) Consider a scenario where you're working with a graph dataset for molecule classification. The task is to predict whether a molecule is biologically active (class 1) or not (class 0). Let's say the dataset contains 900 molecules that are not biologically active (class 0) and 100 molecules that are biologically active (class 1). Without class weights, the model might learn to overwhelmingly predict the majority class (class 0) because doing so would still achieve a high accuracy (90% if it always predicts class 0). However, such a model is not very useful for identifying the much rarer, but potentially more interesting, biologically active molecules. By applying class weights, you can make the loss for the minority class (class 1) more significant. For instance, if class 0 has a weight of 1, class 1 might be given a weight of 9 (reflecting the inverse ratio of their occurrences). This adjustment tells the model that mistakes made on the minority class are much more costly than those made on the majority class, encouraging the model to improve its predictions for class 1, despite its rarity.
+
+## `graphgym/loader.py` loads and preprocesses graph datasets using the following methods:
+
+  - `create_dataset()`: creates the graph dataset for training, validation, and testing.
+    - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
+      - `load_pyg(name, dataset_dir)` for PyG format datasets.
+      - `load_nx(name, dataset_dir)` for NetworkX format datasets.
+      - **Custom loader functions registered in `register.loader_dict`.**
+    - Calls `filter_graphs()`: Sets a minimum number of nodes (0 for 'graph' tasks and 5 for others) to filter out smaller graphs
+    - Calls `transform_before_split(dataset)`: Applies transformations to the dataset (A DeepSNAP dataset object) before train/val/test split
+    - Calls `transform_after_split(datasets)`: Applies transformations after the dataset has been split. `datasets` is a list of DeepSNAP dataset objects
+    - Calls `set_dataset_info(datasets)`: Configures global parameters like input dimension (`dim_in`), output dimension (`dim_out`), and the number of dataset splits
+  - `create_loader(datasets)`: This function is called after `create_dataset()` and uses its output `datasets` (List of datasets for training, validation, and testing). It creates `DataLoader` instances for each dataset split (training, validation, test) using `DataLoader` from PyTorch and `Batch.collate()` from DeepSNAP.
+
+**`graphgym/loader_pyg.py` should be used instead of `graphgym/loader.py` for adding new or custom datasets as it employs a more modular approach for dataset loading, utilizing a registration system that allows for the easy addition of new datasets.**
+
+##  [**Class Weights:**](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) 
+
+Consider a scenario where you're working with a graph dataset for molecule classification. The task is to predict whether a molecule is biologically active (class 1) or not (class 0). Let's say the dataset contains 900 molecules that are not biologically active (class 0) and 100 molecules that are biologically active (class 1). Without class weights, the model might learn to overwhelmingly predict the majority class (class 0) because doing so would still achieve a high accuracy (90% if it always predicts class 0). However, such a model is not very useful for identifying the much rarer, but potentially more interesting, biologically active molecules. By applying class weights, you can make the loss for the minority class (class 1) more significant. For instance, if class 0 has a weight of 1, class 1 might be given a weight of 9 (reflecting the inverse ratio of their occurrences). This adjustment tells the model that mistakes made on the minority class are much more costly than those made on the majority class, encouraging the model to improve its predictions for class 1, despite its rarity.
  - [`sklearn.utils.class_weight.compute_class_weight(class_weight, *, classes, y)` ](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) computes weights for each class in a dataset to address the issue of class imbalance.
   - **Parameters**
     - `class_weight`: This can be a dictionary specifying the weight for each class, the string `balanced` to automatically compute weights inversely proportional to class frequencies, or `None` for uniform class weights.
