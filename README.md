@@ -1550,7 +1550,9 @@ Let's consider a simple example with a binary class dataset where `y` = [1, 1, 1
     - Using a User-defined Dictionary:
       - If class_weight is provided as {0: 0.5, 1: 2}, then class 0 is assigned a weight of 0.5 and class 1 a weight of 2. This manual assignment overrides the balanced computation.
 
-## `graphgym/loader.py` 
+## Graphgym
+
+### `graphgym/loader.py` 
 
 **Loads and preprocesses graph datasets using the following methods:**
 
@@ -1567,7 +1569,212 @@ Let's consider a simple example with a binary class dataset where `y` = [1, 1, 1
 
 **`graphgym/loader_pyg.py` should be used instead of `graphgym/loader.py` for adding new or custom datasets as it employs a more modular approach for dataset loading, utilizing a registration system that allows for the easy addition of new datasets.**
 
+### Running Custom Dataset
 
+I created a copy of ![Zachary's Karate Club](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.datasets.KarateClub.html#torch_geometric.datasets.KarateClub) dataset as a custom dataset. In `~/GraphGym/graphgym/contrib/loader`, I created a file `mykarateclub.py` with a class `MyKarateClub` which is a copy of the class ![KarateClub](https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/datasets/karate.html#KarateClub).
+
+```<class 'graphgym.contrib.loader.mykarateclub.MyKarateClub'>
+{'root': None, 'transform': None, 'pre_transform': None, 'pre_filter': None, 'log': True, '_indices': None, '_data': Data(x=[34, 34], edge_index=[2, 156], y=[34], train_mask=[34]), 'slices': None, '_data_list': None}
+GNN(
+  (encoder): FeatureEncoder()
+  (pre_mp): GeneralMultiLayer(
+    (Layer_0): GeneralLayer(
+      (layer): Linear(
+        (model): Linear(in_features=34, out_features=2, bias=False)
+      )
+      (post_layer): Sequential(
+        (0): BatchNorm1d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): Dropout(p=0.1, inplace=False)
+        (2): PReLU(num_parameters=1)
+      )
+    )
+  )
+  (mp): GNNStackStage(
+    (layer0): GeneralLayer(
+      (layer): SAGEConv(
+        (model): SAGEConv(2, 2, aggr=mean)
+      )
+      (post_layer): Sequential(
+        (0): BatchNorm1d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): Dropout(p=0.1, inplace=False)
+        (2): PReLU(num_parameters=1)
+      )
+    )
+    (layer1): GeneralLayer(
+      (layer): SAGEConv(
+        (model): SAGEConv(2, 2, aggr=mean)
+      )
+      (post_layer): Sequential(
+        (0): BatchNorm1d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): Dropout(p=0.1, inplace=False)
+        (2): PReLU(num_parameters=1)
+      )
+    )
+    (layer2): GeneralLayer(
+      (layer): SAGEConv(
+        (model): SAGEConv(2, 2, aggr=mean)
+      )
+      (post_layer): Sequential(
+        (0): BatchNorm1d(2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (1): Dropout(p=0.1, inplace=False)
+        (2): PReLU(num_parameters=1)
+      )
+    )
+  )
+  (post_mp): GNNNodeHead(
+    (layer_post_mp): MLP(
+      (model): Sequential(
+        (0): Linear(
+          (model): Linear(in_features=2, out_features=4, bias=True)
+        )
+      )
+    )
+  )
+)
+bn:
+  eps: 1e-05
+  mom: 0.1
+cfg_dest: config.yaml
+custom_metrics: []
+dataset:
+  augment_feature: []
+  augment_feature_dims: []
+  augment_feature_repr: original
+  augment_label: 
+  augment_label_dims: 0
+  cache_load: False
+  cache_save: False
+  dir: ./datasets
+  edge_dim: 128
+  edge_encoder: False
+  edge_encoder_bn: True
+  edge_encoder_name: Bond
+  edge_message_ratio: 0.8
+  edge_negative_sampling_ratio: 1.0
+  edge_train_mode: all
+  encoder: True
+  encoder_bn: True
+  encoder_dim: 128
+  encoder_name: db
+  format: PyG
+  label_column: none
+  label_table: none
+  location: local
+  name: MyKarateClub
+  node_encoder: False
+  node_encoder_bn: True
+  node_encoder_name: Atom
+  remove_feature: False
+  resample_disjoint: False
+  resample_negative: False
+  shuffle_split: True
+  split: [0.8, 0.1, 0.1]
+  split_mode: random
+  task: node
+  task_type: classification
+  to_undirected: False
+  transductive: True
+  transform: none
+  tu_simple: True
+device: cpu
+example_arg: example
+example_group:
+  example_arg: example
+gnn:
+  act: prelu
+  agg: mean
+  att_final_linear: False
+  att_final_linear_bn: False
+  att_heads: 1
+  batchnorm: True
+  clear_feature: True
+  dim_inner: 2
+  dropout: 0.1
+  flow: source_to_target
+  head: node
+  keep_edge: 0.5
+  l2norm: True
+  layer_type: sageconv
+  layers_mp: 3
+  layers_post_mp: 1
+  layers_pre_mp: 1
+  msg_direction: single
+  normalize_adj: False
+  self_msg: concat
+  skip_every: 1
+  stage_type: skipsum
+gpu_mem: False
+mem:
+  inplace: False
+metric_agg: argmax
+metric_best: auto
+model:
+  edge_decoding: dot
+  graph_pooling: add
+  loss_fun: cross_entropy
+  match_upper: True
+  size_average: mean
+  thresh: 0.5
+  type: gnn
+num_threads: 6
+num_workers: 0
+optim:
+  base_lr: 0.01
+  lr_decay: 0.1
+  max_epoch: 10
+  momentum: 0.9
+  optimizer: adam
+  scheduler: cos
+  steps: [30, 60, 90]
+  weight_decay: 0.0005
+out_dir: results/example_mykarateclub
+print: both
+round: 4
+run_dir: results/example_mykarateclub/0
+seed: 1
+share:
+  dim_in: 34
+  dim_out: 4
+  num_splits: 1
+tensorboard_agg: True
+tensorboard_each_run: False
+train:
+  auto_resume: False
+  batch_size: 1
+  ckpt_clean: True
+  ckpt_period: 1
+  enable_ckpt: True
+  epoch_resume: -1
+  eval_period: 1
+  iter_per_epoch: 32
+  mode: standard
+  neighbor_sizes: [20, 15, 10, 5]
+  node_per_graph: 32
+  radius: extend
+  sample_node: False
+  sampler: full_batch
+  skip_train_eval: False
+  walk_length: 4
+val:
+  node_per_graph: 32
+  radius: extend
+  sample_node: False
+  sampler: full_batch
+view_emb: False
+Num parameters: 121
+
+Start from epoch 0
+train: {'epoch': 0, 'eta': 5.3104, 'loss': 1.7432, 'lr': 0.01, 'params': 121, 'time_iter': 0.59, 'accuracy': 0.0}
+train: {'epoch': 1, 'eta': 2.3919, 'loss': 1.5875, 'lr': 0.0098, 'params': 121, 'time_iter': 0.0079, 'accuracy': 0.0}
+train: {'epoch': 2, 'eta': 1.4071, 'loss': 1.6127, 'lr': 0.009, 'params': 121, 'time_iter': 0.005, 'accuracy': 0.0}
+train: {'epoch': 3, 'eta': 0.9095, 'loss': 1.5367, 'lr': 0.0079, 'params': 121, 'time_iter': 0.0033, 'accuracy': 0.25}
+train: {'epoch': 4, 'eta': 0.611, 'loss': 1.4839, 'lr': 0.0065, 'params': 121, 'time_iter': 0.0047, 'accuracy': 0.25}
+train: {'epoch': 5, 'eta': 0.4095, 'loss': 1.5025, 'lr': 0.005, 'params': 121, 'time_iter': 0.0032, 'accuracy': 0.25}
+train: {'epoch': 6, 'eta': 0.2646, 'loss': 1.3395, 'lr': 0.0035, 'params': 121, 'time_iter': 0.0031, 'accuracy': 0.25}
+train: {'epoch': 7, 'eta': 0.1555, 'loss': 1.4387, 'lr': 0.0021, 'params': 121, 'time_iter': 0.0046, 'accuracy': 0.25}
+train: {'epoch': 8, 'eta': 0.0694, 'loss': 1.5325, 'lr': 0.001, 'params': 121, 'time_iter': 0.0031, 'accuracy': 0.0}
+train: {'epoch': 9, 'eta': 0.0, 'loss': 1.7909, 'lr': 0.0002, 'params': 121, 'time_iter': 0.0031, 'accuracy': 0.0}
+```
 
 </details>
 
