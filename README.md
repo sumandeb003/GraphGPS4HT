@@ -1529,7 +1529,9 @@ In a Graph Neural Network (GNN), different types of layers play specific roles i
 In summary, the `GRAPH_CONV` layers capture local structural information, `GRAPH_POOL` layers reduce graph size while preserving essential information, `GRAPH_READOUT` layers aggregate information across the whole graph, and the output layer makes final predictions based on the processed graph data. Together, these components enable GNNs to learn from and make predictions on graph-structured data, which is prevalent in domains like social networks, chemistry, and biology.
 
 
-## `graphgym/loader.py` loads and preprocesses graph datasets using the following methods:
+## `graphgym/loader.py` 
+
+Loads and preprocesses graph datasets using the following methods:
 
   - `create_dataset()`: creates the graph dataset for training, validation, and testing.
     - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
