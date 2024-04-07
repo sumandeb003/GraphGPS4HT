@@ -1528,24 +1528,6 @@ In a Graph Neural Network (GNN), different types of layers play specific roles i
 
 In summary, the `GRAPH_CONV` layers capture local structural information, `GRAPH_POOL` layers reduce graph size while preserving essential information, `GRAPH_READOUT` layers aggregate information across the whole graph, and the output layer makes final predictions based on the processed graph data. Together, these components enable GNNs to learn from and make predictions on graph-structured data, which is prevalent in domains like social networks, chemistry, and biology.
 
-
-## `graphgym/loader.py` 
-
-**Loads and preprocesses graph datasets using the following methods:**
-
-  - `create_dataset()`: creates the graph dataset for training, validation, and testing.
-    - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
-      - `load_pyg(name, dataset_dir)` for PyG format datasets.
-      - `load_nx(name, dataset_dir)` for NetworkX format datasets.
-      - **Custom loader functions registered in `register.loader_dict`.**
-    - Calls `filter_graphs()`: Sets a minimum number of nodes (0 for 'graph' tasks and 5 for others) to filter out smaller graphs
-    - Calls `transform_before_split(dataset)`: Applies transformations to the dataset (A DeepSNAP dataset object) before train/val/test split
-    - Calls `transform_after_split(datasets)`: Applies transformations after the dataset has been split. `datasets` is a list of DeepSNAP dataset objects
-    - Calls `set_dataset_info(datasets)`: Configures global parameters like input dimension (`dim_in`), output dimension (`dim_out`), and the number of dataset splits
-  - `create_loader(datasets)`: This function is called after `create_dataset()` and uses its output `datasets` (List of datasets for training, validation, and testing). It creates `DataLoader` instances for each dataset split (training, validation, test) using `DataLoader` from PyTorch and `Batch.collate()` from DeepSNAP.
-
-**`graphgym/loader_pyg.py` should be used instead of `graphgym/loader.py` for adding new or custom datasets as it employs a more modular approach for dataset loading, utilizing a registration system that allows for the easy addition of new datasets.**
-
 ##  [**Class Weights:**](https://scikit-learn.org/stable/modules/generated/sklearn.utils.class_weight.compute_class_weight.html) 
 
 Consider a scenario where you're working with a graph dataset for molecule classification. The task is to predict whether a molecule is biologically active (class 1) or not (class 0). Let's say the dataset contains 900 molecules that are not biologically active (class 0) and 100 molecules that are biologically active (class 1). Without class weights, the model might learn to overwhelmingly predict the majority class (class 0) because doing so would still achieve a high accuracy (90% if it always predicts class 0). However, such a model is not very useful for identifying the much rarer, but potentially more interesting, biologically active molecules. By applying class weights, you can make the loss for the minority class (class 1) more significant. For instance, if class 0 has a weight of 1, class 1 might be given a weight of 9 (reflecting the inverse ratio of their occurrences). This adjustment tells the model that mistakes made on the minority class are much more costly than those made on the majority class, encouraging the model to improve its predictions for class 1, despite its rarity.
@@ -1567,6 +1549,24 @@ Let's consider a simple example with a binary class dataset where `y` = [1, 1, 1
       - The weights would be computed as 6 / (2 * [2, 4]) = [1.5, 0.75]. So, class 0 (the minority class) gets a higher weight of 1.5, and class 1 (the majority class) gets a lower weight of 0.75.
     - Using a User-defined Dictionary:
       - If class_weight is provided as {0: 0.5, 1: 2}, then class 0 is assigned a weight of 0.5 and class 1 a weight of 2. This manual assignment overrides the balanced computation.
+
+## `graphgym/loader.py` 
+
+**Loads and preprocesses graph datasets using the following methods:**
+
+  - `create_dataset()`: creates the graph dataset for training, validation, and testing.
+    - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
+      - `load_pyg(name, dataset_dir)` for PyG format datasets.
+      - `load_nx(name, dataset_dir)` for NetworkX format datasets.
+      - **Custom loader functions registered in `register.loader_dict`.**
+    - Calls `filter_graphs()`: Sets a minimum number of nodes (0 for 'graph' tasks and 5 for others) to filter out smaller graphs
+    - Calls `transform_before_split(dataset)`: Applies transformations to the dataset (A DeepSNAP dataset object) before train/val/test split
+    - Calls `transform_after_split(datasets)`: Applies transformations after the dataset has been split. `datasets` is a list of DeepSNAP dataset objects
+    - Calls `set_dataset_info(datasets)`: Configures global parameters like input dimension (`dim_in`), output dimension (`dim_out`), and the number of dataset splits
+  - `create_loader(datasets)`: This function is called after `create_dataset()` and uses its output `datasets` (List of datasets for training, validation, and testing). It creates `DataLoader` instances for each dataset split (training, validation, test) using `DataLoader` from PyTorch and `Batch.collate()` from DeepSNAP.
+
+**`graphgym/loader_pyg.py` should be used instead of `graphgym/loader.py` for adding new or custom datasets as it employs a more modular approach for dataset loading, utilizing a registration system that allows for the easy addition of new datasets.**
+
 
 
 </details>
