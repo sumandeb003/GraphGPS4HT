@@ -1571,7 +1571,51 @@ Let's consider a simple example with a binary class dataset where `y` = [1, 1, 1
 
 ### Running Custom Dataset
 
-I created a copy of ![Zachary's Karate Club](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.datasets.KarateClub.html#torch_geometric.datasets.KarateClub) dataset as a custom dataset. In `~/GraphGym/graphgym/contrib/loader`, I created a file `mykarateclub.py` with a class `MyKarateClub` which is a copy of the class ![KarateClub](https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/datasets/karate.html#KarateClub).
+I created a copy of ![Zachary's Karate Club](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.datasets.KarateClub.html#torch_geometric.datasets.KarateClub) dataset as a custom dataset. In `~/GraphGym/graphgym/contrib/loader`, I created a file `mykarateclub.py` with a class `MyKarateClub` which is a copy of the class ![KarateClub](https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/datasets/karate.html#KarateClub). In `graphgym/loader_pyg.py`, I added the following line to the `load_pyg()` method:
+
+```
+    elif name == 'MyKarateClub':
+    	dataset = MyKarateClub()
+```
+
+I created the configuration file `~/GraphGym/run/configs/pyg/example_mykarateclub.yaml`:
+
+```
+out_dir: results
+dataset:
+  format: PyG
+  name: MyKarateClub
+  task: node
+  task_type: classification
+train:
+  batch_size: 1
+  eval_period: 1
+  ckpt_period: 1
+  sampler: full_batch
+model:
+  type: gnn
+  loss_fun: cross_entropy
+  edge_decoding: dot
+  graph_pooling: add
+gnn:
+  layers_pre_mp: 1
+  layers_mp: 3
+  layers_post_mp: 1
+  dim_inner: 2
+  layer_type: sageconv
+  stage_type: skipsum
+  batchnorm: True
+  act: prelu
+  dropout: 0.1
+  agg: mean
+  normalize_adj: False
+optim:
+  optimizer: adam
+  base_lr: 0.01
+  max_epoch: 10
+```
+
+In the `graphgym` environment of anaconda, I executed `python ~/GraphGym/run/main_pyg.py --cfg ~/GraphGym/run/configs/pyg/example_mykarateclub.yaml`. The output is printed as follows:
 
 ```<class 'graphgym.contrib.loader.mykarateclub.MyKarateClub'>
 {'root': None, 'transform': None, 'pre_transform': None, 'pre_filter': None, 'log': True, '_indices': None, '_data': Data(x=[34, 34], edge_index=[2, 156], y=[34], train_mask=[34]), 'slices': None, '_data_list': None}
@@ -1775,6 +1819,33 @@ train: {'epoch': 7, 'eta': 0.1555, 'loss': 1.4387, 'lr': 0.0021, 'params': 121, 
 train: {'epoch': 8, 'eta': 0.0694, 'loss': 1.5325, 'lr': 0.001, 'params': 121, 'time_iter': 0.0031, 'accuracy': 0.0}
 train: {'epoch': 9, 'eta': 0.0, 'loss': 1.7909, 'lr': 0.0002, 'params': 121, 'time_iter': 0.0031, 'accuracy': 0.0}
 ```
+
+1. **Encoder Stage**
+
+`FeatureEncoder`: This initial stage likely transforms raw input features into a format suitable for processing by subsequent GNN layers. The specifics of the transformation are not detailed, but it typically normalizes or embeds input features.
+
+2. **Pre-message Passing Stage (pre_mp)**
+
+`GeneralMultiLayer`: This stage consists of layers applied before the core message-passing operations. It's designed to preprocess node features.
+
+`Linear Layer`: A linear transformation applied to the input features. Here, it transforms features from `in_features=34` to `out_features=2`, effectively reducing the dimensionality or projecting the features into a new space.
+
+`BatchNorm1d`, `Dropout`, `PReLU`: These layers perform batch normalization, dropout (with p=0.1 for regularization), and Parametric ReLU activation, respectively, on the output of the linear layer.
+
+3. **Message Passing Stage (mp)**
+
+`GNNStackStage`: This is the core of the GNN, where message passing occurs through multiple GNN layers.
+
+SAGEConv Layers: Each `GeneralLayer` in this stage uses a `SAGEConv` layer for convolution operations, specifically `GraphSAGE` convolution, which aggregates neighbor features with a mean aggregation function (aggr=mean). The model includes 3 such layers (layer0, layer1, layer2), each taking 2-dimensional input and outputting 2-dimensional features. This implies that the feature size does not change through these layers.
+
+Sequential Layers Post SAGEConv: After each `SAGEConv`, the features undergo batch normalization, dropout, and PReLU activation, similar to the pre_mp stage.
+
+4. **Post-message Passing Stage (post_mp)**
+
+`GNNNodeHead` with MLP: This final stage processes the node features after message passing.
+
+MLP (Multi-Layer Perceptron): An MLP with a single linear layer that transforms the features from `in_features=2` to `out_features=4`. This could be for mapping the features to the space of possible labels or another representation.
+
 
 </details>
 
