@@ -1531,7 +1531,7 @@ In summary, the `GRAPH_CONV` layers capture local structural information, `GRAPH
 
 ## `graphgym/loader.py` 
 
-Loads and preprocesses graph datasets using the following methods:
+**Loads and preprocesses graph datasets using the following methods:**
 
   - `create_dataset()`: creates the graph dataset for training, validation, and testing.
     - Calls `load_dataset()`: Loads raw datasets based on the specified format. Inside `load_dataset()`, depending on the dataset format, it may call:
