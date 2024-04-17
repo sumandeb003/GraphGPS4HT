@@ -1845,6 +1845,17 @@ train: {'epoch': 9, 'eta': 0.0, 'loss': 1.7909, 'lr': 0.0002, 'params': 121, 'ti
     - `GNNNodeHead` with MLP: This final stage processes the node features after message passing.
 
     - MLP (Multi-Layer Perceptron): An MLP with a single linear layer that transforms the features from `in_features=2` to `out_features=4`. This could be for mapping the features to the space of possible labels or another representation.
+  
+
+### Aggregating Training Results 
+
+To evaluate the performance of a GNN, multiple runs of training + testing are done. In each run:
+
+- The weights of the GNN are initialized using a different seed. So, the initial weights of the GNN are different in each run.
+- Multiple epochs of training are done. In each epoch, the training accuracy, the validation accuracy and the test accuracy are evaluated.
+- The best epoch is determined depending on the validation accuracy. The training, validation and test accuracies of the best epoch are noted.
+
+After collecting the validation and test accuracies this way, from multiple runs, their individual mean and standard deviation are calculated. 
 
 
 </details>
