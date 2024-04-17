@@ -1852,7 +1852,20 @@ train: {'epoch': 9, 'eta': 0.0, 'loss': 1.7909, 'lr': 0.0002, 'params': 121, 'ti
 To evaluate the performance of a GNN, multiple runs of training + testing are done. In each run:
 
 - The weights of the GNN are initialized using a different seed. So, the initial weights of the GNN are different in each run.
-  - Graphgym creates a separate directory for each run. The title of the directory is the seed value.
+  - Graphgym creates a separate directory for each run. The title of the directory is the seed value. It contains the following sub-directories and file:
+    - `train`: It contains the file `stats.json`. Example content of this file:
+
+```
+{"epoch": 0, "eta": 92.9547, "loss": 0.2347, "lr": 0.01, "params": 509402, "time_iter": 0.0901, "accuracy": 0.9578, "precision": 0.1837, "recall": 0.0365, "f1": 0.0609, "auc": 0.5195}
+{"epoch": 1, "eta": 66.4252, "loss": 0.19, "lr": 0.009, "params": 509402, "time_iter": 0.0816, "accuracy": 0.9622, "precision": 0.4068, "recall": 0.0195, "f1": 0.0372, "auc": 0.5041}
+{"epoch": 2, "eta": 43.5609, "loss": 0.1672, "lr": 0.0065, "params": 509402, "time_iter": 0.0816, "accuracy": 0.9627, "precision": 0.5352, "recall": 0.0308, "f1": 0.0583, "auc": 0.5744}
+{"epoch": 3, "eta": 21.5627, "loss": 0.1532, "lr": 0.0035, "params": 509402, "time_iter": 0.081, "accuracy": 0.9635, "precision": 0.6569, "recall": 0.0544, "f1": 0.1004, "auc": 0.6512}
+{"epoch": 4, "eta": 0.0, "loss": 0.1478, "lr": 0.001, "params": 509402, "time_iter": 0.0808, "accuracy": 0.9638, "precision": 0.6458, "recall": 0.0755, "f1": 0.1352, "auc": 0.6857}
+```
+    - `val`: It contains the file `stats.json`.
+    - `test`: It contains the file `stats.json`.
+    - `ckpt`:  It contains a `.ckpt` file.
+    - `logging.log`: It contains the output messages printed on screen upon executing the `main.py`.
 - Multiple epochs of training are done. In each epoch, the training accuracy, the validation accuracy and the test accuracy are evaluated.
 - The best epoch is determined depending on the validation accuracy. The training, validation and test accuracies of the best epoch are noted.
 
