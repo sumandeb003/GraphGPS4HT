@@ -1863,7 +1863,7 @@ To evaluate the performance of a GNN, multiple runs of training + testing are do
 
 After aggregating the validation and test accuracies this way, from multiple runs, their individual mean and standard deviation are calculated. 
 
-**Example content of `run/results/dataset/train/stats.json`:** Contains epoch-wise training accuracy, TPR, FPR etc.
+**Example content of `run/results/dataset/train/stats.json`:** Contains epoch-wise training accuracy, TPR, FPR etc. of the model.
 ```
 {"epoch": 0, "eta": 92.9547, "loss": 0.2347, "lr": 0.01, "params": 509402, "time_iter": 0.0901, "accuracy": 0.9578, "precision": 0.1837, "recall": 0.0365, "f1": 0.0609, "auc": 0.5195}
 {"epoch": 1, "eta": 66.4252, "loss": 0.19, "lr": 0.009, "params": 509402, "time_iter": 0.0816, "accuracy": 0.9622, "precision": 0.4068, "recall": 0.0195, "f1": 0.0372, "auc": 0.5041}
@@ -1871,7 +1871,7 @@ After aggregating the validation and test accuracies this way, from multiple run
 {"epoch": 3, "eta": 21.5627, "loss": 0.1532, "lr": 0.0035, "params": 509402, "time_iter": 0.081, "accuracy": 0.9635, "precision": 0.6569, "recall": 0.0544, "f1": 0.1004, "auc": 0.6512}
 {"epoch": 4, "eta": 0.0, "loss": 0.1478, "lr": 0.001, "params": 509402, "time_iter": 0.0808, "accuracy": 0.9638, "precision": 0.6458, "recall": 0.0755, "f1": 0.1352, "auc": 0.6857}
 ```
-**Example content of `run/results/dataset/val/stats.json`:** Contains epoch-wise validation accuracy, TPR, FPR etc.
+**Example content of `run/results/dataset/val/stats.json`:** Contains validation accuracy, TPR, FPR etc. of the model for every `eval_period` number of epochs.
 ```
 {"epoch": 0, "loss": 0.3583, "lr": 0, "params": 509402, "time_iter": 0.0338, "accuracy": 0.8444, "precision": 0.0542, "recall": 0.4198, "f1": 0.096, "auc": 0.6545}
 {"epoch": 1, "loss": 0.1082, "lr": 0, "params": 509402, "time_iter": 0.0265, "accuracy": 0.9803, "precision": 0.0, "recall": 0.0, "f1": 0.0, "auc": 0.5354}
@@ -1879,7 +1879,7 @@ After aggregating the validation and test accuracies this way, from multiple run
 {"epoch": 3, "loss": 0.1546, "lr": 0, "params": 509402, "time_iter": 0.0252, "accuracy": 0.9635, "precision": 0.1835, "recall": 0.2469, "f1": 0.2105, "auc": 0.6899}
 {"epoch": 4, "loss": 0.0906, "lr": 0, "params": 509402, "time_iter": 0.0253, "accuracy": 0.9813, "precision": 0.75, "recall": 0.0741, "f1": 0.1348, "auc": 0.6848}
 ```
-**Example content of `run/results/dataset/test/stats.json`:** Contains epoch-wise test accuracy, TPR, FPR etc.
+**Example content of `run/results/dataset/test/stats.json`:** Contains test accuracy, TPR, FPR etc. of the model for every `eval_period` number of epochs.
 ```
 {"epoch": 0, "loss": 0.3999, "lr": 0, "params": 509402, "time_iter": 0.0336, "accuracy": 0.8033, "precision": 0.0708, "recall": 0.4308, "f1": 0.1216, "auc": 0.6672}
 {"epoch": 1, "loss": 0.1704, "lr": 0, "params": 509402, "time_iter": 0.0232, "accuracy": 0.9684, "precision": 0.0, "recall": 0.0, "f1": 0.0, "auc": 0.4045}
