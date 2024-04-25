@@ -1849,17 +1849,18 @@ train: {'epoch': 9, 'eta': 0.0, 'loss': 1.7909, 'lr': 0.0002, 'params': 121, 'ti
 
 ### Aggregating Training Results in GraphGym 
 
-To evaluate the performance of a GNN, multiple runs of training + testing are done. In each run:
+To evaluate the performance of a GNN, multiple trials/runs of training + testing are done. 
 
-- The weights of the GNN are initialized using a different seed. So, the initial weights of the GNN are different in each run.
-  - Graphgym creates a separate directory for each run. The title of the directory is the seed value. It contains the following sub-directories and file:
-    - `train`: It contains the file `stats.json`.
-    - `val`: It contains the file `stats.json`.
-    - `test`: It contains the file `stats.json`.
-    - `ckpt`: It contains a `.ckpt` file.
-    - `logging.log`: It contains the output messages printed on screen upon executing the `main.py`.
-- Multiple epochs of training are done. In each epoch, the training accuracy, the validation accuracy and the test accuracy are evaluated.
-- The best epoch is determined depending on the validation accuracy. The training, validation and test accuracies of the best epoch are noted.
+In each trial/run:
+ - The weights of the GNN are initialized using a different seed. So, the initial weights of the GNN are different in each trial/run.
+   - Graphgym creates a separate directory for each trial/run. The title of the directory is the seed value. It contains the following sub-directories and file:
+     - `train`: It contains the file `stats.json`.
+     - `val`: It contains the file `stats.json`.
+     - `test`: It contains the file `stats.json`.
+     - `ckpt`: It contains a `.ckpt` file.
+     - `logging.log`: It contains the output messages printed on screen upon executing the `main.py`.
+ - Multiple epochs of training are done. In each epoch, the training accuracy, the validation accuracy and the test accuracy are evaluated.
+ - The best epoch is determined depending on the validation accuracy. The training, validation and test accuracies of the best epoch are noted.
 
 After aggregating the validation and test accuracies this way, from multiple runs, their individual mean and standard deviation are calculated. 
 
