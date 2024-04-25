@@ -1863,7 +1863,7 @@ To evaluate the performance of a GNN, multiple runs of training + testing are do
 
 After aggregating the validation and test accuracies this way, from multiple runs, their individual mean and standard deviation are calculated. 
 
-**Example content of `run/results/dataset/seedval/train/stats.json`:** Contains epoch-wise training accuracy, TPR, FPR etc. of the model.
+**Example content of `run/results/dataset/seedval/train/stats.json`:** Contains epoch-wise training accuracy, TPR, FPR etc. of the model for a given trial (= given seed) of training.
 ```
 {"epoch": 0, "eta": 92.9547, "loss": 0.2347, "lr": 0.01, "params": 509402, "time_iter": 0.0901, "accuracy": 0.9578, "precision": 0.1837, "recall": 0.0365, "f1": 0.0609, "auc": 0.5195}
 {"epoch": 1, "eta": 66.4252, "loss": 0.19, "lr": 0.009, "params": 509402, "time_iter": 0.0816, "accuracy": 0.9622, "precision": 0.4068, "recall": 0.0195, "f1": 0.0372, "auc": 0.5041}
@@ -1871,7 +1871,7 @@ After aggregating the validation and test accuracies this way, from multiple run
 {"epoch": 3, "eta": 21.5627, "loss": 0.1532, "lr": 0.0035, "params": 509402, "time_iter": 0.081, "accuracy": 0.9635, "precision": 0.6569, "recall": 0.0544, "f1": 0.1004, "auc": 0.6512}
 {"epoch": 4, "eta": 0.0, "loss": 0.1478, "lr": 0.001, "params": 509402, "time_iter": 0.0808, "accuracy": 0.9638, "precision": 0.6458, "recall": 0.0755, "f1": 0.1352, "auc": 0.6857}
 ```
-**Example content of `run/results/dataset/seedval/val/stats.json`:** Contains validation accuracy, TPR, FPR etc. of the model for every `eval_period` number of epochs.
+**Example content of `run/results/dataset/seedval/val/stats.json`:** Contains validation accuracy, TPR, FPR etc. of the model for every `eval_period`-*th* epoch in a given trial (= given seed) of training.
 ```
 {"epoch": 0, "loss": 0.3583, "lr": 0, "params": 509402, "time_iter": 0.0338, "accuracy": 0.8444, "precision": 0.0542, "recall": 0.4198, "f1": 0.096, "auc": 0.6545}
 {"epoch": 1, "loss": 0.1082, "lr": 0, "params": 509402, "time_iter": 0.0265, "accuracy": 0.9803, "precision": 0.0, "recall": 0.0, "f1": 0.0, "auc": 0.5354}
@@ -1879,7 +1879,7 @@ After aggregating the validation and test accuracies this way, from multiple run
 {"epoch": 3, "loss": 0.1546, "lr": 0, "params": 509402, "time_iter": 0.0252, "accuracy": 0.9635, "precision": 0.1835, "recall": 0.2469, "f1": 0.2105, "auc": 0.6899}
 {"epoch": 4, "loss": 0.0906, "lr": 0, "params": 509402, "time_iter": 0.0253, "accuracy": 0.9813, "precision": 0.75, "recall": 0.0741, "f1": 0.1348, "auc": 0.6848}
 ```
-**Example content of `run/results/dataset/seedval/test/stats.json`:** Contains test accuracy, TPR, FPR etc. of the model for every `eval_period` number of epochs.
+**Example content of `run/results/dataset/seedval/test/stats.json`:** Contains test accuracy, TPR, FPR etc. of the model for every `eval_period`-*th* epoch in a given trial (= given seed) of training.
 ```
 {"epoch": 0, "loss": 0.3999, "lr": 0, "params": 509402, "time_iter": 0.0336, "accuracy": 0.8033, "precision": 0.0708, "recall": 0.4308, "f1": 0.1216, "auc": 0.6672}
 {"epoch": 1, "loss": 0.1704, "lr": 0, "params": 509402, "time_iter": 0.0232, "accuracy": 0.9684, "precision": 0.0, "recall": 0.0, "f1": 0.0, "auc": 0.4045}
@@ -1889,7 +1889,7 @@ After aggregating the validation and test accuracies this way, from multiple run
 ```
 
 
-**Example content of `run/results/dataset/agg/train/stats.json`:**  Contains means and standard deviations of the training metrics of the individual runs
+**Example content of `run/results/dataset/agg/train/stats.json`:**  Contains the means and the standard deviations of the training metrics of the corresponding epochs of all the trials of training. Basically, it contains the means and the standard deviations of the epoch-wise performance metrics in the `train/stats.json` file of every seed value in the `run/results/dataset`directory.
 ```
 {"epoch": 0, "eta": 92.9547, "eta_std": 0.0, "loss": 0.2347, "loss_std": 0.0, "lr": 0.01, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0901, "time_iter_std": 0.0, "accuracy": 0.9578, "accuracy_std": 0.0, "precision": 0.1837, "precision_std": 0.0, "recall": 0.0365, "recall_std": 0.0, "f1": 0.0609, "f1_std": 0.0, "auc": 0.5195, "auc_std": 0.0}
 {"epoch": 1, "eta": 66.4252, "eta_std": 0.0, "loss": 0.19, "loss_std": 0.0, "lr": 0.009, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0816, "time_iter_std": 0.0, "accuracy": 0.9622, "accuracy_std": 0.0, "precision": 0.4068, "precision_std": 0.0, "recall": 0.0195, "recall_std": 0.0, "f1": 0.0372, "f1_std": 0.0, "auc": 0.5041, "auc_std": 0.0}
@@ -1897,11 +1897,12 @@ After aggregating the validation and test accuracies this way, from multiple run
 {"epoch": 3, "eta": 21.5627, "eta_std": 0.0, "loss": 0.1532, "loss_std": 0.0, "lr": 0.0035, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.081, "time_iter_std": 0.0, "accuracy": 0.9635, "accuracy_std": 0.0, "precision": 0.6569, "precision_std": 0.0, "recall": 0.0544, "recall_std": 0.0, "f1": 0.1004, "f1_std": 0.0, "auc": 0.6512, "auc_std": 0.0}
 {"epoch": 4, "eta": 0.0, "eta_std": 0.0, "loss": 0.1478, "loss_std": 0.0, "lr": 0.001, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0808, "time_iter_std": 0.0, "accuracy": 0.9638, "accuracy_std": 0.0, "precision": 0.6458, "precision_std": 0.0, "recall": 0.0755, "recall_std": 0.0, "f1": 0.1352, "f1_std": 0.0, "auc": 0.6857, "auc_std": 0.0}
 ```
-**Example content of `run/results/dataset/agg/train/best.json`:**
+**Example content of `run/results/dataset/agg/train/best.json`:** Contains the means and the standard deviations of the training metrics of the best epoch of all the trials of training. Basically, it contains the means and the standard deviations of the performance metrics of the best epoch in the `train/stats.json` file of every seed value in the `run/results/dataset`directory. The best epoch is the one that has the best **validation** performance in terms of the metric assigned to the `metric_best` parameter (in the configuration file (`.yaml`)).
 ```
 {"epoch": 2, "eta": 43.5609, "eta_std": 0.0, "loss": 0.1672, "loss_std": 0.0, "lr": 0.0065, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0816, "time_iter_std": 0.0, "accuracy": 0.9627, "accuracy_std": 0.0, "precision": 0.5352, "precision_std": 0.0, "recall": 0.0308, "recall_std": 0.0, "f1": 0.0583, "f1_std": 0.0, "auc": 0.5744, "auc_std": 0.0}
 ```
-**Example content of `run/results/dataset/agg/val/stats.json`:** Contains means and standard deviations of the validation metrics of the individual runs
+**Example content of `run/results/dataset/agg/val/stats.json`:** Contains the means and the standard deviations of the validation metrics of the corresponding epochs of all the trials of training. Basically, it contains the means and the standard deviations of the epoch-wise performance metrics in the `val/stats.json` file of every seed value in the `run/results/dataset`directory.
+
 ```
 {"epoch": 0, "loss": 0.3583, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0338, "time_iter_std": 0.0, "accuracy": 0.8444, "accuracy_std": 0.0, "precision": 0.0542, "precision_std": 0.0, "recall": 0.4198, "recall_std": 0.0, "f1": 0.096, "f1_std": 0.0, "auc": 0.6545, "auc_std": 0.0}
 {"epoch": 1, "loss": 0.1082, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0265, "time_iter_std": 0.0, "accuracy": 0.9803, "accuracy_std": 0.0, "precision": 0.0, "precision_std": 0.0, "recall": 0.0, "recall_std": 0.0, "f1": 0.0, "f1_std": 0.0, "auc": 0.5354, "auc_std": 0.0}
@@ -1909,11 +1910,11 @@ After aggregating the validation and test accuracies this way, from multiple run
 {"epoch": 3, "loss": 0.1546, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0252, "time_iter_std": 0.0, "accuracy": 0.9635, "accuracy_std": 0.0, "precision": 0.1835, "precision_std": 0.0, "recall": 0.2469, "recall_std": 0.0, "f1": 0.2105, "f1_std": 0.0, "auc": 0.6899, "auc_std": 0.0}
 {"epoch": 4, "loss": 0.0906, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0253, "time_iter_std": 0.0, "accuracy": 0.9813, "accuracy_std": 0.0, "precision": 0.75, "precision_std": 0.0, "recall": 0.0741, "recall_std": 0.0, "f1": 0.1348, "f1_std": 0.0, "auc": 0.6848, "auc_std": 0.0}
 ```
-**Example content of `run/results/dataset/agg/val/best.json`:**
+**Example content of `run/results/dataset/agg/val/best.json`:** Contains the means and the standard deviations of the validation metrics of the best epoch of all the trials of training. Basically, it contains the means and the standard deviations of the performance metrics of the best epoch in the `val/stats.json` file of every seed value in the `run/results/dataset`directory.
 ```
 {"epoch": 2, "loss": 0.1162, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0258, "time_iter_std": 0.0, "accuracy": 0.9769, "accuracy_std": 0.0, "precision": 0.2941, "precision_std": 0.0, "recall": 0.1235, "recall_std": 0.0, "f1": 0.1739, "f1_std": 0.0, "auc": 0.6988, "auc_std": 0.0}
 ```
-**Example content of `run/results/dataset/agg/test/stats.json`:**
+**Example content of `run/results/dataset/agg/test/stats.json`:** Contains the means and the standard deviations of the test metrics of the corresponding epochs of all the trials of training. Basically, it contains the means and the standard deviations of the epoch-wise performance metrics in the `test/stats.json` file of every seed value in the `run/results/dataset`directory.
 ```
 {"epoch": 0, "loss": 0.3999, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0336, "time_iter_std": 0.0, "accuracy": 0.8033, "accuracy_std": 0.0, "precision": 0.0708, "precision_std": 0.0, "recall": 0.4308, "recall_std": 0.0, "f1": 0.1216, "f1_std": 0.0, "auc": 0.6672, "auc_std": 0.0}
 {"epoch": 1, "loss": 0.1704, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0232, "time_iter_std": 0.0, "accuracy": 0.9684, "accuracy_std": 0.0, "precision": 0.0, "precision_std": 0.0, "recall": 0.0, "recall_std": 0.0, "f1": 0.0, "f1_std": 0.0, "auc": 0.4045, "auc_std": 0.0}
@@ -1921,7 +1922,7 @@ After aggregating the validation and test accuracies this way, from multiple run
 {"epoch": 3, "loss": 0.1871, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.023, "time_iter_std": 0.0, "accuracy": 0.9499, "accuracy_std": 0.0, "precision": 0.12, "precision_std": 0.0, "recall": 0.0923, "recall_std": 0.0, "f1": 0.1043, "f1_std": 0.0, "auc": 0.6296, "auc_std": 0.0}
 {"epoch": 4, "loss": 0.1387, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0224, "time_iter_std": 0.0, "accuracy": 0.9686, "accuracy_std": 0.0, "precision": 1.0, "precision_std": 0.0, "recall": 0.0077, "recall_std": 0.0, "f1": 0.0153, "f1_std": 0.0, "auc": 0.5877, "auc_std": 0.0}
 ```
-**Example content of `run/results/dataset/agg/test/best.json`:**
+**Example content of `run/results/dataset/agg/test/best.json`:** Contains the means and the standard deviations of the test metrics of the best epoch of all the trials of training. Basically, it contains the means and the standard deviations of the performance metrics of the best epoch in the `test/stats.json` file of every seed value in the `run/results/dataset`directory.
 ```
 {"epoch": 2, "loss": 0.1551, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0238, "time_iter_std": 0.0, "accuracy": 0.9638, "accuracy_std": 0.0, "precision": 0.2121, "precision_std": 0.0, "recall": 0.0538, "recall_std": 0.0, "f1": 0.0859, "f1_std": 0.0, "auc": 0.644, "auc_std": 0.0}
 ```
