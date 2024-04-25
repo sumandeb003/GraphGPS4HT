@@ -1854,12 +1854,12 @@ To evaluate the performance of a GNN, multiple trials/runs of training + testing
 In each trial/run:
  - The weights of the GNN are initialized using a different seed. So, the initial weights of the GNN are different in each trial/run.
    - Graphgym creates a separate directory for each trial/run. The title of the directory is the seed value. It contains the following sub-directories and file:
-     - `train`: It contains the file `stats.json`.
-     - `val`: It contains the file `stats.json`.
-     - `test`: It contains the file `stats.json`.
-     - `ckpt`: It contains a `.ckpt` file.
+     - `train`
+     - `val`
+     - `test`
+     - `ckpt`
      - `logging.log`: It contains the output messages printed on screen upon executing the `main.py`.
- - Multiple epochs of training are done. In each epoch, the training accuracy, the validation accuracy and the test accuracy are evaluated.
+ - Multiple epochs of training are done in each run/trial. In each epoch, the training performance is measured. For every `eval_period`-*th* epoch, the validation performance and the test performance are measured. The training, validation and test performances are logged separately in a `stats.json` file of the `train`, `val` and `test` sub-directories, respectively.
  - The best epoch is determined depending on the validation accuracy. The training, validation and test accuracies of the best epoch are noted.
 
 After aggregating the validation and test accuracies this way, from multiple runs, their individual mean and standard deviation are calculated. 
