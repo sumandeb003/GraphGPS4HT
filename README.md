@@ -1866,6 +1866,8 @@ After all the trials of training are done, validation and testing are completed,
  - The means and standard deviations of the **validation performances** in the best epoch of all trials are claculated and stored in `best.json` of `aggr/val`.
  - The means and standard deviations of the **test performances** in the best epoch of all trials are claculated and stored in `best.json` of `aggr/test`.
 
+**There should have been a `best.json` file, along with `stats.json`, in the `train`, `val`, `test` sub-directories of `run/results/dataset/seedval`. The `best.json` file in the `train`, `val`, `test` sub-directories of `aggr` would then contain the means and standard deviations of the performance metrics in the `best.json` file of the corresponding split across all trials.**
+
 **Example content of `run/results/dataset/seedval/train/stats.json`:** Contains epoch-wise training accuracy, TPR, FPR etc. of the model for a given trial (= given seed) of training.
 ```
 {"epoch": 0, "eta": 92.9547, "loss": 0.2347, "lr": 0.01, "params": 509402, "time_iter": 0.0901, "accuracy": 0.9578, "precision": 0.1837, "recall": 0.0365, "f1": 0.0609, "auc": 0.5195}
