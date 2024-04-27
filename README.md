@@ -1615,7 +1615,7 @@ optim:
   max_epoch: 10
 ```
 
-**NOTE: The argument `--repeat 3` when added at the end of the command `python ~/GraphGym/run/main_pyg.py --cfg ~/GraphGym/run/configs/pyg/example_mykarateclub.yaml` will repeat/run the training, validation and testing 3 times - each time with a different seed value for initializing the weights of the GNN. The seed value for the first run is the seed given in the configuration file. The seed values for the subsequent runs are obtained by incrementing this seed by 1 successively. So, the seed given in configuration file is incremented by 1 thrice.**
+**NOTE: The argument `--repeat 3` when added at the end of the command `python ~/GraphGym/run/main_pyg.py --cfg ~/GraphGym/run/configs/pyg/example_mykarateclub.yaml` will repeat/run the training, validation and testing 3 times - each time with a different seed value for initializing the weights of the GNN. The seed value for the first run is the seed given in the configuration file. The seed values for the subsequent runs are obtained by incrementing this seed by 1 successively. So, the seed given in configuration file is incremented by 1 thrice.** I think this `repeat` should have been a parameter in the configuration file rather than an argument in the command.
 
 In the `graphgym` environment of anaconda, I executed `python ~/GraphGym/run/main_pyg.py --cfg ~/GraphGym/run/configs/pyg/example_mykarateclub.yaml`. The output is printed as follows:
 
