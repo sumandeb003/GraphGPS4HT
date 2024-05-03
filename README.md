@@ -1933,6 +1933,10 @@ After all the trials of training are done, validation and testing are completed,
 ```
 {"epoch": 2, "loss": 0.1551, "loss_std": 0.0, "lr": 0.0, "lr_std": 0.0, "params": 509402.0, "params_std": 0.0, "time_iter": 0.0238, "time_iter_std": 0.0, "accuracy": 0.9638, "accuracy_std": 0.0, "precision": 0.2121, "precision_std": 0.0, "recall": 0.0538, "recall_std": 0.0, "f1": 0.0859, "f1_std": 0.0, "auc": 0.644, "auc_std": 0.0}
 ```
+
+## GraphGym Facts
+
+1. In the `.yaml` configuration file in `run/configs`, the parameters `share.num_splits` and `dataset.split` are useless. No matter what values you supply to these parameters, GraphGym picks up these values from the dataset class. To find the splits present and the number of graph samples in each of them, you can use `dataset.data['tran_mask']`, `len(dataset.data['tran_mask'])` and so on in `graphgym/loader_pyg.py`.
 </details>
 
 ## To Dos:
