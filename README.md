@@ -1936,7 +1936,7 @@ After all the trials of training are done, validation and testing are completed,
 
 ## GraphGym Facts
 
-1. In the `.yaml` configuration file in `run/configs`, the parameters `share.num_splits` and `dataset.split` are useless. No matter what values you supply to these parameters, GraphGym picks up these values from the dataset class. To find the splits present and the number of graph samples in each of them, you can use `dataset.data['tran_mask']`, `len(dataset.data['tran_mask'])` and so on in `graphgym/loader_pyg.py`.
+1. In the `.yaml` configuration file in `run/configs`, the parameters `share.num_splits` and `dataset.split` are useless. No matter what values you supply to these parameters, GraphGym picks up these values from the dataset class. Irrespective of its value set in the configuration file, the parameter `share.num_splits` is updated in the method `set_dataset_info` of `graphgym/loader_pyg.py` based on the number of splits present in the dataset. To find the splits present and the number of graph samples in each split, you can use `dataset.data['tran_mask']`, `len(dataset.data['tran_mask'])` and so on in `graphgym/loader_pyg.py`.
 </details>
 
 ## To Dos:
