@@ -1937,6 +1937,58 @@ After all the trials of training are done, validation and testing are completed,
 ## GraphGym Facts
 
 1. In the `.yaml` configuration file in `run/configs`, the parameters `share.num_splits` and `dataset.split` are useless. No matter what values you supply to these parameters, GraphGym picks up these values from the dataset class. Irrespective of its value set in the configuration file, the parameter `share.num_splits` is updated in the method `set_dataset_info` of `graphgym/loader_pyg.py` based on the number of splits present in the dataset. To find the splits present and the number of graph samples in each split, you can use `dataset.data['tran_mask']`, `len(dataset.data['tran_mask'])` and so on in `graphgym/loader_pyg.py`.
+2. 
+
+
+## PyTorch Geometric Facts
+
+1. Basic examples of: **How to instantiate a `Data` object?** 
+```
+import torch
+from torch_geometric.data import Data
+
+# Node features
+x = torch.tensor([[1.0, 2.0], [2.0, 3.0], [3.0, 4.0], [4.0, 5.0]], dtype=torch.float)
+
+# Edge indices
+edge_index = torch.tensor([[0, 1, 1, 2, 2, 3], [1, 0, 2, 1, 3, 2]], dtype=torch.long)
+
+# Labels
+y = torch.tensor([0, 1, 0, 1], dtype=torch.long)
+
+# Train, validation, and test masks
+train_mask = torch.tensor([True, True, False, False], dtype=torch.bool)
+val_mask = torch.tensor([False, False, True, False], dtype=torch.bool)
+test_mask = torch.tensor([False, False, False, True], dtype=torch.bool)
+
+# Create Data object
+data = Data(x=x, edge_index=edge_index, y=y, train_mask=train_mask, val_mask=val_mask, test_mask=test_mask)
+```
+**The primary task of `process` method or the dataset class is to create the tensors `x`, `y`, `edge_index`, `train_mask`, `val_mask`, `test_mask` and create a `Data` object using these tensors**
+```
+def process(self) -> None:
+    data = np.load(osp.join(self.raw_dir, 'reddit_data.npz'))
+    x = torch.from_numpy(data['feature']).to(torch.float)
+    y = torch.from_numpy(data['label']).to(torch.long)
+    split = torch.from_numpy(data['node_types'])
+
+    adj = sp.load_npz(osp.join(self.raw_dir, 'reddit_graph.npz'))
+    row = torch.from_numpy(adj.row).to(torch.long)
+    col = torch.from_numpy(adj.col).to(torch.long)
+    edge_index = torch.stack([row, col], dim=0)
+    edge_index = coalesce(edge_index, num_nodes=x.size(0))
+
+    data = Data(x=x, edge_index=edge_index, y=y)
+    data.train_mask = split == 1
+    data.val_mask = split == 2
+    data.test_mask = split == 3
+
+    if self.pre_transform:
+        data = self.pre_transform(data)
+
+    self.save([data], self.processed_paths[0])
+```
+
 </details>
 
 ## To Dos:
