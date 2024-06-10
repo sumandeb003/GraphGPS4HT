@@ -1942,7 +1942,10 @@ After all the trials of training are done, validation and testing are completed,
 
 ## PyTorch Geometric Facts
 
-1. Basic examples of: **How to instantiate a `Data` object?** 
+1. **Each graph in the train set is represented or saved as a `Data` object.**
+2. **For graph-level dataset, each graph is a `Data` object with `y` a scalar value representing the class/ground-truth of that graph.**
+3. **For node-level graph datasets, only one `Data` object is formed because the dataset usually has only one graph. The nodes in the graph are classified into tran,val,test sets using train_mask,val_mask,test_mask. These masks can be set in the `Data` object itself.**
+4. Basic examples of: **How to instantiate a `Data` object?** 
 ```
 import torch
 from torch_geometric.data import Data
@@ -1989,16 +1992,152 @@ def process(self) -> None:
     self.save([data], self.processed_paths[0])
 ```
 
+5. **Graph-level datasets:**
+
+AQSOL:
+  - #graphs
+  - #nodes
+  - #edges
+  - #features
+  - #classes
+  - 9,833
+  - ~17.6
+  - ~35.8
+  - 1
+  - 1
+  
+
+ZINC:
+ - Name
+ - #graphs
+ - #nodes
+ - #edges
+ - #features
+ - #classes
+ - ZINC Full
+ - 249,456
+ - ~23.2
+ - ~49.8
+ - 1
+ - 1
+ - ZINC Subset
+ - 12,000
+ - ~23.2
+ - ~49.8
+ - 1
+ - 1
+
+
+MNISTSuperPixels:
+  - #graphs
+  - #nodes
+  - #edges
+  - #features
+  - #classes
+  - 70,000
+  - 75
+  - ~1,393.0
+  - 1
+  - 10
+
+
+6. **Node-level datasets:**
+
+Reddit:
+  - #nodes
+  - #edges
+  - #features
+  - #classes
+  - 232,965
+  - 114,615,892
+  - 602
+  - 41
+
+Reddit2:
+  - #nodes
+  - #edges
+  - #features
+  - #classes
+  - 232,965
+  - 23,213,838
+  - 602
+  - 41
+
+Planetoid:
+  - Name
+  - #nodes
+  - #edges
+  - #features
+  - #classes
+  - Cora
+  - 2,708
+  - 10,556
+  - 1,433
+  - 7
+  - CiteSeer
+  - 3,327
+  - 9,104
+  - 3,703
+  - 6
+  - PubMed
+  - 19,717
+  - 88,648
+  - 500
+  - 3
+
+CitationFull:
+  - Name
+  - #nodes
+  - #edges
+  - #features
+  - #classes
+  - Cora
+  - 19,793
+  - 126,842
+  - 8,710
+  - 70
+  - Cora_ML
+  - 2,995
+  - 16,316
+  - 2,879
+  - 7
+  - CiteSeer
+  - 4,230
+  - 10,674
+  - 602
+  - 6
+  - DBLP
+  - 17,716
+  - 105,734
+  - 1,639
+  - 4
+  - PubMed
+  - 19,717
+  - 88,648
+  - 500
+  - 3
+
 </details>
 
 ## To Dos:
 
-1. **Include class weights to account for imbalance between the number of trojan-ed samples and the number of trojan-free samples.**
-2. **Convert the graphs into undirected ones. Check the difference in performance between using directed and undirected graph learning. Use:**
+### Before Training:
+
+1. **Save each graph - AST, DFG - as `.pt` in its respective directory**
+2. **Currently, the graph class is stored in `data.label`. You may need to copy it to `data.y` for each graph compiled using PyVerilog**
+3. **Try a very small circuit, like an AND gate only, to see the kind of nodes and edges and the pecularities added by Pyverilog**
+4. **If needed, convert the graphs into undirected ones. Check the difference in performance between using directed and undirected graph learning. Use:**
 
 ```python
 from torch_geometric.utils import to_undirected`  
          `edge_index = to_undirected(edge_index, num_nodes=x.size(0))`
 ```
 
-4. **Converting the Verilog circuits into graphs has a caveat that it identifies the inputs as nodes.**
+3. **Reverse the edge directions for graphs compiled with PyVerilog**
+4. **Remove unwanted nodes in graphs produced by PyVerilog**
+5. **Converting the Verilog circuits into graphs has a caveat that it identifies the inputs as nodes**
+6. **Remove my Ariane Trojans from training. Use them as explicit test cases and not as part of test set**
+
+### During Training:
+
+1. **During training, include class weights to account for imbalance between the number of trojan-ed samples and the number of trojan-free samples**
