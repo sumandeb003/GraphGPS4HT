@@ -1994,5 +1994,7 @@ def process(self) -> None:
 ## To Dos:
 
 1. **Include class weights to account for imbalance between the number of trojan-ed samples and the number of trojan-free samples.**
-2. **Convert the graphs into undirected ones. Check the difference in performance between using directed and undirected graph learning.**
+2. **Convert the graphs into undirected ones. Check the difference in performance between using directed and undirected graph learning. Use: **
+  `from torch_geometric.utils import to_undirected`  
+         `edge_index = to_undirected(edge_index, num_nodes=x.size(0))`
 3. **Converting the Verilog circuits into graphs has a caveat that it identifies the inputs as nodes.**
