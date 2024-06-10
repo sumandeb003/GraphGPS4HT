@@ -1945,7 +1945,8 @@ After all the trials of training are done, validation and testing are completed,
 1. **Each graph in the train set is represented or saved as a `Data` object.**
 2. **For graph-level dataset, each graph is a `Data` object with `y` a scalar value representing the class/ground-truth of that graph.**
 3. **For node-level graph datasets, only one `Data` object is formed because the dataset usually has only one graph. The nodes in the graph are classified into tran,val,test sets using train_mask,val_mask,test_mask. These masks can be set in the `Data` object itself.**
-4. Basic examples of: **How to instantiate a `Data` object?** 
+4. **For graph-level datasets, a list of `Data` objects for all the graphs is formed. This list of `Data` objects is saved as `train.pt`. Similarly, `val.pt` and `test.pt` are formed.** Prior to this, to find which graphs are in train or val or test set, a split_index file is used. There are usually 3 split_index file - 'train.index', 'val.index', 'test.index'. This split_index file contains the list of indices (of the entire dataset) that represent the graph elements forming the train/test/val set of graphs. Sometimes, the indices are of the train,val,test splits rather than the whole dataset to show the contents of a tiny version of the splits for fast experiments. Check ZINC, AQSOL and MalNetTiny datasets for graph-level example-tasks.
+5. Basic examples of: **How to instantiate a `Data` object?** 
 ```
 import torch
 from torch_geometric.data import Data
