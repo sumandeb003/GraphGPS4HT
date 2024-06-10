@@ -2124,7 +2124,7 @@ CitationFull:
 
 ### Before Training:
 
-1. **Save each graph - AST, DFG - as `.pt` in its respective directory**
+1. **Save each graph - AST, DFG - as `.pt` in its respective directory** (HW2VEC doesn't support CFG)
 2. **Currently, the graph class is stored in `data.label`. You may need to copy it to `data.y` for each graph compiled using PyVerilog**
 3. **Try a very small circuit, like an AND gate only, to see the kind of nodes and edges and the pecularities added by Pyverilog**
 4. **If needed, convert the graphs into undirected ones. Check the difference in performance between using directed and undirected graph learning. Use:**
@@ -2142,3 +2142,23 @@ from torch_geometric.utils import to_undirected`
 ### During Training:
 
 1. **During training, include class weights to account for imbalance between the number of trojan-ed samples and the number of trojan-free samples**
+2. **Check what the HW2VEC and the other trojan detection paper set the following parameters to:**
+```
+transform: Optional[Callable] = None,
+pre_transform: Optional[Callable] = None,
+pre_filter: Optional[Callable] = None,
+```
+3. **How to split our trojan dataset?** 
+
+Reference:
+
+''Wiki-CS: A Wikipedia-Based Benchmark for Graph Neural Networks":
+we split the nodes in each class into two
+sets, 50% for the test set and 50% potentially visible. From
+the visible set, we generated 20 different splits of training,
+validation and early-stopping sets: 5% of the nodes in each
+class were used for training in each split, 22.5% were used
+to evaluate the early-stopping criterion, and 22.5% were
+used as the validation set for hyperparameter tuning. We
+stored the resulting mask vectors with the rest of the dataset,
+so that they can be used consistently across all future work.''
