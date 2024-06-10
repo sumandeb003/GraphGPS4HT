@@ -1,0 +1,1049 @@
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CS1280/DFG.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CS1280/AST.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_1/DFG.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_1/AST.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NS1870/DFG.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NS1870/AST.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CS2560/DFG.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CS2560/AST.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/syncRAM/DFG.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/syncRAM/AST.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-SL1280/DFG.pt
+Deleting:  ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-SL1280/AST.pt
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CS1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[10251], edge_index=[2, 10250], label=[10251], name='c432-CS1280', hw_name='c432-CS1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1526], edge_index=[2, 1859], label=[1526], name='c432-CS1280', hw_name='c432-CS1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_1
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[240], edge_index=[2, 239], label=[240], name='bcdToseg_1', hw_name='bcdToseg_1', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[65], edge_index=[2, 62], label=[65], name='bcdToseg_1', hw_name='bcdToseg_1', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NS1870
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9286], edge_index=[2, 9285], label=[9286], name='c499-NS1870', hw_name='c499-NS1870', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2217], edge_index=[2, 2363], label=[2217], name='c499-NS1870', hw_name='c499-NS1870', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CS2560
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[21548], edge_index=[2, 21547], label=[21548], name='c880-CS2560', hw_name='c880-CS2560', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3196], edge_index=[2, 3874], label=[3196], name='c880-CS2560', hw_name='c880-CS2560', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/syncRAM
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[265], edge_index=[2, 264], label=[265], name='syncRAM', hw_name='syncRAM', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[32], edge_index=[2, 32], label=[32], name='syncRAM', hw_name='syncRAM', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-SL1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11178], edge_index=[2, 11177], label=[11178], name='c499-SL1280', hw_name='c499-SL1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1653], edge_index=[2, 2010], label=[1653], name='c499-SL1280', hw_name='c499-SL1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NR1870
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9205], edge_index=[2, 9204], label=[9205], name='c499-NR1870', hw_name='c499-NR1870', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2185], edge_index=[2, 2323], label=[2185], name='c499-NR1870', hw_name='c499-NR1870', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NR4360
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[23097], edge_index=[2, 23096], label=[23097], name='c880-NR4360', hw_name='c880-NR4360', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[4716], edge_index=[2, 5218], label=[4716], name='c880-NR4360', hw_name='c880-NR4360', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/AES
+TrustHub_to_graph: graphtype - AST
+ERROR:	 ParseError –  line:42: before: ","
+TrustHub_to_graph: graphtype - DFG
+ERROR:	 ParseError –  line:42: before: ","
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NS4360
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[23016], edge_index=[2, 23015], label=[23016], name='c880-NS4360', hw_name='c880-NS4360', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[4704], edge_index=[2, 5203], label=[4704], name='c880-NS4360', hw_name='c880-NS4360', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CY1070
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[10876], edge_index=[2, 10875], label=[10876], name='c880-CY1070', hw_name='c880-CY1070', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1415], edge_index=[2, 1808], label=[1415], name='c880-CY1070', hw_name='c880-CY1070', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/statemachine
+TrustHub_to_graph: graphtype - AST
+ERROR:	 ParseError –  line:1: before: "none"
+TrustHub_to_graph: graphtype - DFG
+ERROR:	 ParseError –  line:1: before: "none"
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-CY2060
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9238], edge_index=[2, 9237], label=[9238], name='c499-CY2060', hw_name='c499-CY2060', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1225], edge_index=[2, 1596], label=[1225], name='c499-CY2060', hw_name='c499-CY2060', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NC1400
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6617], edge_index=[2, 6616], label=[6617], name='c432-NC1400', hw_name='c432-NC1400', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1702], edge_index=[2, 1788], label=[1702], name='c432-NC1400', hw_name='c432-NC1400', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NC2440
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[13617], edge_index=[2, 13616], label=[13617], name='c880-NC2440', hw_name='c880-NC2440', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3184], edge_index=[2, 3399], label=[3184], name='c880-NC2440', hw_name='c880-NC2440', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NC2510
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[12455], edge_index=[2, 12454], label=[12455], name='c499-NC2510', hw_name='c499-NC2510', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2713], edge_index=[2, 2951], label=[2713], name='c499-NC2510', hw_name='c499-NC2510', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/PIC16F84
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[8996], edge_index=[2, 8995], label=[8996], name='PIC16F84', hw_name='PIC16F84', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2418], edge_index=[2, 3576], label=[2418], name='PIC16F84', hw_name='PIC16F84', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NR2360
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11395], edge_index=[2, 11394], label=[11395], name='c432-NR2360', hw_name='c432-NR2360', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2462], edge_index=[2, 2690], label=[2462], name='c432-NR2360', hw_name='c432-NR2360', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NC1720
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[8307], edge_index=[2, 8306], label=[8307], name='c432-NC1720', hw_name='c432-NC1720', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1986], edge_index=[2, 2127], label=[1986], name='c432-NC1720', hw_name='c432-NC1720', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NS1400
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6617], edge_index=[2, 6616], label=[6617], name='c432-NS1400', hw_name='c432-NS1400', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1714], edge_index=[2, 1803], label=[1714], name='c432-NS1400', hw_name='c432-NS1400', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_8
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[227], edge_index=[2, 226], label=[227], name='bcdToseg_8', hw_name='bcdToseg_8', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[65], edge_index=[2, 62], label=[65], name='bcdToseg_8', hw_name='bcdToseg_8', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/case_in_func
+TrustHub_to_graph: graphtype - AST
+ERROR:	 Exception – The operation is not in the global_type2idx_AST table, please report the error to https://github.com/louisccc/hw2vec/issues
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[17], edge_index=[2, 11], label=[17], name='case_in_func', hw_name='case_in_func', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/reset
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[490], edge_index=[2, 489], label=[490], name='reset', hw_name='reset', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[53], edge_index=[2, 50], label=[53], name='reset', hw_name='reset', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CY530
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[4918], edge_index=[2, 4917], label=[4918], name='c432-CY530', hw_name='c432-CY530', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[633], edge_index=[2, 825], label=[633], name='c432-CY530', hw_name='c432-CY530', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_3
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[243], edge_index=[2, 242], label=[243], name='bcdToseg_3', hw_name='bcdToseg_3', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[65], edge_index=[2, 62], label=[65], name='bcdToseg_3', hw_name='bcdToseg_3', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/ptr_clock_reset
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[96], edge_index=[2, 95], label=[96], name='ptr_clock_reset', hw_name='ptr_clock_reset', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[7], edge_index=[2, 7], label=[7], name='ptr_clock_reset', hw_name='ptr_clock_reset', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_s1423scan
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[45], edge_index=[2, 44], label=[45], name='TRIT_s1423scan', hw_name='TRIT_s1423scan', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3123], edge_index=[2, 3664], label=[3123], name='TRIT_s1423scan', hw_name='TRIT_s1423scan', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CS640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11744], edge_index=[2, 11743], label=[11744], name='c880-CS640', hw_name='c880-CS640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1616], edge_index=[2, 1995], label=[1616], name='c880-CS640', hw_name='c880-CS640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/adder4bit_6
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[290], edge_index=[2, 289], label=[290], name='adder4bit_6', hw_name='adder4bit_6', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[77], edge_index=[2, 99], label=[77], name='adder4bit_6', hw_name='adder4bit_6', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/decimal_signed
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[86], edge_index=[2, 85], label=[86], name='decimal_signed', hw_name='decimal_signed', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[6], edge_index=[2, 6], label=[6], name='decimal_signed', hw_name='decimal_signed', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/encoder8to3_4
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[192], edge_index=[2, 191], label=[192], name='encoder8to3_4', hw_name='encoder8to3_4', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[52], edge_index=[2, 51], label=[52], name='encoder8to3_4', hw_name='encoder8to3_4', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NC1550
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7623], edge_index=[2, 7622], label=[7623], name='c499-NC1550', hw_name='c499-NC1550', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1957], edge_index=[2, 2054], label=[1957], name='c499-NC1550', hw_name='c499-NC1550', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-CS1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11340], edge_index=[2, 11339], label=[11340], name='c499-CS1280', hw_name='c499-CS1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1677], edge_index=[2, 2040], label=[1677], name='c499-CS1280', hw_name='c499-CS1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/ram
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[176], edge_index=[2, 175], label=[176], name='ram', hw_name='ram', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[5], edge_index=[2, 5], label=[5], name='ram', hw_name='ram', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/function
+TrustHub_to_graph: graphtype - AST
+ERROR:	 Exception – The operation is not in the global_type2idx_AST table, please report the error to https://github.com/louisccc/hw2vec/issues
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[24], edge_index=[2, 23], label=[24], name='function', hw_name='function', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NS2440
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[13779], edge_index=[2, 13778], label=[13779], name='c880-NS2440', hw_name='c880-NS2440', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3232], edge_index=[2, 3459], label=[3232], name='c880-NS2440', hw_name='c880-NS2440', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-SL1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[14643], edge_index=[2, 14642], label=[14643], name='c880-SL1280', hw_name='c880-SL1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2088], edge_index=[2, 2553], label=[2088], name='c880-SL1280', hw_name='c880-SL1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-RN1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[10962], edge_index=[2, 10961], label=[10962], name='c499-RN1280', hw_name='c499-RN1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1621], edge_index=[2, 1970], label=[1621], name='c499-RN1280', hw_name='c499-RN1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NC1870
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9286], edge_index=[2, 9285], label=[9286], name='c499-NC1870', hw_name='c499-NC1870', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2217], edge_index=[2, 2363], label=[2217], name='c499-NC1870', hw_name='c499-NC1870', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/det_1011
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[293], edge_index=[2, 292], label=[293], name='det_1011', hw_name='det_1011', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[71], edge_index=[2, 63], label=[71], name='det_1011', hw_name='det_1011', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CY2000
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[8152], edge_index=[2, 8151], label=[8152], name='c432-CY2000', hw_name='c432-CY2000', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1074], edge_index=[2, 1413], label=[1074], name='c432-CY2000', hw_name='c432-CY2000', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-SL1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9927], edge_index=[2, 9926], label=[9927], name='c432-SL1280', hw_name='c432-SL1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1478], edge_index=[2, 1799], label=[1478], name='c432-SL1280', hw_name='c432-SL1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/adder4bit_1
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[83], edge_index=[2, 82], label=[83], name='adder4bit_1', hw_name='adder4bit_1', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[12], edge_index=[2, 13], label=[12], name='adder4bit_1', hw_name='adder4bit_1', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CY2030
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[12988], edge_index=[2, 12987], label=[12988], name='c880-CY2030', hw_name='c880-CY2030', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1703], edge_index=[2, 2192], label=[1703], name='c880-CY2030', hw_name='c880-CY2030', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/generate
+TrustHub_to_graph: graphtype - AST
+ERROR:	 Exception – Error. Token name Genvar is invalid or has not yet been supported
+TrustHub_to_graph: graphtype - DFG
+ERROR:	 DefinitionError – No such signals: top.md_generate0.ge_for0[0].subloop.ge_if0.subt.tmp
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-CY270
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[5300], edge_index=[2, 5299], label=[5300], name='c499-CY270', hw_name='c499-CY270', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[688], edge_index=[2, 880], label=[688], name='c499-CY270', hw_name='c499-CY270', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-RN640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11825], edge_index=[2, 11824], label=[11825], name='c880-RN640', hw_name='c880-RN640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1628], edge_index=[2, 2010], label=[1628], name='c880-RN640', hw_name='c880-RN640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-RN320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6481], edge_index=[2, 6480], label=[6481], name='c499-RN320', hw_name='c499-RN320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[893], edge_index=[2, 1108], label=[893], name='c499-RN320', hw_name='c499-RN320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CY590
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9820], edge_index=[2, 9819], label=[9820], name='c880-CY590', hw_name='c880-CY590', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1271], edge_index=[2, 1616], label=[1271], name='c880-CY590', hw_name='c880-CY590', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-CS320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6292], edge_index=[2, 6291], label=[6292], name='c499-CS320', hw_name='c499-CS320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[865], edge_index=[2, 1073], label=[865], name='c499-CS320', hw_name='c499-CS320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NR2510
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[12617], edge_index=[2, 12616], label=[12617], name='c499-NR2510', hw_name='c499-NR2510', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2745], edge_index=[2, 2991], label=[2745], name='c499-NR2510', hw_name='c499-NR2510', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CY290
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[4390], edge_index=[2, 4389], label=[4390], name='c432-CY290', hw_name='c432-CY290', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[563], edge_index=[2, 732], label=[563], name='c432-CY290', hw_name='c432-CY290', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/casex
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[130], edge_index=[2, 129], label=[130], name='casex', hw_name='casex', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[14], edge_index=[2, 17], label=[14], name='casex', hw_name='casex', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/encoder8to3_2
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[193], edge_index=[2, 192], label=[193], name='encoder8to3_2', hw_name='encoder8to3_2', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[48], edge_index=[2, 58], label=[48], name='encoder8to3_2', hw_name='encoder8to3_2', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/spi_master
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[733], edge_index=[2, 732], label=[733], name='spi_master', hw_name='spi_master', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[144], edge_index=[2, 195], label=[144], name='spi_master', hw_name='spi_master', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-RN320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[10243], edge_index=[2, 10242], label=[10243], name='c880-RN320', hw_name='c880-RN320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1372], edge_index=[2, 1706], label=[1372], name='c880-RN320', hw_name='c880-RN320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_s15850scan
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[45], edge_index=[2, 44], label=[45], name='TRIT_s15850scan', hw_name='TRIT_s15850scan', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[19211], edge_index=[2, 22584], label=[19211], name='TRIT_s15850scan', hw_name='TRIT_s15850scan', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-SL320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[10108], edge_index=[2, 10107], label=[10108], name='c880-SL320', hw_name='c880-SL320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1352], edge_index=[2, 1681], label=[1352], name='c880-SL320', hw_name='c880-SL320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NC2120
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[12013], edge_index=[2, 12012], label=[12013], name='c880-NC2120', hw_name='c880-NC2120', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2924], edge_index=[2, 3091], label=[2924], name='c880-NC2120', hw_name='c880-NC2120', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_2
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[227], edge_index=[2, 226], label=[227], name='bcdToseg_2', hw_name='bcdToseg_2', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[62], edge_index=[2, 61], label=[62], name='bcdToseg_2', hw_name='bcdToseg_2', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CS1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[14886], edge_index=[2, 14885], label=[14886], name='c880-CS1280', hw_name='c880-CS1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2124], edge_index=[2, 2598], label=[2124], name='c880-CS1280', hw_name='c880-CS1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/encoder8to3_1
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[211], edge_index=[2, 210], label=[211], name='encoder8to3_1', hw_name='encoder8to3_1', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[45], edge_index=[2, 55], label=[45], name='encoder8to3_1', hw_name='encoder8to3_1', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NS3080
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[17083], edge_index=[2, 17082], label=[17083], name='c880-NS3080', hw_name='c880-NS3080', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3748], edge_index=[2, 4072], label=[3748], name='c880-NS3080', hw_name='c880-NS3080', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-SL320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[5392], edge_index=[2, 5391], label=[5392], name='c432-SL320', hw_name='c432-SL320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[742], edge_index=[2, 927], label=[742], name='c432-SL320', hw_name='c432-SL320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s1488
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9367], edge_index=[2, 9366], label=[9367], name='JC-SW130_s1488', hw_name='JC-SW130_s1488', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2941], edge_index=[2, 3485], label=[2941], name='JC-SW130_s1488', hw_name='JC-SW130_s1488', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/deepcase
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[825], edge_index=[2, 824], label=[825], name='deepcase', hw_name='deepcase', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[134], edge_index=[2, 166], label=[134], name='deepcase', hw_name='deepcase', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CY310
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9204], edge_index=[2, 9203], label=[9204], name='c880-CY310', hw_name='c880-CY310', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1187], edge_index=[2, 1504], label=[1187], name='c880-CY310', hw_name='c880-CY310', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_c5315
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[57233], edge_index=[2, 57232], label=[57233], name='TRIT_c5315', hw_name='TRIT_c5315', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[12585], edge_index=[2, 14486], label=[12585], name='TRIT_c5315', hw_name='TRIT_c5315', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/signed_task
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[87], edge_index=[2, 86], label=[87], name='signed_task', hw_name='signed_task', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1], edge_index=[2, 1], label=[1], name='signed_task', hw_name='signed_task', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s5378
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[22986], edge_index=[2, 22985], label=[22986], name='JC-SW130_s5378', hw_name='JC-SW130_s5378', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[7482], edge_index=[2, 8432], label=[7482], name='JC-SW130_s5378', hw_name='JC-SW130_s5378', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/primitive
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[291], edge_index=[2, 290], label=[291], name='primitive', hw_name='primitive', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[25], edge_index=[2, 39], label=[25], name='primitive', hw_name='primitive', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NR2120
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[12121], edge_index=[2, 12120], label=[12121], name='c880-NR2120', hw_name='c880-NR2120', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2948], edge_index=[2, 3121], label=[2948], name='c880-NR2120', hw_name='c880-NR2120', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CS320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[10108], edge_index=[2, 10107], label=[10108], name='c880-CS320', hw_name='c880-CS320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1352], edge_index=[2, 1681], label=[1352], name='c880-CS320', hw_name='c880-CS320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/adder4bit_7
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[290], edge_index=[2, 289], label=[290], name='adder4bit_7', hw_name='adder4bit_7', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[89], edge_index=[2, 108], label=[89], name='adder4bit_7', hw_name='adder4bit_7', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/partselect_assign
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[190], edge_index=[2, 189], label=[190], name='partselect_assign', hw_name='partselect_assign', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[13], edge_index=[2, 12], label=[13], name='partselect_assign', hw_name='partselect_assign', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-SL320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6373], edge_index=[2, 6372], label=[6373], name='c499-SL320', hw_name='c499-SL320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[877], edge_index=[2, 1088], label=[877], name='c499-SL320', hw_name='c499-SL320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/supply
+TrustHub_to_graph: graphtype - AST
+ERROR:	 Exception – Error. Token name Supply is invalid or has not yet been supported
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[6], edge_index=[2, 3], label=[6], name='supply', hw_name='supply', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/encoder8to3_6
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[164], edge_index=[2, 163], label=[164], name='encoder8to3_6', hw_name='encoder8to3_6', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[62], edge_index=[2, 49], label=[62], name='encoder8to3_6', hw_name='encoder8to3_6', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_c6288
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[45], edge_index=[2, 44], label=[45], name='TRIT_c6288', hw_name='TRIT_c6288', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[14464], edge_index=[2, 16816], label=[14464], name='TRIT_c6288', hw_name='TRIT_c6288', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-CY3880
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[17058], edge_index=[2, 17057], label=[17058], name='c880-CY3880', hw_name='c880-CY3880', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2256], edge_index=[2, 2929], label=[2256], name='c880-CY3880', hw_name='c880-CY3880', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NS1720
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[8010], edge_index=[2, 8009], label=[8010], name='c432-NS1720', hw_name='c432-NS1720', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1926], edge_index=[2, 2052], label=[1926], name='c432-NS1720', hw_name='c432-NS1720', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-RN640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7082], edge_index=[2, 7081], label=[7082], name='c432-RN640', hw_name='c432-RN640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1014], edge_index=[2, 1251], label=[1014], name='c432-RN640', hw_name='c432-RN640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_4
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[230], edge_index=[2, 229], label=[230], name='bcdToseg_4', hw_name='bcdToseg_4', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[65], edge_index=[2, 62], label=[65], name='bcdToseg_4', hw_name='bcdToseg_4', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/WB_CONMAX
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[702], edge_index=[2, 701], label=[702], name='WB_CONMAX', hw_name='WB_CONMAX', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[362], edge_index=[2, 456], label=[362], name='WB_CONMAX', hw_name='WB_CONMAX', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-SL640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11555], edge_index=[2, 11554], label=[11555], name='c880-SL640', hw_name='c880-SL640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1588], edge_index=[2, 1960], label=[1588], name='c880-SL640', hw_name='c880-SL640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NR1550
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7677], edge_index=[2, 7676], label=[7677], name='c499-NR1550', hw_name='c499-NR1550', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1973], edge_index=[2, 2074], label=[1973], name='c499-NR1550', hw_name='c499-NR1550', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/RC6
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[203], edge_index=[2, 202], label=[203], name='RC6', hw_name='RC6', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2411], edge_index=[2, 2716], label=[2411], name='RC6', hw_name='RC6', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/RC5
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[144], edge_index=[2, 143], label=[144], name='RC5', hw_name='RC5', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2180], edge_index=[2, 2463], label=[2180], name='RC5', hw_name='RC5', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_6
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[377], edge_index=[2, 376], label=[377], name='bcdToseg_6', hw_name='bcdToseg_6', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[89], edge_index=[2, 109], label=[89], name='bcdToseg_6', hw_name='bcdToseg_6', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/xtea
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[218], edge_index=[2, 217], label=[218], name='xtea', hw_name='xtea', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1830], edge_index=[2, 2170], label=[1830], name='xtea', hw_name='xtea', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s38417
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[68], edge_index=[2, 67], label=[68], name='JC-SW130_s38417', hw_name='JC-SW130_s38417', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[15], edge_index=[2, 13], label=[15], name='JC-SW130_s38417', hw_name='JC-SW130_s38417', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NR3080
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[16921], edge_index=[2, 16920], label=[16921], name='c880-NR3080', hw_name='c880-NR3080', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3708], edge_index=[2, 4022], label=[3708], name='c880-NR3080', hw_name='c880-NR3080', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/instance_empty_params
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[56], edge_index=[2, 55], label=[56], name='instance_empty_params', hw_name='instance_empty_params', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[24], edge_index=[2, 26], label=[24], name='instance_empty_params', hw_name='instance_empty_params', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/led_main
+TrustHub_to_graph: graphtype - AST
+ERROR:	 ParseError –  line:1: before: "none"
+TrustHub_to_graph: graphtype - DFG
+ERROR:	 ParseError –  line:1: before: "none"
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NS2510
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[12536], edge_index=[2, 12535], label=[12536], name='c499-NS2510', hw_name='c499-NS2510', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2745], edge_index=[2, 2991], label=[2745], name='c499-NS2510', hw_name='c499-NS2510', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_s35932scan
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[49], edge_index=[2, 48], label=[49], name='TRIT_s35932scan', hw_name='TRIT_s35932scan', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[46855], edge_index=[2, 55140], label=[46855], name='TRIT_s35932scan', hw_name='TRIT_s35932scan', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/case
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[136], edge_index=[2, 135], label=[136], name='case', hw_name='case', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[21], edge_index=[2, 26], label=[21], name='case', hw_name='case', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/decimal_width
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[86], edge_index=[2, 85], label=[86], name='decimal_width', hw_name='decimal_width', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[6], edge_index=[2, 6], label=[6], name='decimal_width', hw_name='decimal_width', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s9234
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[18654], edge_index=[2, 18653], label=[18654], name='JC-SW130_s9234', hw_name='JC-SW130_s9234', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[6166], edge_index=[2, 6967], label=[6166], name='JC-SW130_s9234', hw_name='JC-SW130_s9234', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-SL640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7874], edge_index=[2, 7873], label=[7874], name='c499-SL640', hw_name='c499-SL640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1121], edge_index=[2, 1377], label=[1121], name='c499-SL640', hw_name='c499-SL640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/vga
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[320], edge_index=[2, 319], label=[320], name='vga', hw_name='vga', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[41], edge_index=[2, 46], label=[41], name='vga', hw_name='vga', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/RS232
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[292], edge_index=[2, 291], label=[292], name='RS232', hw_name='RS232', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[643], edge_index=[2, 783], label=[643], name='RS232', hw_name='RS232', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/count
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[93], edge_index=[2, 92], label=[93], name='count', hw_name='count', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[7], edge_index=[2, 7], label=[7], name='count', hw_name='count', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/partial
+TrustHub_to_graph: graphtype - AST
+ERROR:	 Exception – Error. Token name Genvar is invalid or has not yet been supported
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[13], edge_index=[2, 7], label=[13], name='partial', hw_name='partial', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/blocking
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[388], edge_index=[2, 387], label=[388], name='blocking', hw_name='blocking', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[97], edge_index=[2, 118], label=[97], name='blocking', hw_name='blocking', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-RN2560
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[21170], edge_index=[2, 21169], label=[21170], name='c880-RN2560', hw_name='c880-RN2560', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3140], edge_index=[2, 3804], label=[3140], name='c880-RN2560', hw_name='c880-RN2560', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/adder4bit_4
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[295], edge_index=[2, 294], label=[295], name='adder4bit_4', hw_name='adder4bit_4', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[89], edge_index=[2, 108], label=[89], name='adder4bit_4', hw_name='adder4bit_4', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-NS1550
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7731], edge_index=[2, 7730], label=[7731], name='c499-NS1550', hw_name='c499-NS1550', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1977], edge_index=[2, 2079], label=[1977], name='c499-NS1550', hw_name='c499-NS1550', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_5
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[215], edge_index=[2, 214], label=[215], name='bcdToseg_5', hw_name='bcdToseg_5', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[62], edge_index=[2, 61], label=[62], name='bcdToseg_5', hw_name='bcdToseg_5', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-SL640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6812], edge_index=[2, 6811], label=[6812], name='c432-SL640', hw_name='c432-SL640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[974], edge_index=[2, 1201], label=[974], name='c432-SL640', hw_name='c432-SL640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/encoder8to3_3
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[360], edge_index=[2, 359], label=[360], name='encoder8to3_3', hw_name='encoder8to3_3', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[39], edge_index=[2, 51], label=[39], name='encoder8to3_3', hw_name='encoder8to3_3', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s1238
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[8818], edge_index=[2, 8817], label=[8818], name='JC-SW130_s1238', hw_name='JC-SW130_s1238', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2753], edge_index=[2, 3217], label=[2753], name='JC-SW130_s1238', hw_name='JC-SW130_s1238', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s38584
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[205151], edge_index=[2, 205150], label=[205151], name='JC-SW130_s38584', hw_name='JC-SW130_s38584', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[66396], edge_index=[2, 75726], label=[66396], name='JC-SW130_s38584', hw_name='JC-SW130_s38584', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/adder4bit_5
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[352], edge_index=[2, 351], label=[352], name='adder4bit_5', hw_name='adder4bit_5', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[153], edge_index=[2, 180], label=[153], name='adder4bit_5', hw_name='adder4bit_5', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/delay
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[104], edge_index=[2, 103], label=[104], name='delay', hw_name='delay', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[10], edge_index=[2, 8], label=[10], name='delay', hw_name='delay', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-CY520
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[5850], edge_index=[2, 5849], label=[5850], name='c499-CY520', hw_name='c499-CY520', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[761], edge_index=[2, 977], label=[761], name='c499-CY520', hw_name='c499-CY520', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NC4360
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[22827], edge_index=[2, 22826], label=[22827], name='c880-NC4360', hw_name='c880-NC4360', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[4668], edge_index=[2, 5158], label=[4668], name='c880-NC4360', hw_name='c880-NC4360', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_c2670
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[45], edge_index=[2, 44], label=[45], name='TRIT_c2670', hw_name='TRIT_c2670', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[4196], edge_index=[2, 4526], label=[4196], name='TRIT_c2670', hw_name='TRIT_c2670', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NC3080
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[16948], edge_index=[2, 16947], label=[16948], name='c880-NC3080', hw_name='c880-NC3080', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3728], edge_index=[2, 4047], label=[3728], name='c880-NC3080', hw_name='c880-NC3080', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/decimal
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[86], edge_index=[2, 85], label=[86], name='decimal', hw_name='decimal', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[6], edge_index=[2, 6], label=[6], name='decimal', hw_name='decimal', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-CY1040
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6994], edge_index=[2, 6993], label=[6994], name='c499-CY1040', hw_name='c499-CY1040', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[919], edge_index=[2, 1188], label=[919], name='c499-CY1040', hw_name='c499-CY1040', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NS2360
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11422], edge_index=[2, 11421], label=[11422], name='c432-NS2360', hw_name='c432-NS2360', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2482], edge_index=[2, 2715], label=[2482], name='c432-NS2360', hw_name='c432-NS2360', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-RN320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[5446], edge_index=[2, 5445], label=[5446], name='c432-RN320', hw_name='c432-RN320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[750], edge_index=[2, 937], label=[750], name='c432-RN320', hw_name='c432-RN320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CS320
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[5473], edge_index=[2, 5472], label=[5473], name='c432-CS320', hw_name='c432-CS320', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[754], edge_index=[2, 942], label=[754], name='c432-CS320', hw_name='c432-CS320', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/generate_instance
+TrustHub_to_graph: graphtype - AST
+ERROR:	 Exception – Error. Token name Genvar is invalid or has not yet been supported
+TrustHub_to_graph: graphtype - DFG
+ERROR:	 DefinitionError – 
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NR2440
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[13644], edge_index=[2, 13643], label=[13644], name='c880-NR2440', hw_name='c880-NR2440', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3196], edge_index=[2, 3414], label=[3196], name='c880-NR2440', hw_name='c880-NR2440', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-RN1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[9927], edge_index=[2, 9926], label=[9927], name='c432-RN1280', hw_name='c432-RN1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1478], edge_index=[2, 1799], label=[1478], name='c432-RN1280', hw_name='c432-RN1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/adder4bit_2
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[352], edge_index=[2, 351], label=[352], name='adder4bit_2', hw_name='adder4bit_2', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[97], edge_index=[2, 120], label=[97], name='adder4bit_2', hw_name='adder4bit_2', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-NS2120
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[12040], edge_index=[2, 12039], label=[12040], name='c880-NS2120', hw_name='c880-NS2120', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2944], edge_index=[2, 3116], label=[2944], name='c880-NS2120', hw_name='c880-NS2120', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-SL2560
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[21170], edge_index=[2, 21169], label=[21170], name='c880-SL2560', hw_name='c880-SL2560', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[3140], edge_index=[2, 3804], label=[3140], name='c880-SL2560', hw_name='c880-SL2560', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s1196
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[8948], edge_index=[2, 8947], label=[8948], name='JC-SW130_s1196', hw_name='JC-SW130_s1196', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2822], edge_index=[2, 3302], label=[2822], name='JC-SW130_s1196', hw_name='JC-SW130_s1196', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/vectoradd
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[1022], edge_index=[2, 1021], label=[1022], name='vectoradd', hw_name='vectoradd', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+Warning: Isolated system call is not supported: display
+TrustHub_to_graph: data - [Data(x=[371], edge_index=[2, 544], label=[371], name='vectoradd', hw_name='vectoradd', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CS640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6839], edge_index=[2, 6838], label=[6839], name='c432-CS640', hw_name='c432-CS640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[978], edge_index=[2, 1206], label=[978], name='c432-CS640', hw_name='c432-CS640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-RN640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7847], edge_index=[2, 7846], label=[7847], name='c499-RN640', hw_name='c499-RN640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1117], edge_index=[2, 1372], label=[1117], name='c499-RN640', hw_name='c499-RN640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NR1720
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[8037], edge_index=[2, 8036], label=[8037], name='c432-NR1720', hw_name='c432-NR1720', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1930], edge_index=[2, 2057], label=[1930], name='c432-NR1720', hw_name='c432-NR1720', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_s13207scan
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[68469], edge_index=[2, 68468], label=[68469], name='TRIT_s13207scan', hw_name='TRIT_s13207scan', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[15805], edge_index=[2, 18748], label=[15805], name='TRIT_s13207scan', hw_name='TRIT_s13207scan', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/JC-SW130_s953
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7770], edge_index=[2, 7769], label=[7770], name='JC-SW130_s953', hw_name='JC-SW130_s953', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2361], edge_index=[2, 2731], label=[2361], name='JC-SW130_s953', hw_name='JC-SW130_s953', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NC2360
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[11341], edge_index=[2, 11340], label=[11341], name='c432-NC2360', hw_name='c432-NC2360', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2454], edge_index=[2, 2680], label=[2454], name='c432-NC2360', hw_name='c432-NC2360', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/TRIT_c3540
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[27635], edge_index=[2, 27634], label=[27635], name='TRIT_c3540', hw_name='TRIT_c3540', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[6536], edge_index=[2, 7461], label=[6536], name='TRIT_c3540', hw_name='TRIT_c3540', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/adder4bit_3
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[250], edge_index=[2, 249], label=[250], name='adder4bit_3', hw_name='adder4bit_3', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[137], edge_index=[2, 157], label=[137], name='adder4bit_3', hw_name='adder4bit_3', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-BE280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[45104], edge_index=[2, 45103], label=[45104], name='c432-BE280', hw_name='c432-BE280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[8218], edge_index=[2, 10534], label=[8218], name='c432-BE280', hw_name='c432-BE280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/instance_array
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[417], edge_index=[2, 416], label=[417], name='instance_array', hw_name='instance_array', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[169], edge_index=[2, 154], label=[169], name='instance_array', hw_name='instance_array', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/bcdToseg_7
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[241], edge_index=[2, 240], label=[241], name='bcdToseg_7', hw_name='bcdToseg_7', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[64], edge_index=[2, 62], label=[64], name='bcdToseg_7', hw_name='bcdToseg_7', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-CY1020
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[5996], edge_index=[2, 5995], label=[5996], name='c432-CY1020', hw_name='c432-CY1020', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[782], edge_index=[2, 1024], label=[782], name='c432-CY1020', hw_name='c432-CY1020', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/encoder8to3_5
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[206], edge_index=[2, 205], label=[206], name='encoder8to3_5', hw_name='encoder8to3_5', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[43], edge_index=[2, 49], label=[43], name='encoder8to3_5', hw_name='encoder8to3_5', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c880-RN1280
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[14994], edge_index=[2, 14993], label=[14994], name='c880-RN1280', hw_name='c880-RN1280', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[2140], edge_index=[2, 2618], label=[2140], name='c880-RN1280', hw_name='c880-RN1280', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c499-CS640
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[7982], edge_index=[2, 7981], label=[7982], name='c499-CS640', hw_name='c499-CS640', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1137], edge_index=[2, 1397], label=[1137], name='c499-CS640', hw_name='c499-CS640', hw_type='TjFree')]
+===================================================================
+===================================================================
+TrustHub_to_graph: circuit - ../../Downloads/TrustHub/4GraphGPS/TjFree/c432-NR1400
+TrustHub_to_graph: graphtype - AST
+TrustHub_to_graph: data - [Data(x=[6509], edge_index=[2, 6508], label=[6509], name='c432-NR1400', hw_name='c432-NR1400', hw_type='TjFree')]
+TrustHub_to_graph: graphtype - DFG
+TrustHub_to_graph: data - [Data(x=[1674], edge_index=[2, 1753], label=[1674], name='c432-NR1400', hw_name='c432-NR1400', hw_type='TjFree')]
+===================================================================
