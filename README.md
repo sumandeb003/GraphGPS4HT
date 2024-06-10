@@ -1993,7 +1993,8 @@ def process(self) -> None:
     self.save([data], self.processed_paths[0])
 ```
 
-5. **Graph-level datasets:**
+6. **The percentage split and the number of splits are usually fixed for datasets.**
+7. **Graph-level datasets:**
 
 AQSOL:
   - #graphs
@@ -2042,7 +2043,7 @@ MNISTSuperPixels:
   - 10
 
 
-6. **Node-level datasets:**
+8. **Node-level datasets:**
 
 Reddit:
   - #nodes
