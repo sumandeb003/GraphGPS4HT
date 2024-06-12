@@ -2129,6 +2129,7 @@ CitationFull:
 2. **Currently, the graph class is stored in `data.label`. You may need to copy it to `data.y` for each graph compiled using PyVerilog**
 3. **Try a very small circuit, like an AND gate only, to see the kind of nodes and edges and the pecularities added by Pyverilog**
 4. **If needed, convert the graphs into undirected ones. Check the difference in performance between using directed and undirected graph learning. Use:**
+5. I have Trojan-Free graphs and Trojan-ed graphs. I need to split these into training, validation and test sets. In what proportion should I split them?
 
 ```python
 from torch_geometric.utils import to_undirected`  
@@ -2139,6 +2140,9 @@ from torch_geometric.utils import to_undirected`
 4. **Remove unwanted nodes in graphs produced by PyVerilog**
 5. **Converting the Verilog circuits into graphs has a caveat that it identifies the inputs as nodes**
 6. **Remove my Ariane Trojans from training. Use them as explicit test cases and not as part of test set**
+7. **Golden Reference-Free Hardware Trojan Localization using Graph Convolutional Network:** We construct and assess our GCN model on the graph representation of a dataset, consisted of 49 Trojan-infested RTL codes. The limited number of graphs in our dataset is not problematic since our machine learning model is for node classification, and each graph contains thousands of nodes. Our dataset comprises three base circuits that contain various HTs. AES, DES, and RC5 are encryption cores with different algorithms that get an input number as plaintext along with a secret key and output the encrypted number known as ciphertext. The AES samples are derived from the TrustHub benchmark [14] which is the most popular open hardware Trojan datasets used in the literature. The RC5 and DES are open-source designs in which we insert the Trojan circuits extracted from AES-Txx benchmarks. However, some of TrustHub HT benchmarks are specific to
+AES and cannot be inserted in RC5 or DES circuits. We use the leave-one-out approach for evaluation. We report test results on a circuit infected with a HT benchmark while the model is trained on other circuits and HTs. We change the
+test circuit and repeat training on the rest again. The process is repeated until all samples are tested. In this scenario, the circuit under test and its HT are not seen by the model in training which indicates the capability of model to locate HT in unknown circuits and HTs. In all evaluations, we define the positive sample as Trojan node class and the negative sample as benign node class. For example, true positive represents the Trojan nodes that are correctly classified as Trojan.
 
 ### During Training:
 
@@ -2163,3 +2167,5 @@ to evaluate the early-stopping criterion, and 22.5% were
 used as the validation set for hyperparameter tuning. We
 stored the resulting mask vectors with the rest of the dataset,
 so that they can be used consistently across all future work.''
+
+4. 
