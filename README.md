@@ -2159,6 +2159,43 @@ We use 17 exemplary GLN benchmarks from the TrustHub suite. For each benchmark, 
 example, if $rs232t1000$ is to be tested, none of the other $rs232$ designs used for training, only for validation. For $s15850t100$ - the only $s15850$ design in the suite, we randomly select three other designs for validation.
 
 9. **HW2VEC: A Graph Learning Tool for Automating Hardware Security:** From Trust-Hub, we collect three base circuits, AES, PIC, and RS232, and insert 34 varied types of HTs into them. We also include these HTs as standalone instances to the TJ-RTL dataset. Furthermore, we insert these standalone HTs into two other circuits (DES and RC5) and include the resulting circuits to expand the TJ-RTL dataset. Lastly, we create the graph datasets, DFG-TJ-RTL and AST-TJ-RTL, in which each graph instance is annotated with a $TROJAN$ or $NON_TROJAN$ label. We perform a variant leave-one-out cross-validation to experiment. We perform a train-test split on the TJ-RTL dataset by leaving one base circuit benchmark in the testing set and use the remaining circuits to train the model. We repeat this process for each base circuit and average the metrics we acquire from evaluating each testing set.
+10. **Contrastive Graph Convolutional Networks for Hardware Trojan Detection in Third Party IP Cores:** One of the challenges associated with conducting research in the field of HTs is the
+relative lack of publicly available Trojan-inserted circuits. This
+is particularly true when attempting to apply ML strategies
+which require large amounts of data for effective model
+training. The Trust-Hub benchmark [21] contains 96 Trojan-
+inserted circuits, sub-categorized by multiple taxonomies, such
+as trojan location and activation mechanism. Our criteria for
+HT selection is based on stealthiness and ease of activation;
+i.e., the HT must use a trigger that is activated via common,
+user-facing IC inputs. As only five of the circuits in the Trust-
+Hub benchmark contain trigger-based HT that are activated
+based on legitimate user input, we introduce (Section II)
+a method to generate trigger-based HT using the gate-level
+netlist of publicly available IP cores (Section IV-A).
+
+We now outline the data generation methodology adopted
+for our HT trigger detection task. Each benign circuit (i.e.,
+a circuit lacking a HT) is converted to a compact adjacency
+matrix representation and randomly embedded with triggers. Circuit adjacency matrices are then
+embedded with triggers by appropriately adding rows and
+columns equivalent to number of trigger nodes and creating
+appropriate connections between trigger inputs and randomly
+selected insertion nodes of the benign circuit adjacency matrix.
+In this way, each adjacency matrix is embedded with each
+trigger to yield multiple HT embedded adjacency matrices.
+
+Each IP core is a benign circuit, synthesized and
+converted to the adjacency matrix representation and a HT
+trigger is inserted at a random insertion point. For each benign circuit, multiple instances of trigger-embedded circuits are
+generated with a distinct trigger and at distinct insertion points.
+We further divide the dataset for our HT detection experiments
+into: a) a dataset consisting of benign circuits embedded with
+combinatorial triggers and b) a dataset consisting of benign
+circuits embedded with sequential triggers. A trigger seen during training is never
+encountered during testing (not even embedded in a different
+circuit); in particular, triggers of different sizes are employed
+for training and test to ensure this.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
