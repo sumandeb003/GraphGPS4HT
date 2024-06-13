@@ -2150,9 +2150,13 @@ feature vectors for all nodes. Vectors cover the following:
 are grouped regardless of the number of inputs and the driver strengths that the different AND gates support.
  - Input, output degrees of gates, i.e., the number of incoming and outgoing connections.
  - Shortest distances to primary inputs/outputs. For gates not directly connected with a primary input/output, a breadth-first search is conducted to obtain shortest distances.
+
 For training and validation, we also use a binary label vector which marks each node as part of some HT or as regular/benign gate. The related information is derived during parsing.
 
 We propose an approach where predictions are made on unknown HTs residing within circuits that are neither seen during training nor have golden references. This represents a real-world scenario, where security engineers do not know in advance which HT to expect, if any at all, and further need to test circuits without golden references.
+
+We use 17 exemplary GLN benchmarks from the TrustHub suite. For each benchmark, a respective model is trained from scratch. For our practical validation, each model does not get to see the design to be tested at all during training. For
+example, if $rs232t1000$ is to be tested, none of the other $rs232$ designs used for training, only for validation.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
