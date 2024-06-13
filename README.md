@@ -2156,7 +2156,9 @@ For training and validation, we also use a binary label vector which marks each 
 We propose an approach where predictions are made on unknown HTs residing within circuits that are neither seen during training nor have golden references. This represents a real-world scenario, where security engineers do not know in advance which HT to expect, if any at all, and further need to test circuits without golden references.
 
 We use 17 exemplary GLN benchmarks from the TrustHub suite. For each benchmark, a respective model is trained from scratch. For our practical validation, each model does not get to see the design to be tested at all during training. For
-example, if $rs232t1000$ is to be tested, none of the other $rs232$ designs used for training, only for validation.
+example, if $rs232t1000$ is to be tested, none of the other $rs232$ designs used for training, only for validation. For $s15850t100$ - the only $s15850$ design in the suite, we randomly select three other designs for validation.
+
+9. **HW2VEC: A Graph Learning Tool for Automating Hardware Security:** From Trust-Hub, we collect three base circuits, AES, PIC, and RS232, and insert 34 varied types of HTs into them. We also include these HTs as standalone instances to the TJ-RTL dataset. Furthermore, we insert these standalone HTs into two other circuits (DES and RC5) and include the resulting circuits to expand the TJ-RTL dataset. Lastly, we create the graph datasets, DFG-TJ-RTL and AST-TJ-RTL, in which each graph instance is annotated with a $TROJAN$ or $NON_TROJAN$ label. We perform a variant leave-one-out cross-validation to experiment. We perform a train-test split on the TJ-RTL dataset by leaving one base circuit benchmark in the testing set and use the remaining circuits to train the model. We repeat this process for each base circuit and average the metrics we acquire from evaluating each testing set.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
