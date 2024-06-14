@@ -2242,7 +2242,8 @@ Xilinx and Intel FPGA netlists respectively for comparison.
 The validation results are shown in Table III. Each experi-
 ment is independently repeated 10 times and the average value
 is reported. **Compares with HW2VEC directly though the datsaset for HW2VEC was different from the one used in this work. Also, HW2VEC used leave-one-out approach which this work didn't use.**
- - We share the experimental results on two datasets.
+ - **Risk-Aware and Explainable Framework for Ensuring
+Guaranteed Coverage in Evolving Hardware Trojan Detection:** We share the experimental results on two datasets.
 First is GAINESIS [48] synthetic dataset with binary labels and
 second is using Trust-Hub chip-level Trojan dataset [47]. This dataset
 includes VHDL or Verilog source code files for each IP core design,
