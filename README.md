@@ -2200,7 +2200,48 @@ and the remaining 23 as training samples. We perform this
 validation on all the netlists and evaluate the average of the
 24 classification results. The evaluation metrics are recall,
 precision, F1-score, and accuracy, in which a Trojan net is
-regarded as a positive sample. 
+regarded as a positive sample.
+ - **Automated Hardware Trojan Detection at LUT
+Using Explainable Graph Neural Networks:** Since the distributions of Trojan-infected and Trojan-free
+datasets are usually imbalanced, we employ the advanced
+cost-sensitive class-balanced (CB) focal loss function [29] for
+GNN model training to address the class imbalance problem.
+Compared to the classical re-balancing strategies such as up-
+sampling and down-sampling, which may cause overfitting
+or lose important samples, CB focal loss achieves significant
+improvements in classification of imbalanced datasets by as-
+signing larger weights to the minor classes. **We collect a comprehensive dataset with 927 Trojan-
+infected and 262 Trojan-free samples**, which are regarded
+as the positive and negative classes with labels of 1 and 0
+respectively. **The Trojan-infected samples are Trust-Hub.org
+benchmarks with Trojans inserted into AES, RS232, PIC,
+$c2670$, $c3540$, $c5315$, $c6288$, $s1423$, $s13207$, $s15850$ and
+$s35932$ base circuits**, where the AES, RS232 and PIC series
+benchmarks are in the form of RTL code and the others are
+in gate-level netlist. The activation mechanism and payload
+of the Trojan-infected samples are described in Table I, where
+TRIT-TC represents 574 conditionally triggered combinational
+Trojans and TRIT-TS represents 329 FSM and counter trig-
+gered Trojans respectively. The Trojan-free samples are open
+source IP cores from opencores.org and different from the
+Trojan-infected base circuits. **We randomly divide the dataset
+into training and testing sets with the ratio of 4:1.** We train the GNN model with CB focal loss through
+grid search and four-fold cross validation on the training dataset. In our tests, we evaluate the performance of the model
+under the criteria of true positive rate (TPR), true negative
+rate (TNR), accuracy, precision and F1-measure. We perform
+hyperparameter selection under the criterion of maximum F1-
+measure. The main hyperparameter selection strategies and the
+optimal values of the GNN model trained for Xilinx and Intel
+FPGA netlists are described in Table II. on the validation dataset. The training process of the GNN
+model with CB focal loss for Xilinx and Intel FPGA netlists
+are shown in Fig. 2 and Fig. 3 respectively, where both GNN
+models converge fast within 200 epochs. We also train another
+two GNN models with classical cross-entropy (CE) loss fol-
+lowing the parameter selection procedure of CB focal loss for
+Xilinx and Intel FPGA netlists respectively for comparison.
+The validation results are shown in Table III. Each experi-
+ment is independently repeated 10 times and the average value
+is reported.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
