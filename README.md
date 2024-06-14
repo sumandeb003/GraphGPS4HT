@@ -2241,7 +2241,7 @@ lowing the parameter selection procedure of CB focal loss for
 Xilinx and Intel FPGA netlists respectively for comparison.
 The validation results are shown in Table III. Each experi-
 ment is independently repeated 10 times and the average value
-is reported.
+is reported. **Compares with HW2VEC directly though the datsaset for HW2VEC was different from the one used in this work.**
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
