@@ -2242,6 +2242,22 @@ Xilinx and Intel FPGA netlists respectively for comparison.
 The validation results are shown in Table III. Each experi-
 ment is independently repeated 10 times and the average value
 is reported. **Compares with HW2VEC directly though the datsaset for HW2VEC was different from the one used in this work. Also, HW2VEC used leave-one-out approach which this work didn't use.**
+ - We share the experimental results on two datasets.
+First is GAINESIS [48] synthetic dataset with binary labels and
+second is using Trust-Hub chip-level Trojan dataset [47]. This dataset
+includes VHDL or Verilog source code files for each IP core design,
+which contain both malicious and non-malicious functions. We first generated 10,000 data points using the proposed confor-
+malized GAN with the given source dataset and picked only 20%
+of the evolved dataset. The generated dataset has labels $TF_G$ and
+$TI_G$ , where as the source dataset has labels $TF_S$ and $TI_S$. In our
+evolved dataset, we create three labels as shown below. First, Trojan-
+Free (TF) which consists of $TF_S$ and $TF_G$; second, Trojan-Infected
+(TI) where we only consider the label $TI_S$ ; finally, the third label is
+Evolved Trojan (T-EV) which consists of the label $TI_G$. The dataset is split into training set, calibration set, and test set
+with ratio 2:1:1. In training dataset we have 1436 TF, 114 TI, and
+308 T-EV. For calibration, we have 470 TF, 33 TI, and 117 T-EV.
+Finally, we have 18% of T-EV in calibration set and 16% each in
+train and test.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
