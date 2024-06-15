@@ -2259,6 +2259,84 @@ with ratio 2:1:1. In training dataset we have 1436 TF, 114 TI, and
 308 T-EV. For calibration, we have 470 TF, 33 TI, and 117 T-EV.
 Finally, we have 18% of T-EV in calibration set and 16% each in
 train and test.
+ - **GNN4Gate: A Bi-Directional Graph Neural Network for Gate-Level
+Hardware Trojan Detection:** Based on the benchmark provided by
+Trusthub [26], we use the method introduced in Section III-C
+to create the circuit graph datasets. Each gate is encoded into
+a 65-dimensional feature representation (59 one-hot code bits
+and 6 special port bits). The basic information of the resultant
+17 datasets is summarized in Table II. In order to evaluate the performance of GNN4Gate, we use
+the same leave-one-out cross validation method as used in [7]. Each time one of the netlists in Table II is selected as the test
+set (unknown netlist), and the other netlists are used as the
+train set (known netlists). In the experiments, the classification
+results of each netlist are recorded, and True Positive (TP),
+True Negative (TN), False Positive (FP), and False Negative
+(FN) are counted. Three ML indicators are used to evaluate
+the related models, including True Positive Rate (TPR, also
+known as Recall), True Negative Rate (TNR) and Accuracy
+(ACC). Table I and II show the performances of the state-of-the-
+art and GNN4Gate at gate-level. From Table I, one can find
+that, the average TPR and TNR of GNN4Gate reach 87.14%
+and 99.73% respectively, which are highly competitive to
+others. More importantly, GNN4Gate can automatically extract
+features and locate relevant HT structures, showing great po-
+tential in gate-level detection. We compare the performance
+of GNN4Gate with the lasted net classification works on each
+netlist in Table II. Significantly, GNN4Gate achieved very high
+TNR on all data sets. When compared with the results of [22],
+the average TPR of GNN4Gate on the corresponding data set
+reaches 90.42%, which is very close to [22]. It is worth noting
+that [22] is a hybrid detection, which uses dynamic information
+in addition to the static structure features. Therefore, we expect
+that the structural features extracted by GNN can be further
+combined with dynamic detection to achieve better results. Moreover, due to the lack of sample support for similar Trojan
+structures, the test results of GNN4Gate on the s35932-T300
+and s38584-T100 netlists are not good. One can see similar
+abnormal results on the s35932-T300 of [23] and the s38584-
+T100 of [7]. Compared with [7] using a wide range of local
+structure information (e.g. the number of up to 5-level loops
+on the output side), GNN4Gate focuses more on the neighbor
+structure information of the gate (up to 2-level neighbors), so
+it is more adapt to incomplete netlists. Ablation Study: 
+In order to further analyze the effectiveness of graph mod-
+eling with port information and Bi-GCN framework for HT
+detection, we compare the resultant variants with the standard
+model GNN4Gate in two scenarios (with or without port
+coding). We use the same experimental settings as in Section
+IV-B and report the average performance of each model on
+17 netlists. The result is shown in Figure 4, where FW-GCN
+and UD-GCN represent GCN detection model using forward
+and undirected graph structures respectively. Under the precise
+weighted sample balance described in Section III-E, the TPR
+of all the relevant models has been improved in the port
+coding scenario, and the TNR has been maintained at a high
+level. From Figure 4, one can find that, by aggregating both
+the forward and backward neighbors’ information, UD-GCN
+achieves better performances than FW-GCN does, but it loses
+the sequence information of signal propagation, which leads
+to worse performances compared with the standard model GNN4Gate. Obviously, UD-GCN is also comparable to existing
+works, but the port information brings relatively little improve-
+ment. Because the port connection has a certain directionality,
+and can be fully utilized in the directed graph. The goal of HTs location is to determine the HTs’ structure
+from large-scale circuits, so that people can better understand
+and control HT. At present, there is very little work on HTs
+location. Although, both net classification and gate classifica-
+tion are the finest HT detection methods at gate-level, more
+efforts are necessary for the former to determine the relevant
+gates to have a comprehensive understanding and better control
+on HTs. The latter, such as GNN4Gate, can get the location of
+Trojan-gates directly.
+As shown in Table III, GNN4Gate gives the prediction results
+of gate classification and lists the suspicious logic gates on
+the s35932-T200 netlist, the complete HT structure includes
+16 Trojan-gates, of which 11 are detected by GNN4Gate.
+Sometimes, some normal gates are mistakenly classified as
+Trojan-gates, but GNN4Gate has a high TNR, and the number
+of misclassifications will be very small compared to the whole
+circuit. Professionals can directly review the local structure of
+the suspicious gates without reviewing the whole circuit. HT
+location can be used as a further work of HT detection, which
+has greater application needs.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
