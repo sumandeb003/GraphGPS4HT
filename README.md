@@ -2353,6 +2353,49 @@ technology libraries such as SMIC and TSMC, and build
 a technology-independent cell model.** Then, the cells in
 the original netlist are replaced by cells in the technology-independent cell model with the same function to obtain the
 technology-independent netlist.
+ - **TROJANFORGE: ADVERSARIAL HARDWARE TROJAN EXAMPLES WITH REINFORCEMENT LEARNING:** We seek inspiration from Generative Adversarial
+Networks (GANs) to generate new and better HT insertions. We utilize an RL agent that generates HT instances
+intending to evade HT detectors, i.e., the GAN’s generator component. We propose the “TrojanForge”framework in
+which an HT inserter tool operates in conjunction with HT detectors (the GAN’s Discriminator) in a loop and tries to
+collect the maximum positive reward by generating HT instances that are not detectable. We develop an RL-based HT generator and employ various HT detector(s) in a GAN-like loop to generate adversarial HT examples. **An RL agent uses these candidate nets to
+construct HTs that can hide from a random approach and four state-of-the-art HT detectors. The RL agent reinforces
+actions that yield more positive rewards and generates a set of stealthy HTs in various ISCAS-85 combinational circuits. HT Insertion tools:** Initial attempts to gather an HT benchmark were realized in TrustHub, where a list of 96 benchmarks are available to
+use Shakya et al. (2017); Salmani et al. (2013). Despite the valuable novelty, the dataset suffers from shortcomings such
+as limited size and diversity Krieg (2023).
+Various studies have been conducted to address Trusthub’s shortcomings. Cruz et al. Cruz et al. (2018) offers an
+automated HT generation tool that inserts HTs based on entered parameters from the user. They include the total
+number of trigger nets, the number of rare trigger nets, the number of inserted HT instances, and the type of payload.
+The location of a payload is selected randomly. Sarihi et al. Sarihi et al. (2022) introduced an RL-based tool in which an
+agent explores circuits and takes five different positional actions to insert HT instances in a way that maximizes the sum
+of collected rewards. The agent receives rewards according to the number of engaged circuit inputs in the HT activation
+test vector. Gohil et al. Gohil et al. (2022a) proposed another HT insertion RL tool, ATTRITION. ATTRITION sets a
+signal probability threshold for trigger candidates, and the RL agent is rewarded proportional to the size of “compatible”
+trigger rare nets it finds. Compatible rare nets are a set of rare nets that can be activated with a single test vector.
+Nozawa et al. Nozawa et al. (2021) degrade the performance of ML-based HT detectors by introducing adversarial HT
+examples. The approach changes the structure of the netlist while preserving its functionality. These changes tamper
+with the feature values of the circuit and, subsequently, cause a circuit misclassification by the detector. The authors use
+Trusthub HTs to showcase the success of their method. Sarihi et al. Sarihi et al. (2024a) uses ABC, an open-source
+synthesis tool, to restructure graphs while preserving their functionality. The goal is to introduce a new benchmark
+with unseen data points. The authors demonstrate that current state-of-the-art HT detectors cannot detect most of the
+proposed benchmarks. Gohil et al. Gohil et al. (2024) introduced AttackGNN, a tool that integrates ABC with an RL
+agent to generate adversarial examples that mislead GNNs (graph neural networks) which are used in four hardware
+security applications. The RL agent uses a combination of graph restructuring actions to achieve the highest attack
+rates. Saravanan Saravanan et al. (2023) et al. propose a rare net selection technique that has two main parts. First, the
+authors use the structural information of circuits such as the number of unique primary inputs and gates that form the
+input logic cone of a rare net to analyze each rare net. Second, random sampling with a tree-based search is used to
+uncover overlapped trigger combinations and score them based on their quality. **HT Detection Tools:** 
+Our proposed framework needs a discriminator (HT detector) tool. Here, we review HT detection.
+TGRL Pan and Mishra (2021) is an RL framework that generates test vectors by tweaking the input bit patterns to
+activate a set of rare nets. The algorithm shows higher trigger coverage compared to MERO; however, neither the
+test vectors are released, nor the vectors are tested on real HT benchmarks. DETERRENT Gohil et al. (2022b) also
+employs RL to find the largest set of rare nets that are compatible Gohil et al. (2022b). The authors discuss how to prune
+some actions for a faster convergence; however, they do not consider rare net pruning. Sarihi et al. Sarihi et al. (2023)
+introduces three detection proposals based on SCOAP (Sandia Controllability and Observability Analysis Program
+parameters) and signal switching activity to generate test vectors for ISCAS-85 benchmarks. The authors combine
+all the test vectors Sarihi et al. (2024b) and demonstrate their efficacy against HT implementations. Hasegawa et
+al. Hasegawa et al. (2022) introduces a robust ML HT detector called R-HTDetector trained with 51 features extracted
+from TrustHub benchmarks. The detector aims to increase resiliency against the adversarial gate modification attacks
+proposed in Nozawa et al. (2021).
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
