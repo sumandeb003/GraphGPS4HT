@@ -2337,6 +2337,22 @@ circuit. Professionals can directly review the local structure of
 the suspicious gates without reviewing the whole circuit. HT
 location can be used as a further work of HT detection, which
 has greater application needs.
+ - **A unioned graph neural network based hardware Trojan node detection:** Benchmarks used in this paper are listed in Table I, which
+contain 17 gate-level netlists from Trust-HUB. The types of
+HTs covered in the data set include combinational logic, ring
+inverter and sequential logic. **To evaluate the performance, we perform a leave-one-out
+cross-validation. GNN models are trained on 15 of the 16
+total netlists, leaving 1 netlist outside of the training data
+set to be the test set data.** In this way, we can verify the
+transferability of the proposed architecture on all 16 circuits. In IC design, cells with the same logical function usually
+have different descriptions because they vary in timing, area,
+and power, which makes it more difficult to analyze the
+netlist. In HT detection, we only focus on circuit structure and logic gate function. **Therefore, in order to reduce
+the complexity of the algorithm, we first learn the existing
+technology libraries such as SMIC and TSMC, and build
+a technology-independent cell model.** Then, the cells in
+the original netlist are replaced by cells in the technology-independent cell model with the same function to obtain the
+technology-independent netlist.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
