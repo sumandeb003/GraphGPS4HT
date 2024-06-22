@@ -2396,6 +2396,177 @@ all the test vectors Sarihi et al. (2024b) and demonstrate their efficacy agains
 al. Hasegawa et al. (2022) introduces a robust ML HT detector called R-HTDetector trained with 51 features extracted
 from TrustHub benchmarks. The detector aims to increase resiliency against the adversarial gate modification attacks
 proposed in Nozawa et al. (2021).
+ - **MaliGNNoma: GNN-Based Malicious Circuit Classifier for Secure Cloud FPGAs:** Cloud service
+providers (CSPs), such as Amazon Web Service (AWS) [2]
+and Microsoft [3], offer cloud-based FPGAs that clients can
+rent and customize with their own logic [4]; this model can
+be referred to as FPGA-as-a-Service (FaaS). When clients with the necessary resource and computing de-
+mands are not present, the FPGA fabric can be shared among
+multiple clients (tenants) with smaller resource requirements. Multi-tenancy has not been realized commercially yet,
+mainly due to security challenges. One of the reasons is the
+shared power delivery networks of the FPGA fabric among
+tenants, which can create potential attack vectors [8]. As clients have control over programming these FPGAs,
+multiple security concerns are raised. One prominent example
+is fault-injection attacks, wherein circuits are intentionally
+configured to induce severe voltage fluctuations, leading to hardware faults. Such faults can either be subtle and cause
+computation errors, or cause a crash of the FPGA device and
+therefore denial-of-service (DoS) [5], jeopardizing the entire
+availability of the system. When evaluating the financial loss
+for commercial CSPs versus the costs of performing the attack,
+the cost of the downtime of FPGA infrastructure is 10× as
+much as the costs for the attacker causing the downtime [6].
+Such powerful attacks put the CSPs at a severe disadvantage to
+the attackers and make them potential victims of sabotage [6]. Next
+to the fault-injection attacks that can crash the FPGAs, side-
+channel attacks use indirect power measurements to exfiltrate
+secret information from one tenant’s FPGA fabric through a
+malicious co-tenant [9], [10], [11]. Additionally, more fine-
+grained fault-injection attacks do not only affect the avail-
+ability of resources, but can also affect data integrity by
+causing delicate faults that only affect individual bytes. Using that, attacks exist to extract cryptographic secrets [12], [13]
+or information in neural network accelerators [14]. In this work, we address the security of cloud FP-
+GAs against fault-injection attacks, while considering multi-
+tenancy. Side-channel attacks are not addressed here, but can
+be solved orthogonal to us – for instance on the level of timing
+analysis, as suggested in [8]. While we consider multi-tenancy
+scenarios, our research is not entirely confined to that aspect. **To address the above challenges, we propose the MaliGN-
+Noma framework that identifies different netlist-level mali-
+cious FPGA configurations. MaliGNNoma leverages GNNs
+to accurately classify netlists by capitalizing on their inher-
+ent graph structure, as depicted in Fig. 2. Unlike existing
+methods that focus on checking bitstreams, MaliGNNoma
+directly operates on netlist graphs. This enables the model
+to preserve semantic information, extract crucial features, and
+improve detection capabilities. Additionally, MaliGNNoma
+aligns seamlessly with the workflow of CSP, where netlists
+serve as the primary input for generating bitstreams. We have constructed our own
+dataset of FPGA netlists to train the GNN, which we
+to the research community at the following repository:
+https://github.com/hassanassar/MaliGNNoma. Additionally, we integrate our frame-
+work with a state-of-the-art parameterized explainer for
+GNNs [28]. This explainer, when given a graph (i.e.,
+a netlist), extracts a subgraph (i.e., sub-circuit) that
+has the most influence on the GNN’s predictions. By
+identifying specific gates contributing to the prediction
+of a ‘malicious’ label, MaliGNNoma offers valuable
+insights for investigation by circuit designers. The effectiveness of MaliGNNoma is show-
+cased by training it over a dataset comprising of benign and
+malicious designs. The benign benchmarks are collected from
+ISCAS benchmark [29], Berkley benchmark [30], Groundhog
+benchmark [31], and OpenCores [32]. The malicious designs contain state-of-the-art attacks as described in [18], [23], [21],
+[33]. We crafted the malicious designs based on state-of-the-
+art methodologies, as they are not open-sourced. We evaluated
+all designs in our dataset on a ZCU102 FPGA Board and
+confirmed that malicious designs injected faults into neighbor-
+ing tenants. 2 MaliGNNoma achieves a classification accuracy
+and precision of 98.24% and 97.88%, respectively. MaliGNNoma employs the open-source PyVerilog tool to parse the Verilog netlists and convert them into DFGs (see Fig. 4 1 ), as explained in Section II-C1.
+MaliGNNoma assigns a one-hot encoded feature to each node
+layers of GIN as follows.The feature vector length per
+node is 37, representing all possible types of nodes in a DFG. By utilizing the PG-Explainer our model can identify the influential nodes contributing to the prediction of a “malicious” label. We utilize a Xilinx UltraScale+ XCZU9EG FPGA con-
+tained on the ZCU102 board. We generate multiple bitstreams
+to configure the FPGA board with tenant designs. To replicate
+a multi-tenancy scenario, we employed 20 distinct reconfig-
+urable regions within the FPGA. These regions vary in size,
+ranging from 50% of the FPGA resources (with room for an
+additional equally-sized tenant) to 15% of the FPGA resources
+(allowing space for up to five other equally-sized tenants).
+Based on these tenant regions, we built a dataset of 115
+netlists. The netlists are based on benign designs from the ISCAS, Groundhog, Berkley, and OpenCores benchmarks in
+addition to a benign AES implementation to compare how
+well it can be differentiated from the maliciously modified
+AES. The netlists contain malicious designs as well, such as
+the MUX-based and Latch-based ROs as explained in [18], and
+advanced encryption standard (AES)-based attacks detailed
+in [21]. Moreover, we build attacks based on data encryption
+standard (DES) and secure hash algorithm (SHA) in a method
+similar to the AES-based attacks. For the AES-based attacks,
+we hide them with circuits from the ISCAS benchmark as
+explained in [23] to check how hard it is to detect them. Table III shows the designs used and their numbers; overall
+we have 68 malicious designs and 47 benign designs.** Since GNNs have not been previously
+applied to FPGA netlist analysis, in our experimental investi-
+gation, we explore two different GNN baselines, specifically
+the GIN and GCN, across various GNN configurations to
+assess their effectiveness.
+For the GCN, we consider a baseline GCN with 2 to 3
+layers and hidden dimensions of 100, 200, and 400. We also
+experiment with different dropout rates in the range of 0.1, 0.2,
+and 0.5, 4 after every GNN layer, along with the addition of an attention pooling layer with pooling ratios of 20%, 50%, and
+80%. Additionally, we explore different READOUT functions,
+including Max, Mean, and Sum.
+For the GIN, we consider 2 and 3 layers with hidden
+dimensions of 64, 100, and 128. The default setup for the
+GIN employs a Sum READOUT function without a pooling
+layer. We add a dropout stage after the linear layer.
+All models were trained for 100 epochs using the mini-
+batch gradient descent algorithm with a batch size of 4 and a
+learning rate of 0.001. **For each sample in the dataset, a leave-
+one-out cross-validation approach is applied. The dataset is
+randomly shuffled, and for each sample, it is divided into
+a training set and a validation set (with a 10% split of the
+remaining data). During training, the GNN is evaluated on
+the validation set every 10 epochs. The GNN parameters that
+yield the best performance on the validation set are selected
+as the final model for testing. This process is carried out once
+for each sample in the dataset, with one sample left out for
+testing in each iteration.** The best MaliGNNoma per-
+formance was achieved using 2 layers of GIN with a hidden
+dimension of 100 and a dropout rate of 0.5. This resulted in
+an accuracy of 98.24%, precision of 97.88%, recall of 98.5%,
+and an F1 score of 98.19%. MaliGNNoma effectively detects
+malicious netlist configurations, even sophisticated ones like
+AES-based, and achieves state-of-the-art performance in all
+aspects. Table IV presents the classification performance of
+MaliGNNoma on the various subsets of the dataset. As evident
+from the table, there were only two misclassifications in the
+entire dataset: one benign AES was misclassified as malicious,
+and one Latch-RO circuit was misclassified as benign. Comparing GCN to
+GIN, with the same hidden dimension of 100, GCN (with Max
+READOUT) achieves similar performance, with an accuracy of
+94.73%. However, to achieve this result, a pooling ratio of
+20% was applied, which was unnecessary for GIN. Overall,
+when comparing both, GIN exhibits greater expressiveness
+as it incorporates a neural network in the aggregation step,
+enabling it to capture more intricate relationships in the graph
+data. However, for both architectures, increasing the number of layers to 3 leads to a significant reduction in performance. For
+instance, in the case of GIN, this increase resulted in a notable
+accuracy drop to 77.19%. This effect is commonly referred to
+as “over-smoothing.” Over-smoothing occurs when nodes lose
+their discriminative power because they aggregate information
+from too many neighbors, making them nearly identical. After model training and testing, the
+model is passed to the PGExplainer to extract an explanatory
+subgraph from the entire graph representation of the netlist.
+This step is particularly crucial, especially in cases where
+a malicious label is predicted, as it provides justification
+for the model’s decision. To evaluate the performance of
+subgraph extraction without relying on node labeling to iden-
+tify malicious components, we use the fidelity- metric. An
+explanation is considered sufficient if it independently leads
+to the initial prediction of the model. Since there may be
+other configurations in the graph that could also lead to the
+same prediction, it is possible to have multiple sufficient
+explanations for a single prediction. A sufficient explanation is
+characterized by a fidelity- score close to 0. For our dataset, the
+average fidelity- score obtained is 0.28, with a fidelity- score
+of 0 being observed for 70% of the samples. This indicates
+that in the majority of cases, the extracted explanations are
+effective in justifying the model’s predictions. MaliGNNoma runs on a single machine of
+10 cores (2x Intel(R) Xeon(R) CPU E5-2680 v4@2.4GHz).
+On average, MaliGNNoma training process for 100 epochs,
+including dataset reading and conversion to graphs, takes
+approximately 6 hours. It is important to note that this is an
+offline procedure. Once MaliGNNoma is trained, the inference
+time for each prediction averages around 0.05 seconds. As we show in Table I,
+not all attack vectors are detected by the state-of-the-art. To
+quantify this, we compare MaliGNNoma against them based
+on our dataset. Table V shows the results of this comparison.
+As these tools are not openly available, we perform a conservative comparison, i.e., we assume they have 100% accuracy
+in detecting the attacks they report capable of detecting. This is
+to their benefit, as realistically they have lower accuracy e.g.,
+as reported in [23], [22], [19]. Even with this conservative
+comparison, MaliGNNoma outperforms all the state-of-the-
+art solutions. The highest accuracy is theoretically reached by
+the tool of [23] which is still lower than the actual accuracy
+MaliGNNoma reaches.
 
 In the **leave-one-out approach**, the test set is the trojan-free and trojan-ed versions of a circuit. Every time, the test set changes to a different circuit.
 
